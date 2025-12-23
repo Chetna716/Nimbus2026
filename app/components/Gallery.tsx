@@ -7,7 +7,7 @@ const Gallery = () => {
   return (
     <div className="w-full bg-black flex flex-col items-center py-20 relative overflow-hidden">
       {/* Images Container */}
-      <div className="flex flex-col gap-10 z-10">
+      <div className="flex flex-col gap-4 z-10">
         {/* Section 1 */}
         <motion.div 
           initial={{ x: -200, opacity: 0 }}
