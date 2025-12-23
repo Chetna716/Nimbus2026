@@ -2,12 +2,9 @@
 
 import LiquidEther from './liquidether';
 import GlitchText from './GlitchText';
-import LeftSidebar from './LeftSidebar';
-
 const Hero = () => {
   return (
     <div className="w-full h-screen relative bg-black overflow-hidden">
-      <LeftSidebar />
       {/* Grid Background */}
       <div 
         className="absolute inset-0 z-0 pointer-events-none" 
