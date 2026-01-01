@@ -26,11 +26,11 @@ function Model({ scrollProgress, ...props }: { scrollProgress: MotionValue<numbe
       const entryProgress = Math.min(Math.max(progress / 0.6, 0), 1);
       
       const startX = 10;
-      const endX = 6; // Shifted further right (was 4.5)
+      const endX = 1.0; // Shifted left (was 3.0)
       const exitX = -10; 
       
       const startY = 10; 
-      const endY = 5.0; // Shifted further up (was 3.5)
+      const endY = 1.2; // Lowered model (was 1.5)
       const exitY = -6;
       const startTiltZ = Math.PI / 4;
       const endTiltZ = 0.15; // Keep a slight tilt
@@ -73,34 +73,76 @@ const RCRaceSection = () => {
 
    return (
      <section ref={containerRef} className="w-full h-screen bg-black relative overflow-hidden cursor-grab active:cursor-grabbing">
-       <div className="absolute inset-0 flex flex-col items-start justify-center pointer-events-none pl-10 md:pl-20">
+       <div className="absolute inset-0 flex flex-col items-start justify-center pointer-events-none pl-32 md:pl-64">
          <style jsx global>{`
-           @font-face {
-             font-family: 'Vipnagorgialla';
-             src: url('/vipnagorgialla/Vipnagorgialla Bd.otf') format('opentype');
-             font-weight: bold;
-             font-style: normal;
+          @font-face {
+            font-family: 'Vipnagorgialla Italic';
+            src: url('/vipnagorgialla/Vipnagorgialla Bd It.otf') format('opentype');
+            font-weight: bold;
+            font-style: italic;
+          }
+          .text-3d-shadow {
+             text-shadow: 
+               1px 1px 0 #b91c1c,
+               2px 2px 0 #991b1b,
+               3px 3px 0 #7f1d1d,
+               4px 4px 0 #450a0a,
+               5px 5px 0 #450a0a,
+               6px 6px 0 #450a0a,
+               7px 7px 0 #450a0a,
+               8px 8px 0 #450a0a,
+               9px 9px 0 #450a0a,
+               10px 10px 0 #450a0a,
+               12px 12px 20px rgba(0,0,0,1);
            }
-         `}</style>
+           .text-3d-shadow-grey {
+             text-shadow: 
+               1px 1px 0 #6b7280,
+               2px 2px 0 #4b5563,
+               3px 3px 0 #374151,
+               4px 4px 0 #1f2937,
+               5px 5px 0 #111827,
+               6px 6px 0 #111827,
+               7px 7px 0 #111827,
+               8px 8px 0 #111827,
+               9px 9px 0 #111827,
+               10px 10px 0 #111827,
+               12px 12px 20px rgba(0,0,0,1);
+           }
+           .text-3d-shadow-orange {
+             text-shadow: 
+               1px 1px 0 #fdba74,
+               2px 2px 0 #fb923c,
+               3px 3px 0 #ea580c,
+               4px 4px 0 #c2410c,
+               5px 5px 0 #9a3412,
+               6px 6px 0 #9a3412,
+               7px 7px 0 #9a3412,
+               8px 8px 0 #9a3412,
+               9px 9px 0 #9a3412,
+               10px 10px 0 #9a3412,
+               12px 12px 20px rgba(0,0,0,1);
+           }
+        `}</style>
          <div className="flex flex-col items-start justify-center">
             <motion.h1 
-              style={{ opacity: opacityR, y: yR, fontFamily: 'Vipnagorgialla, sans-serif' }}
-              className="text-[#EF4444] text-[15rem] leading-[0.8] font-bold text-left"
+              style={{ opacity: opacityR, y: yR, fontFamily: 'Vipnagorgialla Italic, sans-serif' }}
+              className="text-[#EF4444] text-[10rem] leading-[0.8] font-bold italic text-left text-3d-shadow"
             >
               R
             </motion.h1>
             <motion.h1 
-              style={{ opacity: opacityCAR, y: yCAR, fontFamily: 'Vipnagorgialla, sans-serif' }}
-              className="text-white text-[15rem] leading-[0.8] font-bold text-left"
+              style={{ opacity: opacityCAR, y: yCAR, fontFamily: 'Vipnagorgialla Italic, sans-serif' }}
+              className="text-[#9CA3AF] text-[10rem] leading-[0.8] font-bold italic text-left text-3d-shadow-grey"
             >
-              <span className="text-[#EF4444]">C</span>A<span className="text-[#FB923C]">R</span>
+              <span className="text-[#EF4444] text-3d-shadow">C</span>A<span className="text-[#FB923C] text-3d-shadow-orange">R</span>
             </motion.h1>
             <div className="flex flex-row items-center">
               <motion.h1 
-                style={{ opacity: opacityRACING, letterSpacing: letterSpacing, fontFamily: 'Vipnagorgialla, sans-serif' }}
-                className="text-white text-[15rem] leading-[0.8] font-bold text-left"
+                style={{ opacity: opacityRACING, letterSpacing: letterSpacing, fontFamily: 'Vipnagorgialla Italic, sans-serif' }}
+                className="text-[#9CA3AF] text-[10rem] leading-[0.8] font-bold italic text-left text-3d-shadow-grey"
               >
-                RA<span className="text-[#FB923C]">C</span>ING
+                RA<span className="text-[#FB923C] text-3d-shadow-orange">C</span>ING
               </motion.h1>
 
               {/* Vertical Capsule Button */}
@@ -108,8 +150,8 @@ const RCRaceSection = () => {
                 style={{ opacity: buttonOpacity, y: buttonY }}
                 className="ml-8 pointer-events-auto"
               >
-                <button className="w-12 h-32 rounded-full border-2 border-[#EF4444] bg-transparent text-white flex items-center justify-center hover:bg-[#EF4444] transition-colors duration-300">
-                   <span className="transform -rotate-90 text-sm font-bold tracking-widest whitespace-nowrap">
+                <button className="w-8 h-24 rounded-full border-2 border-[#EF4444] bg-transparent text-white flex items-center justify-center hover:bg-[#EF4444] transition-colors duration-300">
+                   <span className="transform -rotate-90 text-xs font-bold tracking-widest whitespace-nowrap">
                      EXPLORE
                    </span>
                 </button>
@@ -135,7 +177,7 @@ const RCRaceSection = () => {
             >
               <Model 
                 scrollProgress={scrollYProgress} 
-                scale={11} 
+                scale={9} 
                 rotation={[0, Math.PI / 2, 0]} 
               />
             </PresentationControls>
