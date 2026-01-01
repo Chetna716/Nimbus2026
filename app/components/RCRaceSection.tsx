@@ -8,7 +8,7 @@ import { useScroll, MotionValue, useTransform, motion } from 'framer-motion';
 
 function Model({ scrollProgress, ...props }: { scrollProgress: MotionValue<number> } & any) {
   const { scene } = useGLTF('/rc_car/scene.gltf');
-  const ref = useRef<any>();
+  const ref = useRef<any>(null);
   const active = useRef(false);
 
   useFrame((state) => {
@@ -173,7 +173,7 @@ const RCRaceSection = () => {
               global
               zoom={0.5}
               polar={[-0.1, Math.PI / 4]}
-              snap={{ mass: 4, tension: 400 }}
+              snap={true}
             >
               <Model 
                 scrollProgress={scrollYProgress} 
