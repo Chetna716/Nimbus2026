@@ -69,8 +69,8 @@ const ProShowSection = () => {
   return (
     <section className="w-full min-h-screen bg-black text-white relative flex items-center justify-center overflow-hidden py-20">
       {/* Background Grid/Lines */}
-      <div className="absolute inset-0 pointer-events-none opacity-20">
-        <div className="w-full h-full" style={{ backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)', backgroundSize: '50px 50px' }}></div>
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="w-full h-full" style={{ backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)', backgroundSize: '100px 100px' }}></div>
       </div>
 
       {/* Top Left Squares */}
