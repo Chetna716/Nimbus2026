@@ -56,17 +56,17 @@ const TeamsSection = () => {
   // Calculate vertical travel for images
   const totalTravel = (teams.length - 1) * (IMAGE_HEIGHT + GAP);
   
-  // Initial: Center the first image (50vh - half image height)
-  const initialOffset = `calc(50vh - ${IMAGE_HEIGHT / 2}px)`;
-  // Final: Top of last image at top of screen
-  const finalOffset = `-${totalTravel}px`;
+  // Initial: Center the first image (75vh - half image height)
+  const initialOffset = `calc(75vh - ${IMAGE_HEIGHT / 2}px)`;
+  // Final: Center the last image (keep it at the same level)
+  const finalOffset = `calc(75vh - ${IMAGE_HEIGHT / 2 + totalTravel}px)`;
   
   const y = useTransform(scrollYProgress, [0, 1], [initialOffset, finalOffset]);
 
   // Text Animation Constants
-  const TEXT_ITEM_HEIGHT = 100; // Height of one text block
-  const TEXT_GAP = 20;
-  const TEXT_CONTAINER_HEIGHT = 600; // Much larger viewport to allow full screen movement
+  const TEXT_ITEM_HEIGHT = 100; // Restored height
+  const TEXT_GAP = 20; // Restored gap
+  const TEXT_CONTAINER_HEIGHT = 400; // Increased container slightly to accommodate larger spacing
   const textStride = TEXT_ITEM_HEIGHT + TEXT_GAP;
   
   // To make the text move "till up of the screen", we want a larger range of motion.
@@ -82,13 +82,16 @@ const TeamsSection = () => {
   return (
     <div ref={containerRef} className="w-full relative bg-black" style={{ height: `${teams.length * 100}vh` }}>
       <div className="sticky top-0 h-screen w-full flex items-center overflow-hidden pl-[60px]">
+      {/* Top Right: Header */}
+      <h3 className="absolute top-10 right-10 z-50 text-white text-sm tracking-[0.3em] font-bankgothic">PARTICIPATING CLUBS</h3>
+
       {/* Left: Number Indicator */}
-      <motion.div style={{ y: numberY }} className="absolute left-10 top-10 z-10">
+      <motion.div style={{ y: numberY }} className="absolute left-20 top-10 z-10">
         <div className="flex items-end leading-none">
-          <span className="text-white text-[120px] tracking-tighter" style={{ fontFamily: 'BankGothic, sans-serif' }}>
+          <span className="text-white text-[120px] tracking-tighter font-bankgothic">
             0{activeTeam.id}
           </span>
-          <span className="text-white/50 text-2xl mb-6 ml-2" style={{ fontFamily: 'BankGothic, sans-serif' }}>
+          <span className="text-white/50 text-2xl mb-6 ml-2 font-bankgothic">
             /0{teams.length}
           </span>
         </div>
@@ -96,37 +99,47 @@ const TeamsSection = () => {
 
       {/* Center: Image Display */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-        <div className="relative w-[450px] h-screen overflow-hidden">
+        <div className="relative w-[450px] h-screen">
+           {/* Circular Decoration - Behind Images */}
+           <div 
+             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"
+             style={{ width: 600, height: 600 }}
+           >
+              {/* Outer Ring - Clockwise */}
+              <div className="absolute inset-0 flex items-center justify-center scale-[1.3]">
+                <div className="w-full h-full border-[3px] border-white/40 border-dashed rounded-full animate-spin-slow" />
+              </div>
+              
+              {/* Inner Ring - Anti-clockwise */}
+              <div className="absolute inset-0 flex items-center justify-center scale-[1.0]">
+                <div className="w-full h-full border-[2px] border-white/30 border-dashed rounded-full animate-spin-reverse-slow" />
+              </div>
+           </div>
+
            {/* Image Trail Strip */}
            <motion.div 
              style={{ y }}
-             className="flex flex-col gap-8 w-full"
+             className="flex flex-col gap-8 w-full relative z-10"
            >
-             {teams.map((team) => (
+             {teams.map((team, index) => (
                <div key={team.id} className="w-full relative flex-shrink-0" style={{ height: IMAGE_HEIGHT }}>
                   <Image
                     src={team.image}
                     alt={team.fullName}
                     fill
-                    className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    className={`object-cover transition-all duration-500 ${
+                      activeIndex === index ? 'grayscale-0' : 'grayscale'
+                    }`}
                   />
                </div>
              ))}
            </motion.div>
-           
-           {/* Circular Decoration - scaled to fit larger container if needed, or kept centered */}
-           <div 
-             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-             style={{ width: 450, height: IMAGE_HEIGHT }}
-           >
-              <div className="absolute inset-0 border border-white/10 rounded-full scale-[1.5] animate-spin-slow" />
-           </div>
         </div>
       </div>
 
       {/* Right: Team List */}
-      <div className="absolute right-10 top-0 h-screen flex flex-col justify-center items-end z-20 gap-8 pointer-events-none">
-        <h3 className="text-white/50 text-sm tracking-[0.3em]">PARTICIPATING TEAMS</h3>
+      <div className="absolute right-10 z-20 pointer-events-none" 
+           style={{ top: `calc(75vh - ${IMAGE_HEIGHT/2}px - ${(TEXT_CONTAINER_HEIGHT - TEXT_ITEM_HEIGHT)/2}px)` }}>
         
         <div className="relative overflow-hidden pointer-events-auto" style={{ height: TEXT_CONTAINER_HEIGHT, width: 400 }}>
           <motion.div 
@@ -161,15 +174,6 @@ const TeamsSection = () => {
         </div>
       </div>
       
-      <style jsx>{`
-        .animate-spin-slow {
-          animation: spin 20s linear infinite;
-        }
-        @keyframes spin {
-          from { transform: scale(1.5) rotate(0deg); }
-          to { transform: scale(1.5) rotate(360deg); }
-        }
-      `}</style>
       </div>
     </div>
   );

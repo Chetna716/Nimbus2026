@@ -29,7 +29,7 @@ const AboutUs = () => {
           transition={{ duration: 0.8 }}
           className="mb-20"
         >
-          <h1 className="text-6xl md:text-9xl font-bold tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 whitespace-nowrap" style={{ fontFamily: 'BankGothic, sans-serif' }}>
+          <h1 className="text-6xl md:text-9xl font-bold tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 whitespace-nowrap font-bankgothic">
             ABOUT <span className="text-[#5227FF]">NIMBUS</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-400 w-full leading-relaxed font-light mb-8">
@@ -52,7 +52,7 @@ const AboutUs = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white" style={{ fontFamily: 'BankGothic, sans-serif' }}>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white font-bankgothic">
               OUR VISION
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-6 text-justify">
@@ -98,8 +98,8 @@ const AboutUs = () => {
               }}
               className="bg-[#111] p-8 rounded-lg relative h-full border border-white/10 flex flex-col justify-center z-10"
             >
-               <h3 className="text-2xl font-bold mb-4 text-[#5227FF]" style={{ fontFamily: 'BankGothic, sans-serif' }}>THEME: 2026</h3>
-               <p className="text-white text-4xl md:text-5xl font-bold leading-tight mb-4" style={{ fontFamily: 'Neoform, sans-serif' }}>
+               <h3 className="text-2xl font-bold mb-4 text-[#5227FF] font-bankgothic">THEME: 2026</h3>
+               <p className="text-white text-4xl md:text-5xl font-bold leading-tight mb-4 font-neoform">
                  DIGITAL <br/> FRONTIERS
                </p>
                <p className="text-gray-400">
@@ -125,7 +125,7 @@ const AboutUs = () => {
             { label: "Prizes", value: "₹5L+" }
           ].map((stat, index) => (
             <div key={index} className="text-center">
-              <h4 className="text-4xl md:text-6xl font-bold text-white mb-2" style={{ fontFamily: 'BankGothic, sans-serif' }}>{stat.value}</h4>
+              <h4 className="text-4xl md:text-6xl font-bold text-white mb-2 font-bankgothic">{stat.value}</h4>
               <p className="text-[#5227FF] text-sm md:text-base tracking-widest uppercase">{stat.label}</p>
             </div>
           ))}
@@ -138,7 +138,7 @@ const AboutUs = () => {
            viewport={{ once: true }}
            className="mt-24 text-center"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-8" style={{ fontFamily: 'BankGothic, sans-serif' }}>
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 font-bankgothic">
             BE PART OF THE <span className="text-[#5227FF]">FUTURE</span>
           </h2>
           <button className="px-8 py-4 bg-transparent border border-[#5227FF] text-white hover:bg-[#5227FF] transition-all duration-300 rounded-full tracking-widest font-bold">

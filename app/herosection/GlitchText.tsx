@@ -54,8 +54,7 @@ export default function GlitchText({ text, className }: GlitchTextProps) {
 
   return (
     <h1 
-      className={className}
-      style={{ fontFamily: 'Neoform, sans-serif' }}
+      className={`${className || ''} font-neoform`}
     >
       {displayText}
     </h1>

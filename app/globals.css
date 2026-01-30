@@ -1,19 +1,5 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: 'Neoform';
-  src: url('/neoform-font-1766056187-0/NeoformDemo-2v5zX.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'BankGothic';
-  src: url('/bankgothic-md-bt/BankGothic Md BT.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -24,6 +10,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-bankgothic: var(--font-bankgothic);
+  --font-neoform: var(--font-neoform);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,5 +24,32 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'BankGothic', sans-serif;
+  font-family: var(--font-bankgothic), sans-serif;
+}
+
+.font-bankgothic {
+  font-family: var(--font-bankgothic), sans-serif;
+}
+
+.font-neoform {
+  font-family: var(--font-neoform), sans-serif;
+}
+
+/* Custom Animations */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.animate-spin-slow {
+  animation: spin 40s linear infinite;
+}
+
+.animate-spin-reverse-slow {
+  animation: spin-reverse 50s linear infinite;
 }

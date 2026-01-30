@@ -133,7 +133,7 @@ const ProShowSection = () => {
                   layoutId={`artist-${item.id}`}
                   className={`relative rounded-full overflow-hidden border-2 border-white/20 bg-gray-800 cursor-pointer transition-all duration-500 ${
                     isCenter 
-                      ? 'w-40 h-40 md:w-52 md:h-52 border-4 border-white/30 z-30 shadow-[0_0_30px_rgba(255,255,255,0.1)]' 
+                      ? 'w-32 h-32 md:w-40 md:h-40 border-4 border-white/30 z-30 shadow-[0_0_30px_rgba(255,255,255,0.1)]' 
                       : 'w-24 h-24 md:w-32 md:h-32 opacity-60 hover:opacity-100 hover:scale-105 z-20'
                   }`}
                   onClick={() => handleArtistClick(item.id)}
@@ -165,7 +165,7 @@ const ProShowSection = () => {
               transition={{ duration: 0.3 }}
               className="flex flex-col items-start"
             >
-              <h2 className="text-5xl md:text-7xl font-black tracking-tighter mb-6 uppercase" style={{ fontFamily: 'BankGothic, sans-serif' }}>
+              <h2 className="text-5xl md:text-7xl font-black tracking-tighter mb-6 uppercase font-bankgothic">
                 {activeArtist.name}
               </h2>
               

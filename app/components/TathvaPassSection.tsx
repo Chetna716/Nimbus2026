@@ -38,7 +38,7 @@ const Ticket = ({ index, offset }: { index: number; offset: number }) => {
       <div className="flex-1 flex flex-col p-3 relative">
         <div className="flex justify-between items-start mb-1">
           <div>
-            <h2 className="text-[#333] text-base font-bold tracking-widest" style={{ fontFamily: 'BankGothic, sans-serif' }}>NIMBUS 2025</h2>
+            <h2 className="text-[#333] text-base font-bold tracking-widest font-bankgothic">NIMBUS 2025</h2>
             <p className="text-[#666] text-[8px] tracking-wider mt-0.5">ADMIT ONE</p>
           </div>
           <div className="text-right">
@@ -126,7 +126,7 @@ export default function TathvaPassSection() {
 
       {/* Header */}
       <div className="text-center mb-6 z-10 mt-0">
-        <h1 className="text-6xl md:text-8xl font-black text-white tracking-widest mb-4" style={{ fontFamily: 'Neoform, sans-serif' }}>
+        <h1 className="text-6xl md:text-8xl font-black text-white tracking-widest mb-4 font-neoform">
           NIMBUS PASS
         </h1>
         <p className="text-white/60 text-lg tracking-[0.2em] font-light">

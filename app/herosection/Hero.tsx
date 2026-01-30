@@ -1,8 +1,14 @@
 'use client';
 
-import LiquidEther from './liquidether';
+import dynamic from 'next/dynamic';
 import GlitchText from './GlitchText';
-import Model from './model';
+
+const LiquidEther = dynamic(() => import('./liquidether'), { 
+  ssr: false,
+  loading: () => <div className="absolute inset-0 bg-black" />
+});
+const Model = dynamic(() => import('./model'), { ssr: false });
+
 const Hero = () => {
   return (
     <div className="w-full h-screen relative bg-black overflow-hidden">
@@ -45,12 +51,12 @@ const Hero = () => {
         {/* Foreground Text */}
         <div className="absolute z-20 top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none flex flex-col items-center justify-center">
           <div className="relative">
-            <span className="absolute -top-1 left-2 text-white text-5xl tracking-[0.2em]">DATES</span>
+            <span className="absolute -top-1 left-2 text-white text-5xl tracking-[0.2em] font-neoform">DATES</span>
             <GlitchText 
               text="NIMBUS"
               className="text-white text-[250px] tracking-widest leading-none"
             />
-            <span className="absolute -bottom-4 right-2 text-white text-5xl tracking-widest">2026</span>
+            <span className="absolute -bottom-4 right-2 text-white text-5xl tracking-widest font-neoform">2026</span>
           </div>
         </div>
       </div>
