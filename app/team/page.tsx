@@ -21,6 +21,7 @@ interface TeamMember {
     github?: string;
     instagram?: string;
     email?: string;
+    whatsapp?: string;
   };
 }
 
@@ -30,64 +31,64 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "SARAYU NALLABOLU",
     role: "PRESIDENT",
     category: "CORE",
-    image: "/teams2/Satyam_Maurya.jpg", // Placeholder
-    socials: { linkedin: "#", github: "#", instagram: "#" }
+    image: "/whatsapp.jpeg", // Placeholder
+    socials: { linkedin: "#", github: "#", instagram: "#", whatsapp: "#" }
   },
   {
     id: "2",
     name: "ARYAN SINGH",
     role: "VICE PRESIDENT",
     category: "CORE",
-    image: "/teams2/Satyam_Maurya.jpg",
-    socials: { linkedin: "#", email: "#" }
+    image: "/whatsapp.jpeg",
+    socials: { linkedin: "#", email: "#", whatsapp: "#" }
   },
   {
     id: "3",
     name: "RISHABH GUPTA",
     role: "TECH LEAD",
     category: "TECHNICAL",
-    image: "/teams2/Satyam_Maurya.jpg",
-    socials: { linkedin: "#", github: "#" }
+    image: "/whatsapp.jpeg",
+    socials: { linkedin: "#", github: "#", whatsapp: "#" }
   },
   {
     id: "4",
     name: "PRIYA SHARMA",
     role: "DESIGN HEAD",
     category: "CREATIVE",
-    image: "/teams2/Satyam_Maurya.jpg",
-    socials: { linkedin: "#", instagram: "#" }
+    image: "/whatsapp.jpeg",
+    socials: { linkedin: "#", instagram: "#", whatsapp: "#" }
   },
   {
     id: "5",
     name: "VIKRAM MALHOTRA",
     role: "EVENT MANAGER",
     category: "MANAGEMENT",
-    image: "/teams2/Satyam_Maurya.jpg",
-    socials: { linkedin: "#", email: "#" }
+    image: "/whatsapp.jpeg",
+    socials: { linkedin: "#", email: "#", whatsapp: "#" }
   },
   {
     id: "6",
     name: "SNEHA PATEL",
     role: "WEB DEVELOPER",
     category: "TECHNICAL",
-    image: "/teams2/Satyam_Maurya.jpg",
-    socials: { linkedin: "#", github: "#" }
+    image: "/whatsapp.jpeg",
+    socials: { linkedin: "#", github: "#", whatsapp: "#" }
   },
   {
     id: "7",
     name: "ROHAN VERMA",
     role: "CONTENT LEAD",
     category: "CREATIVE",
-    image: "/teams2/Satyam_Maurya.jpg",
-    socials: { linkedin: "#", instagram: "#" }
+    image: "/whatsapp.jpeg",
+    socials: { linkedin: "#", instagram: "#", whatsapp: "#" }
   },
   {
     id: "8",
     name: "ANANYA DAS",
     role: "PUBLIC RELATIONS",
     category: "MANAGEMENT",
-    image: "/teams2/Satyam_Maurya.jpg",
-    socials: { linkedin: "#", email: "#" }
+    image: "/whatsapp.jpeg",
+    socials: { linkedin: "#", email: "#", whatsapp: "#" }
   }
 ];
 
@@ -129,9 +130,15 @@ const TeamsPage = () => {
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-4 text-white font-bankgothic">
             OUR <span className="text-[#5227FF]">TEAM</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-400 font-light max-w-2xl leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-400 font-light w-full max-w-6xl leading-relaxed mb-6">
             The minds behind the magic. A collective of innovators, creators, and leaders driving Nimbus 2026.
           </p>
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: "100%" }}
+            transition={{ duration: 0.8, ease: "easeInOut", delay: 0.5 }}
+            className="h-1 bg-[#5227FF] max-w-6xl"
+          />
         </motion.div>
 
         {/* Category Filters */}
@@ -243,6 +250,18 @@ const TeamsPage = () => {
                     {member.socials.email && (
                       <a href={`mailto:${member.socials.email}`} className="p-2 border border-white/20 rounded hover:bg-[#5227FF] hover:border-[#5227FF] hover:text-white text-gray-400 transition-all">
                         <Mail size={16} />
+                      </a>
+                    )}
+                    {member.socials.whatsapp && (
+                      <a href={member.socials.whatsapp} className="p-2 border border-white/20 rounded hover:bg-[#5227FF] hover:border-[#5227FF] hover:text-white text-gray-400 transition-all flex items-center justify-center">
+                        <div className="relative w-4 h-4">
+                          <Image
+                            src="/whatsapp.jpeg"
+                            alt="WhatsApp"
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
                       </a>
                     )}
                   </div>
