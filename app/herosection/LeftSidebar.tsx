@@ -24,10 +24,20 @@ const LeftSidebar = ({ activeSection = 1 }: LeftSidebarProps) => {
   return (
     <>
       <Menu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
-      <div className="fixed left-0 top-0 h-full w-[60px] z-50 flex flex-col items-center border-r-2 border-white/20 bg-transparent text-white mix-blend-difference pointer-events-none">
+      {/* Mobile Menu Trigger */}
+      <div
+        className="fixed top-4 left-4 z-50 md:hidden flex flex-col gap-1.5 cursor-pointer mix-blend-difference"
+        onClick={() => setIsMenuOpen(true)}
+      >
+        <div className="w-6 h-0.5 bg-white"></div>
+        <div className="w-6 h-0.5 bg-white"></div>
+        <div className="w-6 h-0.5 bg-white"></div>
+      </div>
+
+      <div className="hidden md:flex fixed left-0 top-0 h-full w-[60px] z-50 flex-col items-center border-r-2 border-white/20 bg-transparent text-white mix-blend-difference pointer-events-none">
         {/* Top Menu Icon */}
         <div className="w-full py-8 flex flex-col items-center border-b border-white/20">
-          <div 
+          <div
             className="flex flex-col gap-1.5 cursor-pointer pointer-events-auto hover:scale-110 transition-transform"
             onClick={() => setIsMenuOpen(true)}
           >
@@ -37,36 +47,36 @@ const LeftSidebar = ({ activeSection = 1 }: LeftSidebarProps) => {
           </div>
         </div>
 
-      {/* Vertical Text */}
-      <div className="flex-1 w-full flex items-center justify-center border-b border-white/20">
-        <h2 
-          className="whitespace-nowrap text-2xl tracking-[0.2em] font-bold rotate-180 font-bankgothic"
-          style={{ 
-            writingMode: 'vertical-rl',
-          }}
-        >
-          NIMBUS 2026
-        </h2>
-      </div>
-
-      {/* Bottom Navigation */}
-      <div className="w-full py-8 flex flex-col items-center gap-4 text-xs tracking-widest opacity-80 pointer-events-auto font-bankgothic">
-        {items.map((item) => (
-          <Link 
-            key={item.id} 
-            href={item.href}
-            className="cursor-pointer hover:text-[#5227FF] transition-colors flex items-center justify-center min-h-[24px]" 
-            style={{ writingMode: 'vertical-rl' }}
+        {/* Vertical Text */}
+        <div className="flex-1 w-full flex items-center justify-center border-b border-white/20">
+          <h2
+            className="whitespace-nowrap text-2xl tracking-[0.2em] font-bold rotate-180 font-bankgothic"
+            style={{
+              writingMode: 'vertical-rl',
+            }}
           >
-            {activeSection === item.id ? (
-               <span className="rotate-180 font-bold text-[#5227FF] whitespace-nowrap">{item.label}</span>
-            ) : (
-               <span className="rotate-180 whitespace-nowrap">{item.default}</span>
-            )}
-          </Link>
-        ))}
+            NIMBUS 2026
+          </h2>
+        </div>
+
+        {/* Bottom Navigation */}
+        <div className="w-full py-8 flex flex-col items-center gap-4 text-xs tracking-widest opacity-80 pointer-events-auto font-bankgothic">
+          {items.map((item) => (
+            <Link
+              key={item.id}
+              href={item.href}
+              className="cursor-pointer hover:text-[#5227FF] transition-colors flex items-center justify-center min-h-[24px]"
+              style={{ writingMode: 'vertical-rl' }}
+            >
+              {activeSection === item.id ? (
+                <span className="rotate-180 font-bold text-[#5227FF] whitespace-nowrap">{item.label}</span>
+              ) : (
+                <span className="rotate-180 whitespace-nowrap">{item.default}</span>
+              )}
+            </Link>
+          ))}
+        </div>
       </div>
-    </div>
     </>
   );
 };

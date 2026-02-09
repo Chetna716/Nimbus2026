@@ -118,7 +118,7 @@ const TeamsPage = () => {
         }}
       />
 
-      <div className="relative z-10 pl-[80px] md:pl-[120px] pr-8 py-20 max-w-7xl mx-auto">
+      <div className="relative z-10 px-6 pt-24 pb-12 md:pl-[120px] md:pr-8 md:py-20 max-w-7xl mx-auto">
 
         {/* Header */}
         <motion.div
@@ -127,10 +127,10 @@ const TeamsPage = () => {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-4 text-white font-bankgothic">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tighter mb-4 text-white font-bankgothic">
             OUR <span className="text-[#5227FF]">TEAM</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-400 font-light w-full max-w-6xl leading-relaxed mb-6">
+          <p className="text-lg md:text-2xl text-gray-400 font-light w-full max-w-6xl leading-relaxed mb-6">
             The minds behind the magic. A collective of innovators, creators, and leaders driving Nimbus 2026.
           </p>
           <motion.div
@@ -147,7 +147,7 @@ const TeamsPage = () => {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-6 py-2 rounded-full font-mono text-sm tracking-widest border transition-all duration-300 ${activeCategory === cat
+              className={`px-4 py-2 md:px-6 rounded-full font-mono text-xs md:text-sm tracking-widest border transition-all duration-300 ${activeCategory === cat
                 ? 'bg-[#5227FF] border-[#5227FF] text-white shadow-[0_0_20px_rgba(82,39,255,0.4)]'
                 : 'bg-transparent border-white/20 text-gray-400 hover:border-white hover:text-white'
                 }`}
@@ -182,13 +182,13 @@ const TeamsPage = () => {
                     src={member.image}
                     alt={member.name}
                     fill
-                    className={`object-cover transition-transform duration-700 ease-out ${hoveredMember === member.id ? 'scale-110 grayscale-0' : 'scale-100 grayscale'}`}
+                    className="object-cover transition-transform duration-700 ease-out scale-100 grayscale-0 md:grayscale md:group-hover:scale-110 md:group-hover:grayscale-0"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90" />
 
                   {/* Tech Grid Overlay (Visible on Hover) */}
                   <div
-                    className={`absolute inset-0 bg-[url('/grid-pattern.png')] opacity-0 transition-opacity duration-500 mixed-blend-overlay ${hoveredMember === member.id ? 'opacity-20' : ''}`}
+                    className="absolute inset-0 bg-[url('/grid-pattern.png')] transition-opacity duration-500 mixed-blend-overlay opacity-0 md:group-hover:opacity-20"
                     style={{ backgroundSize: '30px 30px' }}
                   />
                 </div>
@@ -212,7 +212,7 @@ const TeamsPage = () => {
                   </div>
 
                   {/* Text Content */}
-                  <div className={`transform transition-transform duration-500 ${hoveredMember === member.id ? '-translate-y-4' : 'translate-y-0'}`}>
+                  <div className="transform transition-transform duration-500 translate-y-0 md:group-hover:-translate-y-4">
                     <div className="flex items-center gap-2 mb-2">
                       <div className="w-1 h-3 bg-[#5227FF]" />
                       <span className="text-xs font-mono font-bold text-[#5227FF] tracking-wider uppercase">
@@ -220,7 +220,7 @@ const TeamsPage = () => {
                       </span>
                     </div>
 
-                    <h3 className="text-3xl font-bold font-bankgothic text-white mb-1 tracking-wide">
+                    <h3 className="text-2xl md:text-3xl font-bold font-bankgothic text-white mb-1 tracking-wide">
                       {member.name}
                     </h3>
                     <p className="text-sm font-mono text-gray-400 tracking-wider mb-6">
@@ -230,7 +230,7 @@ const TeamsPage = () => {
 
                   {/* Socials - Slide Up Reveal */}
                   <div
-                    className={`nav-links flex gap-4 overflow-hidden transition-all duration-500 ${hoveredMember === member.id ? 'max-h-12 opacity-100' : 'max-h-0 opacity-0'}`}
+                    className="nav-links flex gap-4 overflow-hidden transition-all duration-500 max-h-12 opacity-100 md:max-h-0 md:opacity-0 md:group-hover:max-h-12 md:group-hover:opacity-100"
                   >
                     {member.socials.linkedin && (
                       <a href={member.socials.linkedin} className="p-2 border border-white/20 rounded hover:bg-[#5227FF] hover:border-[#5227FF] hover:text-white text-gray-400 transition-all">
@@ -272,7 +272,7 @@ const TeamsPage = () => {
                 <div className="absolute bottom-0 right-0 w-8 h-8 border-r border-b border-white/20 pointer-events-none transition-colors duration-300 group-hover:border-[#5227FF]" />
 
                 {/* Border Overlay */}
-                <div className={`absolute inset-0 border border-white/10 transition-colors duration-300 pointer-events-none ${hoveredMember === member.id ? 'border-[#5227FF]/50' : ''}`} style={{ clipPath: "polygon(0 0, 100% 0, 100% 88%, 88% 100%, 0 100%)" }} />
+                <div className="absolute inset-0 border border-white/10 transition-colors duration-300 pointer-events-none md:group-hover:border-[#5227FF]/50" style={{ clipPath: "polygon(0 0, 100% 0, 100% 88%, 88% 100%, 0 100%)" }} />
 
               </motion.div>
             ))}

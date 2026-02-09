@@ -84,13 +84,13 @@ const EventsTimeline = () => {
                 }}
             />
 
-            <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden px-8 md:px-20">
+            <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden px-4 md:px-20 py-0">
 
                 {/* Header */}
                 <div className="absolute top-10 left-0 right-0 z-50 flex justify-between items-center px-8 md:px-20">
                     <div>
-                        <h3 className="text-[#5227FF] text-sm tracking-[0.5em] font-bankgothic mb-2">EVENT TIMELINE</h3>
-                        <div className="w-32 h-[2px] bg-gradient-to-r from-[#5227FF] to-transparent" />
+                        <h3 className="text-[#5227FF] text-xs md:text-sm tracking-[0.3em] md:tracking-[0.5em] font-bankgothic mb-2">EVENT TIMELINE</h3>
+                        <div className="w-24 md:w-32 h-[2px] bg-gradient-to-r from-[#5227FF] to-transparent" />
                     </div>
                     <div className="text-right">
                         <div className="text-white/40 font-mono text-xs tracking-widest">SCROLL TO EXPLORE</div>
@@ -101,7 +101,7 @@ const EventsTimeline = () => {
                 </div>
 
                 {/* Main Content Area */}
-                <div className="w-full max-w-7xl mx-auto relative z-10 flex flex-col items-center justify-center h-full">
+                <div className="w-full max-w-7xl mx-auto relative z-10 flex flex-col items-center justify-center h-full pt-36 md:pt-0">
 
                     {/* Horizontal Timeline Track */}
                     <div className="w-full mb-20 relative">
@@ -152,7 +152,7 @@ const EventsTimeline = () => {
                     </div>
 
                     {/* Event Card Display */}
-                    <div className="w-full relative" style={{ height: '500px' }}>
+                    <div className="w-full relative py-8 md:py-0" style={{ height: 'auto', minHeight: '500px' }}>
                         {events.map((event, index) => (
                             <motion.div
                                 key={event.id}
@@ -166,7 +166,7 @@ const EventsTimeline = () => {
                                 className="absolute inset-0 flex items-center justify-center"
                                 style={{ pointerEvents: activeIndex === index ? 'auto' : 'none' }}
                             >
-                                <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                                <div className="w-full max-w-5xl flex flex-col md:grid md:grid-cols-2 gap-8 items-center pb-20 md:pb-0">
 
                                     {/* Image Section */}
                                     <div className="relative group">
@@ -193,7 +193,7 @@ const EventsTimeline = () => {
                                         </div>
 
                                         {/* ID Badge */}
-                                        <div className="absolute -bottom-4 -right-4 bg-black border-2 border-[#5227FF] px-6 py-3 font-bankgothic text-2xl text-white z-20">
+                                        <div className="absolute -bottom-4 -right-16 w-[280px] h-[45px] flex items-center justify-start pl-6 bg-black border-2 border-[#5227FF] font-bankgothic text-xl text-white z-20">
                                             {String(event.id).padStart(2, '0')}
                                         </div>
                                     </div>
@@ -206,10 +206,10 @@ const EventsTimeline = () => {
                                                 <div className="w-1 h-6 bg-[#5227FF]" />
                                                 <span className="text-[#5227FF] font-mono text-xs tracking-[0.3em]">EVENT</span>
                                             </div>
-                                            <h2 className="text-5xl md:text-6xl font-bold font-bankgothic text-white tracking-tight leading-none">
+                                            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold font-bankgothic text-white tracking-tight leading-none bg-black/50 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none inline-block">
                                                 {event.name}
                                             </h2>
-                                            <p className="text-white/60 font-mono text-sm tracking-wider mt-2">{event.fullName}</p>
+                                            <p className="text-white/60 font-mono text-xs md:text-sm tracking-wider mt-2">{event.fullName}</p>
                                         </div>
 
                                         {/* Event Details */}

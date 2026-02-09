@@ -37,7 +37,7 @@ const AboutUs = () => {
         }}
       />
 
-      <div className="relative z-10 pl-[80px] md:pl-[120px] pr-8 py-20 max-w-7xl mx-auto">
+      <div className="relative z-10 px-6 pt-24 pb-12 md:pl-[120px] md:pr-8 md:py-20 max-w-7xl mx-auto">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -45,10 +45,10 @@ const AboutUs = () => {
           transition={{ duration: 0.8 }}
           className="mb-20"
         >
-          <h1 className="text-6xl md:text-9xl font-bold tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 whitespace-nowrap font-bankgothic">
+          <h1 className="text-4xl sm:text-6xl md:text-9xl font-bold tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 whitespace-nowrap font-bankgothic">
             ABOUT <span className="text-[#5227FF]">NIMBUS</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-400 w-full leading-relaxed font-light mb-8">
+          <p className="text-lg md:text-2xl text-gray-400 w-full leading-relaxed font-light mb-8">
             The Annual Technical Festival of <span className="text-white font-bold">NIT Hamirpur</span>.
             Where innovation meets reality, and technology shapes the future.
           </p>
@@ -68,22 +68,22 @@ const AboutUs = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white font-bankgothic">
+            <h2 className="text-2xl md:text-4xl font-bold mb-6 text-white font-bankgothic">
               OUR VISION
             </h2>
-            <p className="text-gray-400 text-lg leading-relaxed mb-6 text-justify">
+            <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-6 text-justify">
               Nimbus acts as a platform for the technical minds of the nation to showcase their skills and knowledge.
               It is an amalgamation of technology and fun, where students from all over the country come together to
               celebrate the spirit of engineering and innovation.
             </p>
-            <p className="text-gray-400 text-lg leading-relaxed text-justify mb-10">
+            <p className="text-gray-400 text-base md:text-lg leading-relaxed text-justify mb-10">
               With a legacy of over a decade, Nimbus has evolved into one of the premier technical festivals in North India,
               hosting a plethora of events, workshops, and guest lectures from industry leaders.
             </p>
 
             {/* Added Image */}
             {/* Added Image with Block Reveal */}
-            <div className="relative w-full h-[400px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group bg-black">
+            <div className="relative w-full h-[250px] md:h-[400px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group bg-black">
               <AnimatePresence mode='wait'>
                 <motion.div
                   key={currentImageIndex}
@@ -107,7 +107,7 @@ const AboutUs = () => {
                     className="absolute bottom-10 left-8 z-40"
                   >
                     <div className="relative overflow-hidden">
-                      <h3 className="relative z-10 text-4xl md:text-6xl font-bold text-white font-bankgothic drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] tracking-widest pl-6 pr-8 py-4 border-l-8 border-[#5227FF] bg-black/80 backdrop-blur-md rounded-r-2xl">
+                      <h3 className="relative z-10 text-2xl md:text-6xl font-bold text-white font-bankgothic drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] tracking-widest pl-6 pr-8 py-4 border-l-8 border-[#5227FF] bg-black/80 backdrop-blur-md rounded-r-2xl">
                         {images[currentImageIndex].title}
                       </h3>
                       {/* Shine effect */}
@@ -181,7 +181,7 @@ const AboutUs = () => {
             { label: "Prizes", value: "₹5L+" }
           ].map((stat, index) => (
             <div key={index} className="text-center">
-              <h4 className="text-4xl md:text-6xl font-bold text-white mb-2 font-bankgothic">{stat.value}</h4>
+              <h4 className="text-3xl md:text-6xl font-bold text-white mb-2 font-bankgothic">{stat.value}</h4>
               <p className="text-[#5227FF] text-sm md:text-base tracking-widest uppercase">{stat.label}</p>
             </div>
           ))}
@@ -194,7 +194,7 @@ const AboutUs = () => {
           viewport={{ once: true }}
           className="mt-24 text-center"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 font-bankgothic">
+          <h2 className="text-2xl md:text-5xl font-bold mb-8 font-bankgothic">
             BE PART OF THE <span className="text-[#5227FF]">FUTURE</span>
           </h2>
           <button className="px-8 py-4 bg-transparent border border-[#5227FF] text-white hover:bg-[#5227FF] transition-all duration-300 rounded-full tracking-widest font-bold">

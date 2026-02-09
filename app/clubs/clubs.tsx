@@ -92,11 +92,11 @@ const TeamsSection = () => {
         }}
       />
 
-      <div className="sticky top-0 h-screen w-full flex items-center overflow-hidden pl-[60px]">
+      <div className="sticky top-0 h-screen w-full flex items-center overflow-hidden pl-0 md:pl-[60px]">
 
         {/* Header Info */}
-        <div className="absolute top-10 right-10 z-50 flex flex-col items-end">
-          <h3 className="text-[#5227FF] text-sm tracking-[0.5em] font-bankgothic mb-2">PARTICIPATING CLUBS</h3>
+        <div className="absolute top-6 right-4 md:top-10 md:right-10 z-50 flex flex-col items-end">
+          <h3 className="text-[#5227FF] text-xs md:text-sm tracking-[0.3em] md:tracking-[0.5em] font-bankgothic mb-2">PARTICIPATING CLUBS</h3>
           <div className="w-32 h-[2px] bg-gradient-to-r from-transparent to-[#5227FF]" />
         </div>
 
@@ -127,7 +127,7 @@ const TeamsSection = () => {
 
         {/* Center: Image Display */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-          <div className="relative w-[500px] h-screen flex items-center justify-center">
+          <div className="relative w-[500px] h-screen flex items-center justify-center scale-[0.6] md:scale-100 origin-center">
             {/* Tech Circles Decoration */}
             <div
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"
@@ -135,12 +135,12 @@ const TeamsSection = () => {
             >
               {/* Outer Glow Ring */}
               <div className="absolute inset-0 flex items-center justify-center scale-[1.3]">
-                <div className="w-full h-full border-2 border-white/30 rounded-full animate-spin-slow shadow-[0_0_80px_rgba(82,39,255,0.4)]" />
+                <div className="w-full h-full border-2 border-white/30 rounded-full animate-spin-slow" />
               </div>
 
               {/* Dashed Tech Ring */}
               <div className="absolute inset-0 flex items-center justify-center scale-[1.1]">
-                <div className="w-full h-full border-[3px] border-dashed border-[#5227FF]/60 rounded-full animate-spin-reverse-slow shadow-[0_0_40px_rgba(82,39,255,0.3)]" />
+                <div className="w-full h-full border-[3px] border-dashed border-[#5227FF]/60 rounded-full animate-spin-reverse-slow" />
               </div>
 
               {/* Inner Accent Ring */}
@@ -191,10 +191,10 @@ const TeamsSection = () => {
         </div>
 
         {/* Right: Team List */}
-        <div className="absolute right-10 md:right-20 z-20 pointer-events-none"
+        <div className="absolute right-4 md:right-20 z-20 pointer-events-none"
           style={{ top: `calc(50vh - ${(TEXT_CONTAINER_HEIGHT - TEXT_ITEM_HEIGHT) / 2}px)` }}>
 
-          <div className="relative overflow-hidden pointer-events-auto" style={{ height: TEXT_CONTAINER_HEIGHT, width: 500 }}>
+          <div className="relative overflow-hidden pointer-events-auto w-[200px] md:w-[500px]" style={{ height: TEXT_CONTAINER_HEIGHT }}>
             <motion.div
               style={{ y: textY }}
               className="flex flex-col items-end w-full"
@@ -211,9 +211,9 @@ const TeamsSection = () => {
                   style={{ height: TEXT_ITEM_HEIGHT, marginBottom: TEXT_GAP }}
                 >
                   <div className="flex items-center gap-4">
-                    <div className={`transition-all duration-300 h-[1px] bg-[#5227FF] ${activeIndex === index ? 'w-12 opacity-100' : 'w-0 opacity-0'}`} />
+                    <div className={`transition-all duration-300 h-[1px] bg-[#5227FF] ${activeIndex === index ? 'w-6 md:w-12 opacity-100' : 'w-0 opacity-0'}`} />
                     <h2
-                      className={`text-2xl md:text-5xl font-bold font-bankgothic tracking-tight transition-all duration-500 ${activeIndex === index
+                      className={`text-xl md:text-5xl font-bold font-bankgothic tracking-tight transition-all duration-500 ${activeIndex === index
                         ? 'text-white scale-100 translate-x-0 outline-text'
                         : 'text-transparent stroke-white/20 scale-90 translate-x-4 stroke-1'
                         }`}
@@ -222,7 +222,7 @@ const TeamsSection = () => {
                       {team.name}
                     </h2>
                   </div>
-                  <div className={`mt-2 text-xs font-mono tracking-[0.3em] transition-all duration-300 ${activeIndex === index ? 'text-[#5227FF] opacity-100' : 'text-gray-600 opacity-0'
+                  <div className={`mt-2 text-[10px] md:text-xs font-mono tracking-[0.2em] md:tracking-[0.3em] transition-all duration-300 ${activeIndex === index ? 'text-[#5227FF] opacity-100' : 'text-gray-600 opacity-0'
                     }`}>
                     {team.fullName}
                   </div>
