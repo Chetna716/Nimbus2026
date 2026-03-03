@@ -2,8 +2,7 @@
 import { useState, useEffect } from 'react';
 import Hero from "./herosection/Hero";
 import Gallery from "./components/Gallery";
-import TathvaPassSection from "./components/TathvaPassSection";
-import ProShowSection from "./components/ProShowSection";
+import RobowarSection from "./components/RobowarSection";
 import LeftSidebar from "./herosection/LeftSidebar";
 
 import Preloader from "./components/Preloader";
@@ -30,8 +29,7 @@ export default function Home() {
           if (entry.isIntersecting) {
             if (entry.target.id === 'hero') setActiveSection(1);
             if (entry.target.id === 'gallery') setActiveSection(2);
-            if (entry.target.id === 'pass') setActiveSection(3);
-            if (entry.target.id === 'proshow') setActiveSection(4);
+            if (entry.target.id === 'robowar') setActiveSection(3);
           }
         });
       },
@@ -55,11 +53,8 @@ export default function Home() {
       <section id="gallery" className="w-full">
         <Gallery />
       </section>
-      <section id="pass" className="w-full">
-        <TathvaPassSection />
-      </section>
-      <section id="proshow" className="w-full">
-        <ProShowSection />
+      <section id="robowar" className="w-full">
+        <RobowarSection />
       </section>
     </main>
   );
