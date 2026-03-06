@@ -25,7 +25,7 @@ const ZONES: ZoneData[] = [
         name: "OAT ARENA",
         type: "MAIN STAGE",
         description: "The Open Air Theatre (OAT) is the beating heart of Nimbus. Hosting flagship pro-shows, the inaugural ceremony, and high-octane performances.",
-        color: "#5227FF", // Electric Blue
+        color: "#B19EEF", // Electric Purple
         path: "M 200,400 L 350,380 L 400,450 L 320,520 L 180,480 Z",
         cx: 290,
         cy: 450
@@ -35,7 +35,7 @@ const ZONES: ZoneData[] = [
         name: "TECH BLOCK",
         type: "WORKSHOPS",
         description: "Lecture Hall Complex (LHC). A hub for coding hackathons, workshops, and technical guest lectures. Air-conditioned and equipped with high-speed wifi.",
-        color: "#00FFC2", // Cyan
+        color: "#FF9FFC", // Pink
         path: "M 500,100 L 700,100 L 700,250 L 600,250 L 600,300 L 500,300 Z",
         cx: 600,
         cy: 200
@@ -82,7 +82,7 @@ const MapPage = () => {
     const handleZoomOut = () => setScale(prev => Math.max(prev - 0.2, 0.8));
 
     return (
-        <main className="min-h-screen bg-[#050505] text-white relative overflow-hidden font-bankgothic selection:bg-[#5227FF] selection:text-white">
+        <main className="min-h-screen bg-[#050505] text-white relative overflow-hidden font-bankgothic selection:bg-[#B19EEF] selection:text-white">
 
             {/* --- GRID & AMBIENCE --- */}
             <div className="fixed inset-0 z-0 pointer-events-none">
@@ -90,7 +90,7 @@ const MapPage = () => {
                 <div
                     className="absolute inset-0 opacity-20"
                     style={{
-                        backgroundImage: 'linear-gradient(rgba(82, 39, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(82, 39, 255, 0.1) 1px, transparent 1px)',
+                        backgroundImage: 'linear-gradient(rgba(177, 158, 239, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(177, 158, 239, 0.1) 1px, transparent 1px)',
                         backgroundSize: '40px 40px',
                         transform: 'perspective(500px) rotateX(20deg)',
                         transformOrigin: 'center 80%'
@@ -104,11 +104,11 @@ const MapPage = () => {
             <header className="absolute top-0 left-0 w-full p-6 md:p-10 flex justify-between items-start z-50 pointer-events-none">
                 <div className="pointer-events-auto">
                     <Link href="/" className="flex items-center gap-2 group opacity-70 hover:opacity-100 transition-opacity mb-4">
-                        <ChevronLeft className="w-5 h-5 text-[#5227FF]" />
+                        <ChevronLeft className="w-5 h-5 text-[#B19EEF]" />
                         <span className="text-sm font-mono tracking-widest">RETURN_HOME</span>
                     </Link>
                     <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-white">
-                        NIMBUS <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5227FF] to-cyan-400">MAP</span>
+                        NIMBUS <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B19EEF] to-[#FF9FFC]">MAP</span>
                     </h1>
                     <div className="flex items-center gap-4 mt-2">
                         <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
@@ -121,14 +121,14 @@ const MapPage = () => {
 
             {/* --- COMING SOON OVERLAY --- */}
             <div className="absolute inset-0 z-[40] flex items-center justify-center pointer-events-none">
-                <div className="bg-black/80 backdrop-blur-md border-y border-[#5227FF] py-8 w-full text-center relative overflow-hidden">
+                <div className="bg-black/80 backdrop-blur-md border-y border-[#B19EEF] py-8 w-full text-center relative overflow-hidden">
                     <motion.div
                         initial={{ x: "-100%" }}
                         animate={{ x: "100%" }}
                         transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                        className="absolute inset-0 bg-gradient-to-r from-transparent via-[#5227FF]/20 to-transparent"
+                        className="absolute inset-0 bg-gradient-to-r from-transparent via-[#B19EEF]/20 to-transparent"
                     />
-                    <h2 className="text-6xl md:text-9xl font-bold text-white font-bankgothic tracking-widest opacity-80 drop-shadow-[0_0_20px_rgba(82,39,255,0.8)]">
+                    <h2 className="text-6xl md:text-9xl font-bold text-white font-bankgothic tracking-widest opacity-80 drop-shadow-[0_0_20px_rgba(177,158,239,0.8)]">
                         COMING SOON
                     </h2>
                     <p className="text-gray-400 font-mono tracking-[0.5em] mt-2 text-sm md:text-xl">
@@ -148,7 +148,7 @@ const MapPage = () => {
                 >
                     <svg
                         viewBox="0 0 1000 600"
-                        className="w-full h-full drop-shadow-[0_0_20px_rgba(82,39,255,0.2)]"
+                        className="w-full h-full drop-shadow-[0_0_20px_rgba(177,158,239,0.2)]"
                     >
 
                         {/* Connecting Lines (Decor) */}

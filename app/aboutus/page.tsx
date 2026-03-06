@@ -22,7 +22,7 @@ const AboutUs = () => {
 
 
   return (
-    <main className="min-h-screen bg-black text-white relative overflow-x-hidden selection:bg-[#5227FF] selection:text-white">
+    <main className="min-h-screen bg-black text-white relative overflow-x-hidden selection:bg-[#B19EEF] selection:text-white">
       <LeftSidebar activeSection={-1} /> {/* -1 or a specific ID for About Us if we add it to sidebar */}
 
       {/* Grid Background */}
@@ -46,7 +46,7 @@ const AboutUs = () => {
           className="mb-20"
         >
           <h1 className="text-4xl sm:text-6xl md:text-9xl font-bold tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 whitespace-nowrap font-bankgothic">
-            ABOUT <span className="text-[#5227FF]">NIMBUS</span>
+            ABOUT <span className="text-[#B19EEF]">NIMBUS</span>
           </h1>
           <p className="text-lg md:text-2xl text-gray-400 w-full leading-relaxed font-light mb-8">
             The Annual Technical Festival of <span className="text-white font-bold">NIT Hamirpur</span>.
@@ -56,7 +56,7 @@ const AboutUs = () => {
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
             transition={{ duration: 0.8, ease: "easeInOut", delay: 0.5 }}
-            className="h-1 bg-[#5227FF]"
+            className="h-1 bg-[#B19EEF]"
           />
         </motion.div>
 
@@ -107,7 +107,7 @@ const AboutUs = () => {
                     className="absolute bottom-10 left-8 z-40"
                   >
                     <div className="relative overflow-hidden">
-                      <h3 className="relative z-10 text-2xl md:text-6xl font-bold text-white font-bankgothic drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] tracking-widest pl-6 pr-8 py-4 border-l-8 border-[#5227FF] bg-black/80 backdrop-blur-md rounded-r-2xl">
+                      <h3 className="relative z-10 text-2xl md:text-6xl font-bold text-white font-bankgothic drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] tracking-widest pl-6 pr-8 py-4 border-l-8 border-[#B19EEF] bg-black/80 backdrop-blur-md rounded-r-2xl">
                         {images[currentImageIndex].title}
                       </h3>
                       {/* Shine effect */}
@@ -182,7 +182,7 @@ const AboutUs = () => {
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <h4 className="text-3xl md:text-6xl font-bold text-white mb-2 font-bankgothic">{stat.value}</h4>
-              <p className="text-[#5227FF] text-sm md:text-base tracking-widest uppercase">{stat.label}</p>
+              <p className="text-[#B19EEF] text-sm md:text-base tracking-widest uppercase">{stat.label}</p>
             </div>
           ))}
         </motion.div>
@@ -195,9 +195,9 @@ const AboutUs = () => {
           className="mt-24 text-center"
         >
           <h2 className="text-2xl md:text-5xl font-bold mb-8 font-bankgothic">
-            BE PART OF THE <span className="text-[#5227FF]">FUTURE</span>
+            BE PART OF THE <span className="text-[#B19EEF]">FUTURE</span>
           </h2>
-          <button className="px-8 py-4 bg-transparent border border-[#5227FF] text-white hover:bg-[#5227FF] transition-all duration-300 rounded-full tracking-widest font-bold">
+          <button className="px-8 py-4 bg-transparent border border-[#B19EEF] text-white hover:bg-[#B19EEF] transition-all duration-300 rounded-full tracking-widest font-bold">
             REGISTER NOW
           </button>
         </motion.div>

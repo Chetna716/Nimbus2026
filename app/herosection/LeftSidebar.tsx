@@ -65,11 +65,11 @@ const LeftSidebar = ({ activeSection = 1 }: LeftSidebarProps) => {
             <Link
               key={item.id}
               href={item.href}
-              className="cursor-pointer hover:text-[#5227FF] transition-colors flex items-center justify-center min-h-[24px]"
+              className="cursor-pointer hover:text-[#B19EEF] transition-colors flex items-center justify-center min-h-[24px]"
               style={{ writingMode: 'vertical-rl' }}
             >
               {activeSection === item.id ? (
-                <span className="rotate-180 font-bold text-[#5227FF] whitespace-nowrap">{item.label}</span>
+                <span className="rotate-180 font-bold text-[#B19EEF] whitespace-nowrap">{item.label}</span>
               ) : (
                 <span className="rotate-180 whitespace-nowrap">{item.default}</span>
               )}

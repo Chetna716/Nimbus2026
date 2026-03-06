@@ -18,8 +18,8 @@ const Hero = () => {
       {/* Map Button - Top Right */}
       <div className="absolute top-4 right-4 md:top-8 md:right-16 z-50">
         <Link href="/map">
-          <button className="group relative px-6 py-2 bg-black/40 backdrop-blur-md border border-white/20 hover:border-[#5227FF] transition-colors rounded-full overflow-hidden">
-            <span className="relative z-10 text-xs font-mono tracking-[0.2em] text-white group-hover:text-[#5227FF] transition-colors">
+          <button className="group relative px-6 py-2 bg-black/40 backdrop-blur-md border border-white/20 hover:border-[#B19EEF] transition-colors rounded-full overflow-hidden">
+            <span className="relative z-10 text-xs font-mono tracking-[0.2em] text-white group-hover:text-[#B19EEF] transition-colors">
               EXPLORE MAP
             </span>
             <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -42,7 +42,7 @@ const Hero = () => {
         {/* Background Effects */}
         <div className="absolute inset-0 z-0">
           <LiquidEther
-            colors={['#5227FF', '#FF9FFC', '#B19EEF']}
+            colors={['#B19EEF', '#FF9FFC', '#B19EEF']}
             mouseForce={20}
             cursorSize={100}
             isViscous={false}
@@ -83,7 +83,7 @@ const Hero = () => {
           className="absolute right-4 md:right-10 bottom-8 md:bottom-12 z-30 max-w-[240px] md:max-w-sm"
         >
           <div className="relative overflow-hidden group cursor-pointer">
-            <div className="relative z-10 pl-6 pr-8 py-6 border-l-8 border-[#5227FF] bg-gray-900/40 backdrop-blur-xl rounded-r-2xl border-white/10 border-y border-r">
+            <div className="relative z-10 pl-6 pr-8 py-6 border-l-8 border-[#B19EEF] bg-gray-900/40 backdrop-blur-xl rounded-r-2xl border-white/10 border-y border-r">
               <h3 className="text-xl md:text-3xl font-bold text-white font-bankgothic drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] tracking-widest mb-2">
                 COMING SOON
               </h3>

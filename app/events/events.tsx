@@ -70,7 +70,7 @@ const EventsTimeline = () => {
     const timelineProgress = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
 
     return (
-        <div ref={containerRef} className="w-full relative bg-black selection:bg-[#5227FF] selection:text-white" style={{ height: `${events.length * 100}vh` }}>
+        <div ref={containerRef} className="w-full relative bg-black selection:bg-[#B19EEF] selection:text-white" style={{ height: `${events.length * 100}vh` }}>
 
             {/* Background Grid */}
             <div
@@ -89,12 +89,12 @@ const EventsTimeline = () => {
                 {/* Header */}
                 <div className="absolute top-10 left-0 right-0 z-50 flex justify-between items-center px-8 md:px-20">
                     <div>
-                        <h3 className="text-[#5227FF] text-xs md:text-sm tracking-[0.3em] md:tracking-[0.5em] font-bankgothic mb-2">EVENT TIMELINE</h3>
-                        <div className="w-24 md:w-32 h-[2px] bg-gradient-to-r from-[#5227FF] to-transparent" />
+                        <h3 className="text-[#B19EEF] text-xs md:text-sm tracking-[0.3em] md:tracking-[0.5em] font-bankgothic mb-2">EVENT TIMELINE</h3>
+                        <div className="w-24 md:w-32 h-[2px] bg-gradient-to-r from-[#B19EEF] to-transparent" />
                     </div>
                     <div className="text-right">
                         <div className="text-white/40 font-mono text-xs tracking-widest">SCROLL TO EXPLORE</div>
-                        <div className="text-[#5227FF] font-bankgothic text-2xl">
+                        <div className="text-[#B19EEF] font-bankgothic text-2xl">
                             {String(activeIndex + 1).padStart(2, '0')}/{String(events.length).padStart(2, '0')}
                         </div>
                     </div>
@@ -109,13 +109,13 @@ const EventsTimeline = () => {
                         <div className="w-full h-[2px] bg-white/10 relative">
                             {/* Progress Line */}
                             <motion.div
-                                className="h-full bg-gradient-to-r from-[#5227FF] to-purple-400"
+                                className="h-full bg-gradient-to-r from-[#B19EEF] to-purple-400"
                                 style={{ width: timelineProgress }}
                             />
 
                             {/* Glowing Indicator */}
                             <motion.div
-                                className="absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-[#5227FF] rounded-full shadow-[0_0_20px_rgba(82,39,255,0.8)]"
+                                className="absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-[#B19EEF] rounded-full shadow-[0_0_20px_rgba(177,158,239,0.8)]"
                                 style={{
                                     left: timelineProgress,
                                     marginLeft: '-8px'
@@ -137,12 +137,12 @@ const EventsTimeline = () => {
                                 >
                                     {/* Node Circle */}
                                     <div className={`w-3 h-3 rounded-full border-2 transition-all duration-300 ${activeIndex >= index
-                                        ? 'bg-[#5227FF] border-[#5227FF] scale-125 shadow-[0_0_15px_rgba(82,39,255,0.6)]'
+                                        ? 'bg-[#B19EEF] border-[#B19EEF] scale-125 shadow-[0_0_15px_rgba(177,158,239,0.6)]'
                                         : 'bg-black border-white/30 group-hover:border-white/60'
                                         }`} />
 
                                     {/* Node Label */}
-                                    <div className={`mt-4 text-xs font-mono tracking-wider transition-all duration-300 ${activeIndex === index ? 'text-[#5227FF] scale-110' : 'text-white/40 group-hover:text-white/70'
+                                    <div className={`mt-4 text-xs font-mono tracking-wider transition-all duration-300 ${activeIndex === index ? 'text-[#B19EEF] scale-110' : 'text-white/40 group-hover:text-white/70'
                                         }`}>
                                         {event.date}
                                     </div>
@@ -172,10 +172,10 @@ const EventsTimeline = () => {
                                     <div className="relative group">
                                         <div className="relative w-full aspect-[16/10] overflow-hidden">
                                             {/* Corner Accents */}
-                                            <div className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-[#5227FF] z-20" />
-                                            <div className="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-[#5227FF] z-20" />
-                                            <div className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-[#5227FF] z-20" />
-                                            <div className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-[#5227FF] z-20" />
+                                            <div className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-[#B19EEF] z-20" />
+                                            <div className="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-[#B19EEF] z-20" />
+                                            <div className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-[#B19EEF] z-20" />
+                                            <div className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-[#B19EEF] z-20" />
 
                                             {/* Image */}
                                             <Image
@@ -189,11 +189,11 @@ const EventsTimeline = () => {
                                             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-60" />
 
                                             {/* Scanline Effect */}
-                                            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#5227FF]/5 to-transparent bg-[length:100%_4px] pointer-events-none" />
+                                            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#B19EEF]/5 to-transparent bg-[length:100%_4px] pointer-events-none" />
                                         </div>
 
                                         {/* ID Badge */}
-                                        <div className="absolute -bottom-4 -right-16 w-[280px] h-[45px] flex items-center justify-start pl-6 bg-black border-2 border-[#5227FF] font-bankgothic text-xl text-white z-20">
+                                        <div className="absolute -bottom-4 -right-16 w-[280px] h-[45px] flex items-center justify-start pl-6 bg-black border-2 border-[#B19EEF] font-bankgothic text-xl text-white z-20">
                                             {String(event.id).padStart(2, '0')}
                                         </div>
                                     </div>
@@ -203,8 +203,8 @@ const EventsTimeline = () => {
                                         {/* Event Name */}
                                         <div>
                                             <div className="flex items-center gap-2 mb-2">
-                                                <div className="w-1 h-6 bg-[#5227FF]" />
-                                                <span className="text-[#5227FF] font-mono text-xs tracking-[0.3em]">EVENT</span>
+                                                <div className="w-1 h-6 bg-[#B19EEF]" />
+                                                <span className="text-[#B19EEF] font-mono text-xs tracking-[0.3em]">EVENT</span>
                                             </div>
                                             <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold font-bankgothic text-white tracking-tight leading-none bg-black/50 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none inline-block">
                                                 {event.name}
@@ -215,24 +215,24 @@ const EventsTimeline = () => {
                                         {/* Event Details */}
                                         <div className="grid grid-cols-2 gap-4">
                                             <div className="border border-white/10 p-4 bg-white/5">
-                                                <div className="text-[#5227FF] font-mono text-xs tracking-widest mb-1">TIME</div>
+                                                <div className="text-[#B19EEF] font-mono text-xs tracking-widest mb-1">TIME</div>
                                                 <div className="text-white font-bankgothic text-lg">{event.time}</div>
                                             </div>
                                             <div className="border border-white/10 p-4 bg-white/5">
-                                                <div className="text-[#5227FF] font-mono text-xs tracking-widest mb-1">VENUE</div>
+                                                <div className="text-[#B19EEF] font-mono text-xs tracking-widest mb-1">VENUE</div>
                                                 <div className="text-white font-bankgothic text-lg">{event.venue}</div>
                                             </div>
                                         </div>
 
                                         {/* Description */}
-                                        <div className="border-l-2 border-[#5227FF]/50 pl-4">
+                                        <div className="border-l-2 border-[#B19EEF]/50 pl-4">
                                             <p className="text-gray-300 leading-relaxed">{event.description}</p>
                                         </div>
 
                                         {/* CTA Button */}
-                                        <button className="group relative px-8 py-3 bg-transparent border-2 border-[#5227FF] text-[#5227FF] font-bankgothic tracking-wider overflow-hidden transition-all duration-300 hover:text-white">
+                                        <button className="group relative px-8 py-3 bg-transparent border-2 border-[#B19EEF] text-[#B19EEF] font-bankgothic tracking-wider overflow-hidden transition-all duration-300 hover:text-white">
                                             <span className="relative z-10">REGISTER NOW</span>
-                                            <div className="absolute inset-0 bg-[#5227FF] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
+                                            <div className="absolute inset-0 bg-[#B19EEF] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
                                         </button>
                                     </div>
 

@@ -78,7 +78,7 @@ const TeamsSection = () => {
   const numberY = useTransform(scrollYProgress, [0, 1], [0, 200]);
 
   return (
-    <div ref={containerRef} className="w-full relative bg-black selection:bg-[#5227FF] selection:text-white" style={{ height: `${teams.length * 100}vh` }}>
+    <div ref={containerRef} className="w-full relative bg-black selection:bg-[#B19EEF] selection:text-white" style={{ height: `${teams.length * 100}vh` }}>
 
       {/* Background Grid */}
       <div
@@ -96,8 +96,8 @@ const TeamsSection = () => {
 
         {/* Header Info */}
         <div className="absolute top-6 right-4 md:top-10 md:right-10 z-50 flex flex-col items-end">
-          <h3 className="text-[#5227FF] text-xs md:text-sm tracking-[0.3em] md:tracking-[0.5em] font-bankgothic mb-2">PARTICIPATING CLUBS</h3>
-          <div className="w-32 h-[2px] bg-gradient-to-r from-transparent to-[#5227FF]" />
+          <h3 className="text-[#B19EEF] text-xs md:text-sm tracking-[0.3em] md:tracking-[0.5em] font-bankgothic mb-2">PARTICIPATING CLUBS</h3>
+          <div className="w-32 h-[2px] bg-gradient-to-r from-transparent to-[#B19EEF]" />
         </div>
 
         {/* Left: Number Indicator */}
@@ -107,7 +107,7 @@ const TeamsSection = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-600 text-[120px] tracking-tighter font-bankgothic font-bold">
                 0{activeTeam.id}
               </span>
-              <span className="text-[#5227FF] text-2xl mb-6 ml-2 font-bankgothic">
+              <span className="text-[#B19EEF] text-2xl mb-6 ml-2 font-bankgothic">
                 /0{teams.length}
               </span>
             </div>
@@ -117,8 +117,8 @@ const TeamsSection = () => {
               key={activeTeam.id}
               className="mt-4 max-w-xs"
             >
-              <p className="text-[#5227FF] font-mono text-xs tracking-widest mb-1">// DESCRIPTION</p>
-              <p className="text-gray-300 text-sm leading-relaxed border-l-2 border-[#5227FF]/50 pl-3">
+              <p className="text-[#B19EEF] font-mono text-xs tracking-widest mb-1">// DESCRIPTION</p>
+              <p className="text-gray-300 text-sm leading-relaxed border-l-2 border-[#B19EEF]/50 pl-3">
                 {activeTeam.description}
               </p>
             </motion.div>
@@ -140,7 +140,7 @@ const TeamsSection = () => {
 
               {/* Dashed Tech Ring */}
               <div className="absolute inset-0 flex items-center justify-center scale-[1.1]">
-                <div className="w-full h-full border-[3px] border-dashed border-[#5227FF]/60 rounded-full animate-spin-reverse-slow" />
+                <div className="w-full h-full border-[3px] border-dashed border-[#B19EEF]/60 rounded-full animate-spin-reverse-slow" />
               </div>
 
               {/* Inner Accent Ring */}
@@ -150,7 +150,7 @@ const TeamsSection = () => {
             </div>
 
             {/* Vertical Center Line */}
-            <div className="absolute top-0 bottom-0 left-1/2 w-[1px] bg-gradient-to-b from-transparent via-[#5227FF]/50 to-transparent z-0" />
+            <div className="absolute top-0 bottom-0 left-1/2 w-[1px] bg-gradient-to-b from-transparent via-[#B19EEF]/50 to-transparent z-0" />
 
             {/* Image Trail Strip */}
             <motion.div
@@ -160,14 +160,14 @@ const TeamsSection = () => {
               {teams.map((team, index) => (
                 <div key={team.id} className="relative flex-shrink-0 group" style={{ height: IMAGE_HEIGHT, width: IMAGE_WIDTH }}>
                   <div className={`absolute -inset-4 border transition-all duration-500 rounded-sm ${activeIndex === index
-                    ? 'border-[#5227FF] opacity-100 scale-100'
+                    ? 'border-[#B19EEF] opacity-100 scale-100'
                     : 'border-transparent opacity-0 scale-95'
                     }`}>
                     {/* Corners */}
-                    <div className="absolute top-0 left-0 w-2 h-2 bg-[#5227FF]" />
-                    <div className="absolute top-0 right-0 w-2 h-2 bg-[#5227FF]" />
-                    <div className="absolute bottom-0 left-0 w-2 h-2 bg-[#5227FF]" />
-                    <div className="absolute bottom-0 right-0 w-2 h-2 bg-[#5227FF]" />
+                    <div className="absolute top-0 left-0 w-2 h-2 bg-[#B19EEF]" />
+                    <div className="absolute top-0 right-0 w-2 h-2 bg-[#B19EEF]" />
+                    <div className="absolute bottom-0 left-0 w-2 h-2 bg-[#B19EEF]" />
+                    <div className="absolute bottom-0 right-0 w-2 h-2 bg-[#B19EEF]" />
                   </div>
 
                   <Image
@@ -182,7 +182,7 @@ const TeamsSection = () => {
 
                   {/* Scanline Effect on Active */}
                   {activeIndex === index && (
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#5227FF]/10 to-transparent z-30 pointer-events-none bg-[length:100%_4px]" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#B19EEF]/10 to-transparent z-30 pointer-events-none bg-[length:100%_4px]" />
                   )}
                 </div>
               ))}
@@ -211,7 +211,7 @@ const TeamsSection = () => {
                   style={{ height: TEXT_ITEM_HEIGHT, marginBottom: TEXT_GAP }}
                 >
                   <div className="flex items-center gap-4">
-                    <div className={`transition-all duration-300 h-[1px] bg-[#5227FF] ${activeIndex === index ? 'w-6 md:w-12 opacity-100' : 'w-0 opacity-0'}`} />
+                    <div className={`transition-all duration-300 h-[1px] bg-[#B19EEF] ${activeIndex === index ? 'w-6 md:w-12 opacity-100' : 'w-0 opacity-0'}`} />
                     <h2
                       className={`text-xl md:text-5xl font-bold font-bankgothic tracking-tight transition-all duration-500 ${activeIndex === index
                         ? 'text-white scale-100 translate-x-0 outline-text'
@@ -222,7 +222,7 @@ const TeamsSection = () => {
                       {team.name}
                     </h2>
                   </div>
-                  <div className={`mt-2 text-[10px] md:text-xs font-mono tracking-[0.2em] md:tracking-[0.3em] transition-all duration-300 ${activeIndex === index ? 'text-[#5227FF] opacity-100' : 'text-gray-600 opacity-0'
+                  <div className={`mt-2 text-[10px] md:text-xs font-mono tracking-[0.2em] md:tracking-[0.3em] transition-all duration-300 ${activeIndex === index ? 'text-[#B19EEF] opacity-100' : 'text-gray-600 opacity-0'
                     }`}>
                     {team.fullName}
                   </div>

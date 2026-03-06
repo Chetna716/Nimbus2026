@@ -19,7 +19,7 @@ const Footer = () => {
         { icon: Github, href: '#', label: 'GitHub', color: '#fff' },
         { icon: Linkedin, href: '#', label: 'LinkedIn', color: '#0077b5' },
         { icon: Instagram, href: '#', label: 'Instagram', color: '#E4405F' },
-        { icon: Mail, href: '#', label: 'Email', color: '#5227FF' },
+        { icon: Mail, href: '#', label: 'Email', color: '#B19EEF' },
     ];
 
     return (
@@ -42,7 +42,7 @@ const Footer = () => {
                 {/* Diagonal Stripes */}
                 <div className="absolute inset-0 opacity-5">
                     <div className="absolute inset-0" style={{
-                        backgroundImage: 'repeating-linear-gradient(45deg, #5227FF 0px, #5227FF 2px, transparent 2px, transparent 10px)',
+                        backgroundImage: 'repeating-linear-gradient(45deg, #B19EEF 0px, #B19EEF 2px, transparent 2px, transparent 10px)',
                     }} />
                 </div>
 
@@ -57,7 +57,7 @@ const Footer = () => {
                         repeat: Infinity,
                         ease: "easeInOut"
                     }}
-                    className="absolute -top-20 -left-20 w-96 h-96 bg-[#5227FF] rounded-full blur-[120px]"
+                    className="absolute -top-20 -left-20 w-96 h-96 bg-[#B19EEF] rounded-full blur-[120px]"
                 />
                 <motion.div
                     animate={{
@@ -74,7 +74,7 @@ const Footer = () => {
             </div>
 
             {/* Top Border with Animation */}
-            <div className="relative h-1 bg-gradient-to-r from-transparent via-[#5227FF] to-transparent">
+            <div className="relative h-1 bg-gradient-to-r from-transparent via-[#B19EEF] to-transparent">
                 <motion.div
                     animate={{ x: ['-100%', '200%'] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
@@ -101,7 +101,7 @@ const Footer = () => {
                                 <span className="relative inline-block">
                                     NIMBUS
                                     <motion.span
-                                        className="absolute inset-0 text-[#5227FF] opacity-0 group-hover:opacity-100"
+                                        className="absolute inset-0 text-[#B19EEF] opacity-0 group-hover:opacity-100"
                                         animate={{
                                             x: [0, -2, 2, 0],
                                             y: [0, 2, -2, 0],
@@ -115,7 +115,7 @@ const Footer = () => {
                                     </motion.span>
                                 </span>
                                 <br />
-                                <span className="text-[#5227FF] relative inline-block">
+                                <span className="text-[#B19EEF] relative inline-block">
                                     2026
                                     <Zap className="absolute -right-8 top-0 w-6 h-6 text-yellow-400 animate-pulse" />
                                 </span>
@@ -124,14 +124,14 @@ const Footer = () => {
 
                         <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-md">
                             Where <span className="text-white font-bold">innovation</span> meets reality,
-                            and <span className="text-[#5227FF] font-bold">technology</span> shapes the future.
+                            and <span className="text-[#B19EEF] font-bold">technology</span> shapes the future.
                         </p>
 
                         {/* CTA Button */}
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="group relative px-8 py-4 bg-[#5227FF] text-white font-bankgothic tracking-wider overflow-hidden"
+                            className="group relative px-8 py-4 bg-[#B19EEF] text-white font-bankgothic tracking-wider overflow-hidden"
                         >
                             <span className="relative z-10 flex items-center gap-2">
                                 GET STARTED
@@ -158,8 +158,8 @@ const Footer = () => {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="lg:col-span-3"
                     >
-                        <h3 className="text-[#5227FF] font-bankgothic text-sm tracking-[0.3em] mb-8 flex items-center gap-2">
-                            <div className="w-8 h-[2px] bg-[#5227FF]" />
+                        <h3 className="text-[#B19EEF] font-bankgothic text-sm tracking-[0.3em] mb-8 flex items-center gap-2">
+                            <div className="w-8 h-[2px] bg-[#B19EEF]" />
                             NAVIGATE
                         </h3>
                         <ul className="space-y-4">
@@ -174,14 +174,14 @@ const Footer = () => {
                                         <motion.div
                                             initial={{ width: 0 }}
                                             animate={{ width: hoveredLink === index ? 24 : 0 }}
-                                            className="h-[2px] bg-[#5227FF]"
+                                            className="h-[2px] bg-[#B19EEF]"
                                         />
                                         <span className="relative">
                                             {link.name}
                                             <motion.div
                                                 initial={{ scaleX: 0 }}
                                                 animate={{ scaleX: hoveredLink === index ? 1 : 0 }}
-                                                className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#5227FF] origin-left"
+                                                className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#B19EEF] origin-left"
                                             />
                                         </span>
                                     </Link>
@@ -198,23 +198,23 @@ const Footer = () => {
                         transition={{ duration: 0.6, delay: 0.4 }}
                         className="lg:col-span-4"
                     >
-                        <h3 className="text-[#5227FF] font-bankgothic text-sm tracking-[0.3em] mb-8 flex items-center gap-2">
-                            <div className="w-8 h-[2px] bg-[#5227FF]" />
+                        <h3 className="text-[#B19EEF] font-bankgothic text-sm tracking-[0.3em] mb-8 flex items-center gap-2">
+                            <div className="w-8 h-[2px] bg-[#B19EEF]" />
                             CONNECT
                         </h3>
 
                         {/* Contact Info */}
                         <div className="space-y-4 mb-8">
                             <div className="flex items-start gap-3 text-gray-400 group hover:text-white transition-colors">
-                                <MapPin className="w-5 h-5 text-[#5227FF] flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" />
+                                <MapPin className="w-5 h-5 text-[#B19EEF] flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" />
                                 <span className="text-sm">NIT Hamirpur, Himachal Pradesh</span>
                             </div>
                             <div className="flex items-start gap-3 text-gray-400 group hover:text-white transition-colors">
-                                <Phone className="w-5 h-5 text-[#5227FF] flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" />
+                                <Phone className="w-5 h-5 text-[#B19EEF] flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" />
                                 <span className="text-sm">+91 1234567890</span>
                             </div>
                             <div className="flex items-start gap-3 text-gray-400 group hover:text-white transition-colors">
-                                <Mail className="w-5 h-5 text-[#5227FF] flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" />
+                                <Mail className="w-5 h-5 text-[#B19EEF] flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" />
                                 <span className="text-sm">nimbus@nith.ac.in</span>
                             </div>
                         </div>
@@ -251,7 +251,7 @@ const Footer = () => {
                     <motion.div
                         animate={{ x: ['-100%', '100%'] }}
                         transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                        className="absolute inset-0 w-1/3 bg-gradient-to-r from-transparent via-[#5227FF] to-transparent"
+                        className="absolute inset-0 w-1/3 bg-gradient-to-r from-transparent via-[#B19EEF] to-transparent"
                     />
                 </div>
 
@@ -263,7 +263,7 @@ const Footer = () => {
                         viewport={{ once: true }}
                         className="flex items-center gap-4"
                     >
-                        <div className="w-2 h-2 bg-[#5227FF] rounded-full animate-pulse" />
+                        <div className="w-2 h-2 bg-[#B19EEF] rounded-full animate-pulse" />
                         <p className="text-gray-500 text-sm font-mono">
                             © 2026 NIMBUS • Crafted with <span className="text-red-500">♥</span> at NIT Hamirpur
                         </p>
@@ -275,29 +275,29 @@ const Footer = () => {
                         viewport={{ once: true }}
                         className="flex gap-6 text-sm text-gray-500 font-mono"
                     >
-                        <Link href="#" className="hover:text-[#5227FF] transition-colors relative group">
+                        <Link href="#" className="hover:text-[#B19EEF] transition-colors relative group">
                             Privacy
-                            <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#5227FF] group-hover:w-full transition-all duration-300" />
+                            <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#B19EEF] group-hover:w-full transition-all duration-300" />
                         </Link>
                         <span className="text-white/20">•</span>
-                        <Link href="#" className="hover:text-[#5227FF] transition-colors relative group">
+                        <Link href="#" className="hover:text-[#B19EEF] transition-colors relative group">
                             Terms
-                            <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#5227FF] group-hover:w-full transition-all duration-300" />
+                            <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#B19EEF] group-hover:w-full transition-all duration-300" />
                         </Link>
                         <span className="text-white/20">•</span>
-                        <Link href="#" className="hover:text-[#5227FF] transition-colors relative group">
+                        <Link href="#" className="hover:text-[#B19EEF] transition-colors relative group">
                             Sitemap
-                            <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#5227FF] group-hover:w-full transition-all duration-300" />
+                            <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#B19EEF] group-hover:w-full transition-all duration-300" />
                         </Link>
                     </motion.div>
                 </div>
 
                 {/* Decorative Elements */}
-                <div className="absolute top-10 right-10 w-32 h-32 border border-[#5227FF]/20 rounded-full pointer-events-none">
+                <div className="absolute top-10 right-10 w-32 h-32 border border-[#B19EEF]/20 rounded-full pointer-events-none">
                     <motion.div
                         animate={{ rotate: 360 }}
                         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                        className="w-full h-full border-t-2 border-[#5227FF] rounded-full"
+                        className="w-full h-full border-t-2 border-[#B19EEF] rounded-full"
                     />
                 </div>
             </div>

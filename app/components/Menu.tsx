@@ -49,17 +49,17 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
                 <motion.div
                   initial={{ rotate: 0 }}
                   animate={{ rotate: 45, y: 8 }}
-                  className="w-6 h-0.5 bg-white group-hover:bg-[#5227FF] transition-colors"
+                  className="w-6 h-0.5 bg-white group-hover:bg-[#B19EEF] transition-colors"
                 />
                 <motion.div
                   initial={{ opacity: 1 }}
                   animate={{ opacity: 0 }}
-                  className="w-6 h-0.5 bg-white group-hover:bg-[#5227FF] transition-colors"
+                  className="w-6 h-0.5 bg-white group-hover:bg-[#B19EEF] transition-colors"
                 />
                 <motion.div
                   initial={{ rotate: 0 }}
                   animate={{ rotate: -45, y: -8 }}
-                  className="w-6 h-0.5 bg-white group-hover:bg-[#5227FF] transition-colors"
+                  className="w-6 h-0.5 bg-white group-hover:bg-[#B19EEF] transition-colors"
                 />
               </div>
             </div>
@@ -79,10 +79,10 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
                     onClick={onClose}
                     className="group flex items-center gap-6"
                   >
-                    <span className="text-white/30 font-mono text-sm tracking-widest group-hover:text-[#5227FF] transition-colors">
+                    <span className="text-white/30 font-mono text-sm tracking-widest group-hover:text-[#B19EEF] transition-colors">
                       0{index + 1}
                     </span>
-                    <span className="text-4xl md:text-6xl font-bold text-white tracking-tighter group-hover:text-[#5227FF] transition-colors duration-300 font-bankgothic">
+                    <span className="text-4xl md:text-6xl font-bold text-white tracking-tighter group-hover:text-[#B19EEF] transition-colors duration-300 font-bankgothic">
                       {item.label}
                     </span>
                   </Link>

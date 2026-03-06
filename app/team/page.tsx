@@ -103,7 +103,7 @@ const TeamsPage = () => {
     : TEAM_MEMBERS.filter(m => m.category === activeCategory);
 
   return (
-    <main className="min-h-screen bg-black text-white relative overflow-x-hidden selection:bg-[#5227FF] selection:text-white">
+    <main className="min-h-screen bg-black text-white relative overflow-x-hidden selection:bg-[#B19EEF] selection:text-white">
       <LeftSidebar activeSection={3} /> {/* Assumption: Team is section 3 */}
 
       {/* Background Grid */}
@@ -128,7 +128,7 @@ const TeamsPage = () => {
           className="mb-16"
         >
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tighter mb-4 text-white font-bankgothic">
-            OUR <span className="text-[#5227FF]">TEAM</span>
+            OUR <span className="text-[#B19EEF]">TEAM</span>
           </h1>
           <p className="text-lg md:text-2xl text-gray-400 font-light w-full max-w-6xl leading-relaxed mb-6">
             The minds behind the magic. A collective of innovators, creators, and leaders driving Nimbus 2026.
@@ -137,7 +137,7 @@ const TeamsPage = () => {
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
             transition={{ duration: 0.8, ease: "easeInOut", delay: 0.5 }}
-            className="h-1 bg-[#5227FF] max-w-6xl"
+            className="h-1 bg-[#B19EEF] max-w-6xl"
           />
         </motion.div>
 
@@ -148,7 +148,7 @@ const TeamsPage = () => {
               key={cat}
               onClick={() => setActiveCategory(cat)}
               className={`px-4 py-2 md:px-6 rounded-full font-mono text-xs md:text-sm tracking-widest border transition-all duration-300 ${activeCategory === cat
-                ? 'bg-[#5227FF] border-[#5227FF] text-white shadow-[0_0_20px_rgba(82,39,255,0.4)]'
+                ? 'bg-[#B19EEF] border-[#B19EEF] text-white shadow-[0_0_20px_rgba(177,158,239,0.4)]'
                 : 'bg-transparent border-white/20 text-gray-400 hover:border-white hover:text-white'
                 }`}
             >
@@ -199,7 +199,7 @@ const TeamsPage = () => {
                     initial={{ top: '-10%' }}
                     animate={{ top: '120%' }}
                     transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                    className="absolute left-0 w-full h-[2px] bg-[#5227FF] shadow-[0_0_10px_#5227FF] z-20 opacity-50"
+                    className="absolute left-0 w-full h-[2px] bg-[#B19EEF] shadow-[0_0_10px_#B19EEF] z-20 opacity-50"
                   />
                 )}
 
@@ -214,8 +214,8 @@ const TeamsPage = () => {
                   {/* Text Content */}
                   <div className="transform transition-transform duration-500 translate-y-0 md:group-hover:-translate-y-4">
                     <div className="flex items-center gap-2 mb-2">
-                      <div className="w-1 h-3 bg-[#5227FF]" />
-                      <span className="text-xs font-mono font-bold text-[#5227FF] tracking-wider uppercase">
+                      <div className="w-1 h-3 bg-[#B19EEF]" />
+                      <span className="text-xs font-mono font-bold text-[#B19EEF] tracking-wider uppercase">
                         {member.category} OPS
                       </span>
                     </div>
@@ -233,27 +233,27 @@ const TeamsPage = () => {
                     className="nav-links flex gap-4 overflow-hidden transition-all duration-500 max-h-12 opacity-100 md:max-h-0 md:opacity-0 md:group-hover:max-h-12 md:group-hover:opacity-100"
                   >
                     {member.socials.linkedin && (
-                      <a href={member.socials.linkedin} className="p-2 border border-white/20 rounded hover:bg-[#5227FF] hover:border-[#5227FF] hover:text-white text-gray-400 transition-all">
+                      <a href={member.socials.linkedin} className="p-2 border border-white/20 rounded hover:bg-[#B19EEF] hover:border-[#B19EEF] hover:text-white text-gray-400 transition-all">
                         <Linkedin size={16} />
                       </a>
                     )}
                     {member.socials.github && (
-                      <a href={member.socials.github} className="p-2 border border-white/20 rounded hover:bg-[#5227FF] hover:border-[#5227FF] hover:text-white text-gray-400 transition-all">
+                      <a href={member.socials.github} className="p-2 border border-white/20 rounded hover:bg-[#B19EEF] hover:border-[#B19EEF] hover:text-white text-gray-400 transition-all">
                         <Github size={16} />
                       </a>
                     )}
                     {member.socials.instagram && (
-                      <a href={member.socials.instagram} className="p-2 border border-white/20 rounded hover:bg-[#5227FF] hover:border-[#5227FF] hover:text-white text-gray-400 transition-all">
+                      <a href={member.socials.instagram} className="p-2 border border-white/20 rounded hover:bg-[#B19EEF] hover:border-[#B19EEF] hover:text-white text-gray-400 transition-all">
                         <Instagram size={16} />
                       </a>
                     )}
                     {member.socials.email && (
-                      <a href={`mailto:${member.socials.email}`} className="p-2 border border-white/20 rounded hover:bg-[#5227FF] hover:border-[#5227FF] hover:text-white text-gray-400 transition-all">
+                      <a href={`mailto:${member.socials.email}`} className="p-2 border border-white/20 rounded hover:bg-[#B19EEF] hover:border-[#B19EEF] hover:text-white text-gray-400 transition-all">
                         <Mail size={16} />
                       </a>
                     )}
                     {member.socials.whatsapp && (
-                      <a href={member.socials.whatsapp} className="p-2 border border-white/20 rounded hover:bg-[#5227FF] hover:border-[#5227FF] hover:text-white text-gray-400 transition-all flex items-center justify-center">
+                      <a href={member.socials.whatsapp} className="p-2 border border-white/20 rounded hover:bg-[#B19EEF] hover:border-[#B19EEF] hover:text-white text-gray-400 transition-all flex items-center justify-center">
                         <div className="relative w-4 h-4">
                           <Image
                             src="/whatsapp.jpeg"
@@ -268,11 +268,11 @@ const TeamsPage = () => {
                 </div>
 
                 {/* Corner Accents */}
-                <div className="absolute top-0 left-0 w-8 h-8 border-l border-t border-white/20 pointer-events-none transition-colors duration-300 group-hover:border-[#5227FF]" />
-                <div className="absolute bottom-0 right-0 w-8 h-8 border-r border-b border-white/20 pointer-events-none transition-colors duration-300 group-hover:border-[#5227FF]" />
+                <div className="absolute top-0 left-0 w-8 h-8 border-l border-t border-white/20 pointer-events-none transition-colors duration-300 group-hover:border-[#B19EEF]" />
+                <div className="absolute bottom-0 right-0 w-8 h-8 border-r border-b border-white/20 pointer-events-none transition-colors duration-300 group-hover:border-[#B19EEF]" />
 
                 {/* Border Overlay */}
-                <div className="absolute inset-0 border border-white/10 transition-colors duration-300 pointer-events-none md:group-hover:border-[#5227FF]/50" style={{ clipPath: "polygon(0 0, 100% 0, 100% 88%, 88% 100%, 0 100%)" }} />
+                <div className="absolute inset-0 border border-white/10 transition-colors duration-300 pointer-events-none md:group-hover:border-[#B19EEF]/50" style={{ clipPath: "polygon(0 0, 100% 0, 100% 88%, 88% 100%, 0 100%)" }} />
 
               </motion.div>
             ))}
