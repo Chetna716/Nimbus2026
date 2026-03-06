@@ -46,7 +46,7 @@ export default function Model() {
   }, []);
 
   return (
-    <div className="w-full h-full absolute inset-0 z-30 pointer-events-none translate-y-[200px] md:translate-y-[180px] scale-[0.85] md:scale-90">
+    <div className="w-[130%] md:w-full h-full absolute -left-[15%] md:left-0 top-0 z-30 pointer-events-none translate-y-[120px] md:translate-y-[180px] scale-[0.9] xl:scale-90">
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center text-white/50 text-sm tracking-widest animate-pulse">
           LOADING MODEL...

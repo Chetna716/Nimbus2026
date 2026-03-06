@@ -64,7 +64,7 @@ const Hero = () => {
         <Model />
 
         {/* Foreground Text */}
-        <div className="absolute z-20 top-[35%] md:top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none flex flex-col items-center justify-center">
+        <div className="absolute z-20 top-[25%] md:top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none flex flex-col items-center justify-center">
           <div className="relative">
             <span className="absolute -top-4 md:-top-1 left-2 text-white text-2xl md:text-5xl tracking-[0.2em] font-neoform">DATES</span>
             <GlitchText
