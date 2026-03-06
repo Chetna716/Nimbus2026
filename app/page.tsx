@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Hero from "./herosection/Hero";
 import Gallery from "./components/Gallery";
 import RobowarSection from "./components/RobowarSection";
+import DroneSection from "./components/DroneSection";
 import LeftSidebar from "./herosection/LeftSidebar";
 
 import Preloader from "./components/Preloader";
@@ -30,6 +31,7 @@ export default function Home() {
             if (entry.target.id === 'hero') setActiveSection(1);
             if (entry.target.id === 'gallery') setActiveSection(2);
             if (entry.target.id === 'robowar') setActiveSection(3);
+            if (entry.target.id === 'drone') setActiveSection(4);
           }
         });
       },
@@ -55,6 +57,9 @@ export default function Home() {
       </section>
       <section id="robowar" className="w-full">
         <RobowarSection />
+      </section>
+      <section id="drone" className="w-full">
+        <DroneSection />
       </section>
     </main>
   );
