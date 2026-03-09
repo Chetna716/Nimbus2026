@@ -1,7 +1,7 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform, useSpring } from 'framer-motion';
 
 const TeamsSection = () => {
   const teams = [
@@ -36,16 +36,22 @@ const TeamsSection = () => {
     offset: ['start start', 'end end']
   });
 
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   useEffect(() => {
-    const unsubscribe = scrollYProgress.on('change', (latest) => {
+    const unsubscribe = smoothProgress.on('change', (latest) => {
       const index = Math.min(
-        Math.floor(latest * teams.length),
+        Math.round(latest * (teams.length - 1)),
         teams.length - 1
       );
       setActiveIndex(index);
     });
     return () => unsubscribe();
-  }, [scrollYProgress, teams.length]);
+  }, [smoothProgress, teams.length]);
 
   const activeTeam = teams[activeIndex];
 
@@ -57,12 +63,8 @@ const TeamsSection = () => {
   // Calculate vertical travel for images
   const totalTravel = (teams.length - 1) * (IMAGE_HEIGHT + GAP);
 
-  // Initial: Center the first image
-  const initialOffset = `calc(50vh - ${IMAGE_HEIGHT / 2}px)`;
-  // Final: Center the last image
-  const finalOffset = `calc(50vh - ${IMAGE_HEIGHT / 2 + totalTravel}px)`;
-
-  const y = useTransform(scrollYProgress, [0, 1], [initialOffset, finalOffset]);
+  // Initial: Center the first image via CSS, animate purely numerically
+  const y = useTransform(smoothProgress, [0, 1], [0, -totalTravel]);
 
   // Text Animation Constants
   const TEXT_ITEM_HEIGHT = 100;
@@ -72,10 +74,12 @@ const TeamsSection = () => {
   const textStride = TEXT_ITEM_HEIGHT + TEXT_GAP;
   const textInitialOffset = (TEXT_CONTAINER_HEIGHT - TEXT_ITEM_HEIGHT) / 2;
   const textTotalTravel = (teams.length - 1) * textStride;
-  const textY = useTransform(scrollYProgress, [0, 1], [textInitialOffset, textInitialOffset - textTotalTravel]);
+
+  // Animate text numerically
+  const textY = useTransform(smoothProgress, [0, 1], [textInitialOffset, textInitialOffset - textTotalTravel]);
 
   // Number Indicator Animation
-  const numberY = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const numberY = useTransform(smoothProgress, [0, 1], [0, 200]);
 
   return (
     <div ref={containerRef} className="w-full relative bg-black selection:bg-[#B19EEF] selection:text-white" style={{ height: `${teams.length * 100}vh` }}>
@@ -154,8 +158,8 @@ const TeamsSection = () => {
 
             {/* Image Trail Strip */}
             <motion.div
-              style={{ y }}
-              className="flex flex-col gap-8 w-full relative z-10 items-center"
+              style={{ y, top: '50%', marginTop: -IMAGE_HEIGHT / 2 }}
+              className="absolute flex flex-col gap-8 w-full z-10 items-center"
             >
               {teams.map((team, index) => (
                 <div key={team.id} className="relative flex-shrink-0 group" style={{ height: IMAGE_HEIGHT, width: IMAGE_WIDTH }}>
