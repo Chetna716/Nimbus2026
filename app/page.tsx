@@ -1,9 +1,11 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Hero from "./herosection/Hero";
-import Gallery from "./components/Gallery";
-import RobowarSection from "./components/RobowarSection";
-import DroneSection from "./components/DroneSection";
+import dynamic from 'next/dynamic';
+
+const Gallery = dynamic(() => import('./components/Gallery'), { ssr: true });
+const RobowarSection = dynamic(() => import('./components/RobowarSection'), { ssr: true });
+const DroneSection = dynamic(() => import('./components/DroneSection'), { ssr: true });
 import LeftSidebar from "./herosection/LeftSidebar";
 
 import Preloader from "./components/Preloader";

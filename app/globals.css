@@ -53,3 +53,12 @@ body {
 .animate-spin-reverse-slow {
   animation: spin-reverse 50s linear infinite;
 }
+
+@keyframes block-reveal {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.animate-block-reveal {
+  animation: block-reveal 0.5s ease-out forwards;
+}

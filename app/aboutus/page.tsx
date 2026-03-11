@@ -97,6 +97,7 @@ const AboutUs = () => {
                     src={images[currentImageIndex].src}
                     alt={images[currentImageIndex].title}
                     fill
+                    priority
                     className="object-cover"
                   />
                   {/* Text Layer - Improved Wipe Animation */}
@@ -135,27 +136,21 @@ const AboutUs = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-20" />
 
-              {/* Reveal Blocks Animation */}
+              {/* Reveal Blocks Animation (Optimized using CSS) */}
               <div
                 key={`blocks-${currentImageIndex}`}
                 className="absolute inset-0 z-30 flex flex-wrap content-start"
                 style={{ width: '100%', height: '100%' }}
               >
-                {[...Array(128)].map((_, i) => (
-                  <motion.div
+                {Array.from({ length: 128 }).map((_, i) => (
+                  <div
                     key={i}
-                    initial={{ opacity: 1 }} // Start BLACK
-                    animate={{ opacity: 0 }} // Reveal image
-                    transition={{
-                      duration: 0.5,
-                      delay: Math.random() * 1.5,
-                      ease: "easeOut"
-                    }}
-                    className="bg-black border-[0.5px] border-[#222] relative"
+                    className="bg-black border-[0.5px] border-[#222] relative animate-block-reveal"
                     style={{
                       width: '50px',
                       height: '50px',
-                      boxSizing: 'border-box'
+                      boxSizing: 'border-box',
+                      animationDelay: `${Math.random() * 1.5}s`
                     }}
                   />
                 ))}
