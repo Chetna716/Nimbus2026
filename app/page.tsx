@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic';
 const Gallery = dynamic(() => import('./components/Gallery'), { ssr: true });
 const RobowarSection = dynamic(() => import('./components/RobowarSection'), { ssr: true });
 const DroneSection = dynamic(() => import('./components/DroneSection'), { ssr: true });
+const RcRaceSection = dynamic(() => import('./components/RcRaceSection'), { ssr: true });
 import LeftSidebar from "./herosection/LeftSidebar";
 
 import Preloader from "./components/Preloader";
@@ -41,6 +42,7 @@ export default function Home() {
             if (entry.target.id === 'gallery') setActiveSection(2);
             if (entry.target.id === 'robowar') setActiveSection(3);
             if (entry.target.id === 'drone') setActiveSection(4);
+            if (entry.target.id === 'rcrace') setActiveSection(5);
           }
         });
       },
@@ -69,6 +71,9 @@ export default function Home() {
       </section>
       <section id="drone" className="w-full">
         <DroneSection />
+      </section>
+      <section id="rcrace" className="w-full">
+        <RcRaceSection />
       </section>
     </main>
   );

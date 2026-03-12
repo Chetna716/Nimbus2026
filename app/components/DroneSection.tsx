@@ -2,6 +2,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
+import Link from 'next/link';
 
 const DroneSection = () => {
     const containerRef = useRef<HTMLElement>(null);
@@ -75,11 +76,11 @@ const DroneSection = () => {
                                 </div>
                             </div>
 
-                            <button className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-4 px-12 py-5 bg-transparent border border-[#FF9FFC]/50 text-white font-bankgothic tracking-[0.2em] uppercase overflow-hidden transition-all hover:border-[#FF9FFC] shadow-[0_0_20px_rgba(255,159,252,0.1)] hover:shadow-[0_0_40px_rgba(255,159,252,0.3)]">
+                            <Link href="/dronesoccer" className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-4 px-12 py-5 bg-transparent border border-[#FF9FFC]/50 text-white font-bankgothic tracking-[0.2em] uppercase overflow-hidden transition-all hover:border-[#FF9FFC] shadow-[0_0_20px_rgba(255,159,252,0.1)] hover:shadow-[0_0_40px_rgba(255,159,252,0.3)]">
                                 <div className="absolute inset-0 w-0 bg-gradient-to-r from-[#FF9FFC] to-[#5227FF] transition-all duration-500 ease-out group-hover:w-full z-0"></div>
                                 <span className="relative z-10 font-bold">Deploy Now</span>
                                 <svg className="w-5 h-5 relative z-10 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                            </button>
+                            </Link>
                         </motion.div>
                     </div>
 
