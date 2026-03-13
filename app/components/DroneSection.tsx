@@ -1,10 +1,18 @@
 'use client';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const DroneSection = () => {
+    const [isMobile, setIsMobile] = useState(false);
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     const containerRef = useRef<HTMLElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -26,7 +34,7 @@ const DroneSection = () => {
 
             {/* Giant Background Text */}
             <motion.div
-                style={{ x: marqueeX }}
+                style={{ x: isMobile ? 0 : marqueeX }}
                 className="absolute top-1/4 right-0 w-[200%] pointer-events-none z-0 select-none flex justify-end"
             >
                 <h1 className="text-[6rem] sm:text-[8rem] md:text-[12rem] lg:text-[18rem] xl:text-[24rem] font-bankgothic font-black text-transparent whitespace-nowrap opacity-10"
@@ -87,7 +95,7 @@ const DroneSection = () => {
                     {/* Visual / Image Side */}
                     <div className="lg:col-span-6 relative group order-1 lg:order-2">
                         <motion.div
-                            style={{ y, opacity }}
+                            style={{ y: isMobile ? 0 : y, opacity: isMobile ? 1 : opacity }}
                             className="relative w-full aspect-[4/5] md:aspect-square lg:aspect-[4/5] z-10"
                         >
                             {/* Decorative frame elements */}

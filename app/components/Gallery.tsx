@@ -2,16 +2,25 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 const Gallery = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <div className="w-full bg-black flex flex-col items-center py-10 md:py-20 relative overflow-hidden">
       {/* Images Container */}
       <div className="flex flex-col gap-2 md:gap-4 z-10 w-full px-4 md:px-0 items-center">
         {/* Section 1 */}
         <motion.div
-          initial={{ y: 50, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
+          initial={isMobile ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
+          whileInView={isMobile ? { y: 0, opacity: 1 } : { y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true, margin: "-50px" }}
           className="relative w-full max-w-[500px] md:max-w-none md:w-[1500px] h-[180px] md:h-[223px] group overflow-hidden cursor-pointer rounded-lg md:rounded-none"
@@ -33,8 +42,8 @@ const Gallery = () => {
 
         {/* Section 2 */}
         <motion.div
-          initial={{ y: 50, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
+          initial={isMobile ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
+          whileInView={isMobile ? { y: 0, opacity: 1 } : { y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true, margin: "-50px" }}
           className="relative w-full max-w-[500px] md:max-w-none md:w-[1500px] h-[180px] md:h-[223px] group overflow-hidden cursor-pointer rounded-lg md:rounded-none"
@@ -56,8 +65,8 @@ const Gallery = () => {
 
         {/* Section 3 */}
         <motion.div
-          initial={{ y: 50, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
+          initial={isMobile ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
+          whileInView={isMobile ? { y: 0, opacity: 1 } : { y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true, margin: "-50px" }}
           className="relative w-full max-w-[500px] md:max-w-none md:w-[1500px] h-[180px] md:h-[223px] group overflow-hidden cursor-pointer rounded-lg md:rounded-none"
@@ -82,14 +91,30 @@ const Gallery = () => {
       <div className="w-full mt-20 overflow-hidden py-4 border-t border-b border-white/10 bg-black/50 backdrop-blur-sm">
         <div className="flex whitespace-nowrap animate-marquee">
           {[...Array(10)].map((_, i) => (
-            <span key={i} className="text-white text-xl font-bold tracking-widest mx-4 uppercase opacity-70 font-bankgothic">
-              ///ROBOWAR
-            </span>
+            <div key={i} className="flex">
+              <span className="text-white text-xl font-bold tracking-widest mx-8 uppercase opacity-70 font-bankgothic">
+                ///ROBOWAR
+              </span>
+              <span className="text-white text-xl font-bold tracking-widest mx-8 uppercase opacity-70 font-bankgothic">
+                ///DRONE SOCCER
+              </span>
+              <span className="text-white text-xl font-bold tracking-widest mx-8 uppercase opacity-70 font-bankgothic">
+                ///RC RACE
+              </span>
+            </div>
           ))}
           {[...Array(10)].map((_, i) => (
-            <span key={`dup-${i}`} className="text-white text-xl font-bold tracking-widest mx-4 uppercase opacity-70 font-bankgothic">
-              ///ROBOWAR
-            </span>
+            <div key={`dup-${i}`} className="flex">
+              <span className="text-white text-xl font-bold tracking-widest mx-8 uppercase opacity-70 font-bankgothic">
+                ///ROBOWAR
+              </span>
+              <span className="text-white text-xl font-bold tracking-widest mx-8 uppercase opacity-70 font-bankgothic">
+                ///DRONE SOCCER
+              </span>
+              <span className="text-white text-xl font-bold tracking-widest mx-8 uppercase opacity-70 font-bankgothic">
+                ///RC RACE
+              </span>
+            </div>
           ))}
         </div>
       </div>
