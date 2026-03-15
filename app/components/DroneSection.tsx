@@ -25,11 +25,15 @@ const DroneSection = () => {
     const marqueeX = useTransform(scrollYProgress, [0, 1], ["-30%", "0%"]);
 
     return (
-        <section ref={containerRef} className="w-full min-h-screen bg-[#020205] text-white relative flex items-center justify-center py-16 md:py-24 z-10 overflow-hidden">
+        <section ref={containerRef} className="w-full min-h-screen bg-black text-white relative flex items-center justify-center py-16 md:py-24 z-10 overflow-hidden">
             {/* Cyberpunk/Sky Atmosphere */}
             <div className="absolute inset-0 pointer-events-none z-0">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,159,252,0.08)_0%,transparent_60%),radial-gradient(circle_at_20%_80%,rgba(177,158,239,0.05)_0%,transparent_50%)]" />
                 <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'repeating-linear-gradient(-45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000), repeating-linear-gradient(-45deg, #000 25%, #112 25%, #112 75%, #000 75%, #000)', backgroundPosition: '0 0, 10px 10px', backgroundSize: '20px 20px' }}></div>
+                
+                {/* Section Blending Fades */}
+                <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black to-transparent z-10" />
+                <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent z-10" />
             </div>
 
             {/* Giant Background Text */}

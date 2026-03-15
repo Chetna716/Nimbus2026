@@ -26,8 +26,8 @@ const Gallery = () => {
           className="relative w-full max-w-[500px] md:max-w-none md:w-[1500px] h-[180px] md:h-[223px] group overflow-hidden cursor-pointer rounded-lg md:rounded-none"
         >
           <Image
-            src="/robowar.jpg"
-            alt="Robowar"
+            src="/herosection/section1.jpeg"
+            alt="Thrilling Competition"
             fill
             sizes="(max-width: 1500px) 100vw, 1500px"
             className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
@@ -35,8 +35,8 @@ const Gallery = () => {
           <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
           {/* Text Overlay */}
           <div className="absolute right-4 md:right-10 bottom-8 text-right z-20 pointer-events-none">
-            <h3 className="text-white text-sm md:text-lg tracking-widest mb-0 font-light font-bankgothic">MAIN EVENT</h3>
-            <h2 className="text-white text-2xl md:text-4xl tracking-wider font-bold font-bankgothic">ROBOWARS</h2>
+            <h3 className="text-white text-sm md:text-lg tracking-widest mb-0 font-light font-bankgothic">THRILLING</h3>
+            <h2 className="text-white text-2xl md:text-4xl tracking-wider font-bold font-bankgothic">COMPETITION</h2>
           </div>
         </motion.div>
 
@@ -49,8 +49,8 @@ const Gallery = () => {
           className="relative w-full max-w-[500px] md:max-w-none md:w-[1500px] h-[180px] md:h-[223px] group overflow-hidden cursor-pointer rounded-lg md:rounded-none"
         >
           <Image
-            src="/drone.jpg"
-            alt="Drone Soccer"
+            src="/herosection/section2.jpeg"
+            alt="Technical Workshop"
             fill
             sizes="(max-width: 1500px) 100vw, 1500px"
             className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
@@ -58,8 +58,8 @@ const Gallery = () => {
           <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
           {/* Text Overlay */}
           <div className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 text-left z-20 pointer-events-none">
-            <h3 className="text-white text-sm md:text-lg tracking-widest mb-0 font-light font-bankgothic">AERIAL COMBAT</h3>
-            <h2 className="text-white text-2xl md:text-4xl tracking-wider font-bold font-bankgothic">DRONE SOCCER</h2>
+            <h3 className="text-white text-sm md:text-lg tracking-widest mb-0 font-light font-bankgothic">TECHNICAL</h3>
+            <h2 className="text-white text-2xl md:text-4xl tracking-wider font-bold font-bankgothic">WORKSHOP</h2>
           </div>
         </motion.div>
 
@@ -88,7 +88,7 @@ const Gallery = () => {
       </div>
 
       {/* Scrolling Marquee */}
-      <div className="w-full mt-20 overflow-hidden py-4 bg-black/50 backdrop-blur-sm">
+      <div className="w-full mt-10 overflow-hidden py-4 border-t border-b border-white/10 bg-black/50 backdrop-blur-sm">
         <div className="flex whitespace-nowrap animate-marquee">
           {[...Array(10)].map((_, i) => (
             <div key={i} className="flex">
