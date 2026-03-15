@@ -25,7 +25,7 @@ const DroneSection = () => {
     const marqueeX = useTransform(scrollYProgress, [0, 1], ["-30%", "0%"]);
 
     return (
-        <section ref={containerRef} className="w-full min-h-screen bg-[#020205] text-white relative flex items-center justify-center py-16 md:py-24 z-10 overflow-hidden border-t border-b border-[#B19EEF]/30">
+        <section ref={containerRef} className="w-full min-h-screen bg-[#020205] text-white relative flex items-center justify-center py-16 md:py-24 z-10 overflow-hidden">
             {/* Cyberpunk/Sky Atmosphere */}
             <div className="absolute inset-0 pointer-events-none z-0">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,159,252,0.08)_0%,transparent_60%),radial-gradient(circle_at_20%_80%,rgba(177,158,239,0.05)_0%,transparent_50%)]" />
@@ -105,7 +105,7 @@ const DroneSection = () => {
                             {/* Main Image Container */}
                             <div className="relative w-full h-full overflow-hidden bg-black border border-white/5 shadow-[0_0_50px_rgba(255,159,252,0.15)] filter grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 transform-gpu translate-z-0">
                                 <Image
-                                    src="/events/drone_event.png"
+                                    src="/drone.jpg"
                                     alt="Drone Arena"
                                     fill
                                     className="object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80 group-hover:opacity-100 transform-gpu translate-z-0"
