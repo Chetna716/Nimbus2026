@@ -25,7 +25,7 @@ const RcRaceSection = () => {
     const marqueeX = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
 
     return (
-        <section ref={containerRef} className="w-full min-h-screen bg-black text-white relative flex items-center justify-center py-16 md:py-24 z-10 overflow-hidden">
+        <section ref={containerRef} className="w-full min-h-screen bg-black text-white relative flex items-center justify-center py-8 md:py-12 z-10 overflow-hidden">
             {/* Dark/Neon Atmosphere */}
             <div className="absolute inset-0 pointer-events-none z-0">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(177,158,239,0.08)_0%,transparent_60%),radial-gradient(circle_at_80%_80%,rgba(255,159,252,0.05)_0%,transparent_50%)]" />
