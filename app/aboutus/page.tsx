@@ -161,40 +161,20 @@ const AboutUs = () => {
 
         </div>
 
-        {/* Stats Section */}
+        {/* Tagline Section */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 py-12 border-y border-white/10"
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mt-4 text-center py-12 border-t border-white/10"
         >
-          {[
-            { label: "Events", value: "50+" },
-            { label: "Colleges", value: "100+" },
-            { label: "Footfall", value: "10k+" },
-            { label: "Prizes", value: "₹5L+" }
-          ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <h4 className="text-3xl md:text-6xl font-bold text-white mb-2 font-bankgothic">{stat.value}</h4>
-              <p className="text-[#B19EEF] text-sm md:text-base tracking-widest uppercase">{stat.label}</p>
-            </div>
-          ))}
-        </motion.div>
-
-        {/* Join Us CTA */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-24 text-center"
-        >
-          <h2 className="text-2xl md:text-5xl font-bold mb-8 font-bankgothic">
-            BE PART OF THE <span className="text-[#B19EEF]">FUTURE</span>
+          <h2 className="text-2xl md:text-5xl font-bold font-bankgothic tracking-[0.2em] mb-4">
+            INNOVATE. <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] via-[#FF9FFC] to-[#9333EA]">CREATE.</span> ELEVATE.
           </h2>
-          <button className="px-8 py-4 bg-transparent border border-[#B19EEF] text-white hover:bg-[#B19EEF] transition-all duration-300 rounded-full tracking-widest font-bold">
-            REGISTER NOW
-          </button>
+          <p className="text-gray-500 font-mono tracking-[0.5em] uppercase text-[10px] md:text-base">
+            THE FUTURE IS IN YOUR HANDS
+          </p>
         </motion.div>
       </div>
     </main>
