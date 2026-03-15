@@ -14,7 +14,7 @@ const Gallery = () => {
   }, []);
 
   return (
-    <div className="w-full bg-black flex flex-col items-center py-10 md:py-20 relative overflow-hidden">
+    <div className="w-full bg-black flex flex-col items-center pt-10 pb-10 md:pb-20 relative overflow-hidden">
       {/* Images Container */}
       <div className="flex flex-col gap-2 md:gap-4 z-10 w-full px-4 md:px-0 items-center">
         {/* Section 1 */}

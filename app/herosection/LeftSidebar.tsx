@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Menu from '../components/Menu';
 
 interface LeftSidebarProps {
@@ -24,6 +25,7 @@ const LeftSidebar = ({ activeSection = 1 }: LeftSidebarProps) => {
   return (
     <>
       <Menu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+
       {/* Mobile Menu Trigger */}
       <div
         className="fixed top-4 left-4 z-50 md:hidden flex flex-col gap-1.5 cursor-pointer mix-blend-difference"

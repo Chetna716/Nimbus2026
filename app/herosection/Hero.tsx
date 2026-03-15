@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import GlitchText from './GlitchText';
 
-import Link from 'next/link';
+import Image from 'next/image';
 
 const LiquidEther = dynamic(() => import('./liquidether'), {
   ssr: false,
@@ -15,16 +15,15 @@ const Model = dynamic(() => import('./model'), { ssr: false });
 const Hero = () => {
   return (
     <div className="w-full h-screen relative bg-black overflow-hidden">
-      {/* Map Button - Top Right */}
-      <div className="absolute top-4 right-4 md:top-8 md:right-16 z-50">
-        <Link href="/map">
-          <button className="group relative px-6 py-2 bg-black/40 backdrop-blur-md border border-white/20 hover:border-[#B19EEF] transition-colors rounded-full overflow-hidden">
-            <span className="relative z-10 text-xs font-mono tracking-[0.2em] text-white group-hover:text-[#B19EEF] transition-colors">
-              EXPLORE MAP
-            </span>
-            <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-          </button>
-        </Link>
+      {/* Pixonoids Logo - Top Right */}
+      <div className="absolute top-6 right-4 md:top-8 md:right-8 z-50 pointer-events-none">
+        <Image 
+          src="/PIXO LOGO.png" 
+          alt="Pixonoids Logo" 
+          width={60} 
+          height={20} 
+          className="object-contain opacity-90"
+        />
       </div>
 
       {/* Grid Background */}
@@ -66,12 +65,12 @@ const Hero = () => {
         {/* Foreground Text */}
         <div className="absolute z-20 top-[25%] md:top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none flex flex-col items-center justify-center">
           <div className="relative">
-            <span className="absolute -top-4 md:-top-1 left-2 text-white text-2xl md:text-5xl tracking-[0.2em] font-neoform">DATES</span>
+            <span className="absolute -top-4 md:-top-1 left-2 text-white text-base md:text-3xl tracking-[0.2em] font-bankgothic uppercase">10-11 april</span>
             <GlitchText
               text="NIMBUS"
               className="text-white text-6xl sm:text-8xl md:text-9xl lg:text-[150px] xl:text-[250px] tracking-widest leading-none"
             />
-            <span className="absolute -bottom-8 md:-bottom-4 right-2 text-white text-2xl md:text-5xl tracking-widest font-neoform">2026</span>
+            <span className="absolute -bottom-8 md:-bottom-4 right-2 text-white text-2xl md:text-5xl tracking-widest font-bankgothic">2026</span>
           </div>
         </div>
 
