@@ -101,10 +101,10 @@ const EventsTimeline = () => {
                 </div>
 
                 {/* Main Content Area */}
-                <div className="w-full max-w-7xl mx-auto relative z-10 flex flex-col items-center justify-center h-full pt-36 md:pt-0">
+                <div className="w-full max-w-7xl mx-auto relative z-10 flex flex-col items-center justify-end h-full pt-48 md:pt-0 pb-12 md:pb-0">
 
                     {/* Horizontal Timeline Track */}
-                    <div className="w-full mb-20 relative">
+                    <div className="w-full mb-10 relative">
                         {/* Timeline Base Line */}
                         <div className="w-full h-[2px] bg-white/10 relative">
                             {/* Progress Line */}

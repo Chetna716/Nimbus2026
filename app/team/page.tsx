@@ -8,13 +8,13 @@ import LeftSidebar from '../herosection/LeftSidebar';
 
 // --- Types & Data ---
 
-type Category = 'ALL' | 'CORE' | 'TECHNICAL' | 'CREATIVE' | 'MANAGEMENT';
+type Category = 'FACULTY' | 'CORE TEAM' | 'CLUB COORDINATORS';
 
 interface TeamMember {
   id: string;
   name: string;
   role: string;
-  category: Category;
+  category: Exclude<Category, 'ALL'>;
   image: string;
   socials: {
     linkedin?: string;
@@ -26,81 +26,146 @@ interface TeamMember {
 }
 
 const TEAM_MEMBERS: TeamMember[] = [
+  // --- FACULTY ---
   {
-    id: "1",
+    id: "f1",
+    name: "DR. RAJESH KUMAR",
+    role: "FACULTY ADVISOR",
+    category: "FACULTY",
+    image: "/whatsapp.jpeg",
+    socials: { linkedin: "#", email: "#" }
+  },
+  {
+    id: "f2",
+    name: "DR. PRIYA MEHTA",
+    role: "FACULTY CO-ADVISOR",
+    category: "FACULTY",
+    image: "/whatsapp.jpeg",
+    socials: { linkedin: "#", email: "#" }
+  },
+  {
+    id: "f3",
+    name: "DR. AMIT SHARMA",
+    role: "TECHNICAL MENTOR",
+    category: "FACULTY",
+    image: "/whatsapp.jpeg",
+    socials: { linkedin: "#", email: "#" }
+  },
+  {
+    id: "f4",
+    name: "DR. SUNITA VERMA",
+    role: "EVENT PATRON",
+    category: "FACULTY",
+    image: "/whatsapp.jpeg",
+    socials: { linkedin: "#", email: "#" }
+  },
+  // --- CORE TEAM ---
+  {
+    id: "c1",
     name: "SARAYU NALLABOLU",
     role: "PRESIDENT",
-    category: "CORE",
-    image: "/whatsapp.jpeg", // Placeholder
+    category: "CORE TEAM",
+    image: "/whatsapp.jpeg",
     socials: { linkedin: "#", github: "#", instagram: "#", whatsapp: "#" }
   },
   {
-    id: "2",
+    id: "c2",
     name: "ARYAN SINGH",
     role: "VICE PRESIDENT",
-    category: "CORE",
+    category: "CORE TEAM",
     image: "/whatsapp.jpeg",
     socials: { linkedin: "#", email: "#", whatsapp: "#" }
   },
   {
-    id: "3",
+    id: "c3",
     name: "RISHABH GUPTA",
-    role: "TECH LEAD",
-    category: "TECHNICAL",
+    role: "GENERAL SECRETARY",
+    category: "CORE TEAM",
     image: "/whatsapp.jpeg",
     socials: { linkedin: "#", github: "#", whatsapp: "#" }
   },
   {
-    id: "4",
+    id: "c4",
     name: "PRIYA SHARMA",
-    role: "DESIGN HEAD",
-    category: "CREATIVE",
+    role: "TREASURER",
+    category: "CORE TEAM",
     image: "/whatsapp.jpeg",
     socials: { linkedin: "#", instagram: "#", whatsapp: "#" }
   },
   {
-    id: "5",
+    id: "c5",
     name: "VIKRAM MALHOTRA",
-    role: "EVENT MANAGER",
-    category: "MANAGEMENT",
-    image: "/whatsapp.jpeg",
-    socials: { linkedin: "#", email: "#", whatsapp: "#" }
-  },
-  {
-    id: "6",
-    name: "SNEHA PATEL",
-    role: "WEB DEVELOPER",
-    category: "TECHNICAL",
+    role: "TECH LEAD",
+    category: "CORE TEAM",
     image: "/whatsapp.jpeg",
     socials: { linkedin: "#", github: "#", whatsapp: "#" }
   },
   {
-    id: "7",
-    name: "ROHAN VERMA",
-    role: "CONTENT LEAD",
-    category: "CREATIVE",
+    id: "c6",
+    name: "SNEHA PATEL",
+    role: "DESIGN HEAD",
+    category: "CORE TEAM",
     image: "/whatsapp.jpeg",
     socials: { linkedin: "#", instagram: "#", whatsapp: "#" }
   },
   {
-    id: "8",
+    id: "c7",
+    name: "ROHAN VERMA",
+    role: "EVENT COORDINATOR",
+    category: "CORE TEAM",
+    image: "/whatsapp.jpeg",
+    socials: { linkedin: "#", whatsapp: "#" }
+  },
+  {
+    id: "c8",
     name: "ANANYA DAS",
-    role: "PUBLIC RELATIONS",
-    category: "MANAGEMENT",
+    role: "PR HEAD",
+    category: "CORE TEAM",
     image: "/whatsapp.jpeg",
     socials: { linkedin: "#", email: "#", whatsapp: "#" }
-  }
+  },
+  // --- CLUB COORDINATORS ---
+  {
+    id: "cc1",
+    name: "HARSH VARDHAN",
+    role: "MEDEXTROUS COORDINATOR",
+    category: "CLUB COORDINATORS",
+    image: "/whatsapp.jpeg",
+    socials: { linkedin: "#", whatsapp: "#" }
+  },
+  {
+    id: "cc2",
+    name: "KAVYA JOSHI",
+    role: "EXE COORDINATOR",
+    category: "CLUB COORDINATORS",
+    image: "/whatsapp.jpeg",
+    socials: { linkedin: "#", instagram: "#", whatsapp: "#" }
+  },
+  {
+    id: "cc3",
+    name: "ADITYA RAJ",
+    role: "VIBHAV COORDINATOR",
+    category: "CLUB COORDINATORS",
+    image: "/whatsapp.jpeg",
+    socials: { linkedin: "#", github: "#", whatsapp: "#" }
+  },
+  {
+    id: "cc4",
+    name: "MEERA KAPOOR",
+    role: "ROBOTICS COORDINATOR",
+    category: "CLUB COORDINATORS",
+    image: "/whatsapp.jpeg",
+    socials: { linkedin: "#", whatsapp: "#" }
+  },
 ];
 
-const CATEGORIES: Category[] = ['ALL', 'CORE', 'TECHNICAL', 'CREATIVE', 'MANAGEMENT'];
+const CATEGORIES: Category[] = ['FACULTY', 'CORE TEAM', 'CLUB COORDINATORS'];
 
 const TeamsPage = () => {
-  const [activeCategory, setActiveCategory] = useState<Category>('ALL');
+  const [activeCategory, setActiveCategory] = useState<Category>('FACULTY');
   const [hoveredMember, setHoveredMember] = useState<string | null>(null);
 
-  const filteredMembers = activeCategory === 'ALL'
-    ? TEAM_MEMBERS
-    : TEAM_MEMBERS.filter(m => m.category === activeCategory);
+  const filteredMembers = TEAM_MEMBERS.filter(m => m.category === activeCategory);
 
   return (
     <main className="min-h-screen bg-black text-white relative overflow-x-hidden selection:bg-[#B19EEF] selection:text-white">
