@@ -16,11 +16,11 @@ const Hero = () => {
   return (
     <div className="w-full h-screen relative bg-black overflow-hidden">
       <div className="absolute top-6 right-4 md:top-8 md:right-8 z-50 pointer-events-none">
-        <Image 
-          src="/PIXO LOGO.png" 
-          alt="Pixonoids Logo" 
-          width={60} 
-          height={20} 
+        <Image
+          src="/nimbuslogoW-01.png"
+          alt="Nimbus Logo"
+          width={60}
+          height={20}
           className="object-contain opacity-90"
         />
       </div>
@@ -37,7 +37,7 @@ const Hero = () => {
       <div className="relative z-10 w-full h-full flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <LiquidEther
-            colors={['#7C3AED', '#FF9FFC', '#9333EA']}
+            colors={['#c35debff', '#FF9FFC', '#9333EA']}
             mouseForce={15}
             cursorSize={80}
             isViscous={false}
@@ -59,7 +59,7 @@ const Hero = () => {
         <div className="absolute bottom-0 left-0 right-0 h-1/2 z-[35] pointer-events-none bg-gradient-to-t from-black via-black/50 to-transparent" />
         <div className="absolute z-20 top-[25%] md:top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none flex flex-col items-center justify-center">
           <div className="relative">
-            <span className="absolute -top-4 md:-top-1 left-2 text-white text-base md:text-3xl tracking-[0.2em] font-bankgothic uppercase">10-11 april</span>
+            <span className="absolute -top-4 md:-top-1 left-2 text-white text-base md:text-3xl tracking-[0.2em] font-bankgothic uppercase">10-12 April</span>
             <GlitchText
               text="NIMBUS"
               className="text-white text-6xl sm:text-8xl md:text-9xl lg:text-[150px] xl:text-[250px] tracking-widest leading-none"
@@ -68,11 +68,11 @@ const Hero = () => {
           </div>
         </div>
         <div className="absolute bottom-6 right-4 md:bottom-10 md:right-6 z-50 pointer-events-none">
-          <Image 
-            src="/nimbuslogoW-01.png" 
-            alt="Nimbus Logo" 
-            width={90} 
-            height={30} 
+          <Image
+            src="/PIXO LOGO.png"
+            alt="Pixonoids Logo"
+            width={90}
+            height={30}
             className="object-contain opacity-80 w-10 md:w-16"
           />
         </div>
