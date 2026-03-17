@@ -15,7 +15,6 @@ const Model = dynamic(() => import('./model'), { ssr: false });
 const Hero = () => {
   return (
     <div className="w-full h-screen relative bg-black overflow-hidden">
-      {/* Pixonoids Logo - Top Right */}
       <div className="absolute top-6 right-4 md:top-8 md:right-8 z-50 pointer-events-none">
         <Image 
           src="/PIXO LOGO.png" 
@@ -25,8 +24,6 @@ const Hero = () => {
           className="object-contain opacity-90"
         />
       </div>
-
-      {/* Grid Background */}
       <div
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
@@ -38,7 +35,6 @@ const Hero = () => {
         }}
       />
       <div className="relative z-10 w-full h-full flex items-center justify-center">
-        {/* Background Effects */}
         <div className="absolute inset-0 z-0">
           <LiquidEther
             colors={['#7C3AED', '#FF9FFC', '#9333EA']}
@@ -58,17 +54,9 @@ const Hero = () => {
             autoRampDuration={0.8}
           />
         </div>
-
-        {/* Radial Gradient Behind Model */}
         <div className="absolute inset-0 z-10 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_20%,black_100%)] md:bg-[radial-gradient(circle_at_center,transparent_0%,black_80%)]" />
-
-        {/* 3D Model */}
         <Model />
-
-        {/* Gradient On Top of Model for Blending with next section */}
         <div className="absolute bottom-0 left-0 right-0 h-1/2 z-[15] pointer-events-none bg-gradient-to-t from-black via-black/50 to-transparent" />
-
-        {/* Foreground Text */}
         <div className="absolute z-20 top-[25%] md:top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none flex flex-col items-center justify-center">
           <div className="relative">
             <span className="absolute -top-4 md:-top-1 left-2 text-white text-base md:text-3xl tracking-[0.2em] font-bankgothic uppercase">10-11 april</span>
@@ -79,8 +67,6 @@ const Hero = () => {
             <span className="absolute -bottom-8 md:-bottom-4 right-2 text-white text-2xl md:text-5xl tracking-widest font-bankgothic">2026</span>
           </div>
         </div>
-
-        {/* Nimbus Logo - Bottom Right */}
         <div className="absolute bottom-6 right-4 md:bottom-10 md:right-6 z-50 pointer-events-none">
           <Image 
             src="/nimbuslogoW-01.png" 

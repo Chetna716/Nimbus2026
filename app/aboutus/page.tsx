@@ -23,9 +23,7 @@ const AboutUs = () => {
 
   return (
     <main className="min-h-screen bg-black text-white relative overflow-x-hidden selection:bg-[#B19EEF] selection:text-white">
-      <LeftSidebar activeSection={-1} /> {/* -1 or a specific ID for About Us if we add it to sidebar */}
-
-      {/* Grid Background */}
+      <LeftSidebar activeSection={-1} />
       <div
         className="fixed inset-0 z-0 pointer-events-none opacity-40"
         style={{
@@ -38,7 +36,6 @@ const AboutUs = () => {
       />
 
       <div className="relative z-10 px-6 pt-24 pb-12 md:pl-[120px] md:pr-8 md:py-20 max-w-7xl mx-auto">
-        {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -59,8 +56,6 @@ const AboutUs = () => {
             className="h-1 bg-[#B19EEF]"
           />
         </motion.div>
-
-        {/* Content Grid */}
         <div className="mb-24">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -80,9 +75,6 @@ const AboutUs = () => {
               With a legacy of over a decade, Nimbus has evolved into one of the premier technical festivals in North India,
               hosting a plethora of events, workshops, and guest lectures from industry leaders.
             </p>
-
-            {/* Added Image */}
-            {/* Added Image with Block Reveal */}
             <div className="relative w-full h-[250px] md:h-[400px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group bg-black">
               <AnimatePresence mode='wait'>
                 <motion.div
@@ -100,7 +92,6 @@ const AboutUs = () => {
                     priority
                     className="object-cover"
                   />
-                  {/* Text Layer - Improved Wipe Animation */}
                   <motion.div
                     initial={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)", opacity: 0 }}
                     animate={{ clipPath: "polygon(0 0, 110% 0, 100% 100%, -10% 100%)", opacity: 1 }}
@@ -111,7 +102,6 @@ const AboutUs = () => {
                       <h3 className="relative z-10 text-2xl md:text-6xl font-bold text-white font-bankgothic drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] tracking-widest pl-6 pr-8 py-4 border-l-8 border-[#B19EEF] bg-black/80 backdrop-blur-md rounded-r-2xl">
                         {images[currentImageIndex].title}
                       </h3>
-                      {/* Shine effect */}
                       <motion.div
                         initial={{ x: "-100%" }}
                         animate={{ x: "200%" }}
@@ -122,8 +112,6 @@ const AboutUs = () => {
                   </motion.div>
                 </motion.div>
               </AnimatePresence>
-
-              {/* Grid Overlay on Image (Persistent) */}
               <div
                 className="absolute inset-0 z-20 opacity-30 pointer-events-none"
                 style={{
@@ -135,8 +123,6 @@ const AboutUs = () => {
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-20" />
-
-              {/* Reveal Blocks Animation (Optimized using CSS) */}
               <div
                 key={`blocks-${currentImageIndex}`}
                 className="absolute inset-0 z-30 flex flex-wrap content-start"
@@ -160,8 +146,6 @@ const AboutUs = () => {
 
 
         </div>
-
-        {/* Tagline Section */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}

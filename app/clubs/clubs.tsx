@@ -69,25 +69,21 @@ const TeamsSection = () => {
 
   const activeTeam = teams[activeIndex];
 
-  // Spring-animated progress (0 to 1) driven by activeIndex
   const progress = useSpring(0, {
     stiffness: 120,
     damping: 25,
     restDelta: 0.001
   });
 
-  // Update spring target when activeIndex changes
   useEffect(() => {
     progress.set(activeIndex / (teams.length - 1));
   }, [activeIndex, progress, teams.length]);
 
-  // Image trail constants
   const IMAGE_HEIGHT = 280;
   const IMAGE_WIDTH = 500;
   const IMAGE_GAP = 32;
   const totalImageTravel = (teams.length - 1) * (IMAGE_HEIGHT + IMAGE_GAP);
 
-  // Text trail constants
   const TEXT_ITEM_HEIGHT = 100;
   const TEXT_GAP = 20;
   const TEXT_CONTAINER_HEIGHT = 400;
@@ -95,7 +91,6 @@ const TeamsSection = () => {
   const textInitialOffset = (TEXT_CONTAINER_HEIGHT - TEXT_ITEM_HEIGHT) / 2;
   const textTotalTravel = (teams.length - 1) * textStride;
 
-  // Simultaneous transforms driven by the same spring
   const imageY = useTransform(progress, [0, 1], [0, -totalImageTravel]);
   const textY = useTransform(progress, [0, 1], [textInitialOffset, textInitialOffset - textTotalTravel]);
   const numberY = useTransform(progress, [0, 1], [0, 200]);
@@ -108,7 +103,6 @@ const TeamsSection = () => {
     setTimeout(() => setIsAnimating(false), 500);
   }, [isAnimating, activeIndex, teams.length]);
 
-  // Wheel-based snapping
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -136,7 +130,6 @@ const TeamsSection = () => {
     return () => container.removeEventListener('wheel', handleWheel);
   }, [activeIndex, isAnimating, goTo, teams.length]);
 
-  // Touch-based navigation
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -164,7 +157,6 @@ const TeamsSection = () => {
     };
   }, [activeIndex, isAnimating, goTo, teams.length]);
 
-  // Keyboard navigation
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === 'ArrowDown' || e.key === 'ArrowRight') goTo(activeIndex + 1);
@@ -176,8 +168,6 @@ const TeamsSection = () => {
 
   return (
     <div ref={containerRef} className="w-full h-screen relative bg-black selection:bg-[#B19EEF] selection:text-white overflow-hidden">
-
-      {/* Background Grid */}
       <div
         className="absolute inset-0 z-0 pointer-events-none opacity-40"
         style={{
@@ -190,14 +180,10 @@ const TeamsSection = () => {
       />
 
       <div className="w-full h-full flex items-center overflow-hidden pl-0 md:pl-[60px]">
-
-        {/* Header Info */}
         <div className="absolute top-6 right-4 md:top-10 md:right-10 z-50 flex flex-col items-end">
           <h3 className="text-[#B19EEF] text-xs md:text-sm tracking-[0.3em] md:tracking-[0.5em] font-bankgothic mb-2">PARTICIPATING CLUBS</h3>
           <div className="w-32 h-[2px] bg-gradient-to-r from-transparent to-[#B19EEF]" />
         </div>
-
-        {/* Left: Number Indicator */}
         <motion.div style={{ y: numberY }} className="absolute left-[100px] top-20 z-10 hidden md:block">
           <div className="flex flex-col">
             <div className="flex items-end leading-none">
@@ -221,11 +207,8 @@ const TeamsSection = () => {
             </motion.div>
           </div>
         </motion.div>
-
-        {/* Center: Image Trail */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
           <div className="relative w-[500px] h-screen flex items-center justify-center scale-[0.6] md:scale-100 origin-center">
-            {/* Tech Circles Decoration */}
             <div
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"
               style={{ width: 700, height: 700 }}
@@ -240,18 +223,13 @@ const TeamsSection = () => {
                 <div className="w-full h-full border-2 border-white/20 rounded-full" />
               </div>
             </div>
-
-            {/* Vertical Center Line */}
             <div className="absolute top-0 bottom-0 left-1/2 w-[1px] bg-gradient-to-b from-transparent via-[#B19EEF]/50 to-transparent z-0" />
-
-            {/* Image Trail Strip - all images stacked, moves up/down */}
             <motion.div
               style={{ y: imageY, top: '50%', marginTop: -IMAGE_HEIGHT / 2 }}
               className="absolute flex flex-col gap-8 w-full z-10 items-center"
             >
               {teams.map((team, index) => (
                 <div key={team.id} className="relative flex-shrink-0 group" style={{ height: IMAGE_HEIGHT, width: IMAGE_WIDTH }}>
-                  {/* Active frame border */}
                   <div className={`absolute -inset-3 border-2 transition-all duration-500 rounded-sm ${activeIndex === index
                     ? 'border-[#B19EEF] opacity-100'
                     : 'border-transparent opacity-0'
@@ -271,8 +249,6 @@ const TeamsSection = () => {
                       : 'grayscale opacity-40 border-2 border-transparent z-10 blur-[2px]'
                       }`}
                   />
-
-                  {/* Scanline Effect on Active */}
                   {activeIndex === index && (
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#B19EEF]/10 to-transparent z-30 pointer-events-none bg-[length:100%_4px]" />
                   )}
@@ -281,8 +257,6 @@ const TeamsSection = () => {
             </motion.div>
           </div>
         </div>
-
-        {/* Right: Club Name Trail - all names stacked, moves up/down simultaneously */}
         <div className="absolute right-4 md:right-20 z-20 pointer-events-none"
           style={{ top: `calc(50vh - ${(TEXT_CONTAINER_HEIGHT - TEXT_ITEM_HEIGHT) / 2}px)` }}>
 
@@ -319,8 +293,6 @@ const TeamsSection = () => {
             </motion.div>
           </div>
         </div>
-
-        {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center gap-2">
           <span className="text-white/40 text-[10px] tracking-[0.3em] font-mono uppercase">Scroll</span>
           <motion.div
@@ -329,8 +301,6 @@ const TeamsSection = () => {
             className="w-[1px] h-6 bg-gradient-to-b from-[#B19EEF] to-transparent"
           />
         </div>
-
-        {/* Dot Navigation */}
         <div className="absolute bottom-8 right-8 md:right-20 z-50 flex flex-col gap-3">
           {teams.map((_, index) => (
             <button

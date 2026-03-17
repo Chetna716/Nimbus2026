@@ -15,9 +15,7 @@ const Gallery = () => {
 
   return (
     <div className="w-full bg-black flex flex-col items-center pt-10 pb-10 md:pb-20 relative overflow-hidden">
-      {/* Images Container */}
       <div className="flex flex-col gap-2 md:gap-4 z-10 w-full px-4 md:px-0 items-center">
-        {/* Section 1 */}
         <motion.div
           initial={isMobile ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
           whileInView={isMobile ? { y: 0, opacity: 1 } : { y: 0, opacity: 1 }}
@@ -33,14 +31,11 @@ const Gallery = () => {
             className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
           />
           <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
-          {/* Text Overlay */}
           <div className="absolute right-4 md:right-10 bottom-8 text-right z-20 pointer-events-none">
             <h3 className="text-white text-sm md:text-lg tracking-widest mb-0 font-light font-bankgothic">THRILLING</h3>
             <h2 className="text-white text-2xl md:text-4xl tracking-wider font-bold font-bankgothic">COMPETITION</h2>
           </div>
         </motion.div>
-
-        {/* Section 2 */}
         <motion.div
           initial={isMobile ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
           whileInView={isMobile ? { y: 0, opacity: 1 } : { y: 0, opacity: 1 }}
@@ -56,14 +51,11 @@ const Gallery = () => {
             className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
           />
           <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
-          {/* Text Overlay */}
           <div className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 text-left z-20 pointer-events-none">
             <h3 className="text-white text-sm md:text-lg tracking-widest mb-0 font-light font-bankgothic">TECHNICAL</h3>
             <h2 className="text-white text-2xl md:text-4xl tracking-wider font-bold font-bankgothic">WORKSHOP</h2>
           </div>
         </motion.div>
-
-        {/* Section 3 */}
         <motion.div
           initial={isMobile ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
           whileInView={isMobile ? { y: 0, opacity: 1 } : { y: 0, opacity: 1 }}
@@ -79,40 +71,31 @@ const Gallery = () => {
             className="object-cover object-center transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
           />
           <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
-          {/* Text Overlay */}
           <div className="absolute right-4 md:right-10 bottom-8 text-right z-20 pointer-events-none">
             <h3 className="text-white text-sm md:text-lg tracking-widest mb-0 font-light font-bankgothic">GUEST</h3>
             <h2 className="text-white text-2xl md:text-4xl tracking-wider font-bold font-bankgothic">LECTURE</h2>
           </div>
         </motion.div>
       </div>
-
-      {/* Scrolling Marquee */}
       <div className="w-full mt-10 overflow-hidden py-4 border-t border-b border-white/10 bg-black/50 backdrop-blur-sm">
         <div className="flex whitespace-nowrap animate-marquee">
           {[...Array(10)].map((_, i) => (
             <div key={i} className="flex">
               <span className="text-white text-xl font-bold tracking-widest mx-8 uppercase opacity-70 font-bankgothic">
-                ///ROBOWAR
               </span>
               <span className="text-white text-xl font-bold tracking-widest mx-8 uppercase opacity-70 font-bankgothic">
-                ///DRONE SOCCER
               </span>
               <span className="text-white text-xl font-bold tracking-widest mx-8 uppercase opacity-70 font-bankgothic">
-                ///RC RACE
               </span>
             </div>
           ))}
           {[...Array(10)].map((_, i) => (
             <div key={`dup-${i}`} className="flex">
               <span className="text-white text-xl font-bold tracking-widest mx-8 uppercase opacity-70 font-bankgothic">
-                ///ROBOWAR
               </span>
               <span className="text-white text-xl font-bold tracking-widest mx-8 uppercase opacity-70 font-bankgothic">
-                ///DRONE SOCCER
               </span>
               <span className="text-white text-xl font-bold tracking-widest mx-8 uppercase opacity-70 font-bankgothic">
-                ///RC RACE
               </span>
             </div>
           ))}

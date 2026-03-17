@@ -18,7 +18,6 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(!hasSeenPreloader);
 
   useEffect(() => {
-    // Lock body scroll while loading
     if (isLoading) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -31,8 +30,6 @@ export default function Home() {
     setIsLoading(false);
   };
 
-
-  // ... IntersectionObserver logic ...
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {

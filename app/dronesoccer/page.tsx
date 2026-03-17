@@ -6,13 +6,11 @@ import Link from 'next/link';
 export default function DroneSoccerPage() {
   return (
     <main className="min-h-screen bg-[#020205] text-white relative selection:bg-[#FF9FFC]/30 overflow-x-hidden">
-      {/* Background Effects */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(255,159,252,0.08)_0%,transparent_50%),radial-gradient(circle_at_20%_80%,rgba(177,158,239,0.05)_0%,transparent_50%)]" />
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'repeating-linear-gradient(-45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000), repeating-linear-gradient(-45deg, #000 25%, #112 25%, #112 75%, #000 75%, #000)', backgroundPosition: '0 0, 10px 10px', backgroundSize: '20px 20px' }}></div>
       </div>
 
-      {/* Navigation */}
       <nav className="relative w-full p-6 z-50 flex justify-between items-center bg-transparent">
         <Link href="/#drone" className="group flex items-center gap-3 text-white/70 hover:text-[#FF9FFC] transition-colors">
           <div className="p-2 border border-white/20 group-hover:border-[#FF9FFC]/50 rounded-full bg-black/50 backdrop-blur-md">
@@ -23,7 +21,6 @@ export default function DroneSoccerPage() {
         <div className="font-bankgothic text-[#FF9FFC] tracking-[0.3em] text-sm hidden sm:block">AERIAL EVENT // 02</div>
       </nav>
 
-      {/* Hero Header */}
       <header className="relative pt-20 pb-20 px-6 lg:px-12 z-10 flex flex-col items-center justify-center min-h-[50vh] border-b border-[#FF9FFC]/20">
         <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -44,13 +41,10 @@ export default function DroneSoccerPage() {
         </motion.div>
       </header>
 
-      {/* Main Content */}
       <div className="container mx-auto px-6 lg:px-12 py-20 relative z-10">
         
-        {/* Top Section: Briefing & Status */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-20 items-center">
           
-          {/* Mission Briefing */}
           <div className="flex flex-col justify-center">
             <motion.section initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <h2 className="text-3xl font-bankgothic text-white mb-6 flex items-center gap-4">
@@ -64,7 +58,6 @@ export default function DroneSoccerPage() {
             </motion.section>
           </div>
 
-          {/* Event Status */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="w-full">
             <div className="bg-gradient-to-br from-[#FF9FFC]/10 to-transparent border border-[#FF9FFC]/30 p-6 lg:p-8 relative overflow-hidden group flex flex-col">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF9FFC]/20 blur-[50px] rounded-full group-hover:bg-[#5227FF]/30 transition-colors duration-500"></div>
@@ -100,7 +93,6 @@ export default function DroneSoccerPage() {
           </motion.div>
         </div>
 
-        {/* Bottom Section: Parameters */}
         <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
           <h2 className="text-3xl font-bankgothic text-white mb-8 flex items-center gap-4">
             <span className="w-8 h-[2px] bg-[#FF9FFC]"></span>

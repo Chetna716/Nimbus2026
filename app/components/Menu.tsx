@@ -21,7 +21,6 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -29,8 +28,6 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
             onClick={onClose}
             className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[60]"
           />
-
-          {/* Menu Container */}
           <motion.div
             initial={{ x: '-100%' }}
             animate={{ x: 0 }}
@@ -38,7 +35,6 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
             className="fixed top-0 left-0 h-full w-full md:w-[600px] bg-black border-r border-white/20 z-[70] flex flex-col p-10 md:p-20 overflow-hidden"
           >
-            {/* Close Button Area (Top Left matches sidebar position) */}
             <div className="absolute top-0 left-0 w-[60px] py-8 flex flex-col items-center border-b border-white/20 z-[80]">
               <div
                 className="flex flex-col gap-1.5 cursor-pointer pointer-events-auto group"
@@ -61,8 +57,6 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
                 />
               </div>
             </div>
-
-            {/* Menu Links */}
             <div className="flex flex-col justify-center h-full gap-8 pl-12 relative z-10">
               {menuItems.map((item, index) => (
                 <motion.div
@@ -87,8 +81,6 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
                 </motion.div>
               ))}
             </div>
-
-            {/* Footer / Decorative */}
             <div className="absolute bottom-10 left-10 md:left-20 flex gap-4 text-white/30 font-mono text-xs tracking-widest z-10">
               <p>NIMBUS 2026</p>
               <span>•</span>

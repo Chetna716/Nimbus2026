@@ -10,7 +10,6 @@ export default function Model() {
 
   function onLoad(splineApp: any) {
     setIsLoading(false);
-    // Try to find Head or Eye objects
     const target = splineApp.findObjectByName('Head') ||
       splineApp.findObjectByName('head') ||
       splineApp.findObjectByName('Eye') ||
@@ -39,7 +38,6 @@ export default function Model() {
     const animate = () => {
       if (pointerMoved && objRef.current && initialRotation.current) {
         const sensitivity = 0.5;
-        // Apply rotation relative to initial rotation with smooth interpolation
         objRef.current.rotation.y += (initialRotation.current.y + targetX * sensitivity - objRef.current.rotation.y) * 0.1;
         objRef.current.rotation.x += (initialRotation.current.x + targetY * sensitivity - objRef.current.rotation.x) * 0.1;
       }

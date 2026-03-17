@@ -21,8 +21,6 @@ export default function GlitchText({ text, className }: GlitchTextProps) {
       if (!startTime) startTime = timestamp;
       const progress = timestamp - startTime;
       
-      // Calculate how many letters to fix based on time progress
-      // easing slightly for better feel
       const fraction = Math.min(progress / duration, 1);
       const iterations = fraction * text.length;
 
@@ -33,8 +31,6 @@ export default function GlitchText({ text, className }: GlitchTextProps) {
             if (index < Math.floor(iterations)) {
               return text[index];
             }
-            // Update random character every frame for high-energy glitch
-            // or we could throttle this if it's too chaotic
             return letters[Math.floor(Math.random() * letters.length)];
           })
           .join("")

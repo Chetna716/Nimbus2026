@@ -39,7 +39,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Preconnect to Spline for the 3D Model */}
         <link rel="preconnect" href="https://prod.spline.design" />
         <link rel="dns-prefetch" href="https://prod.spline.design" />
       </head>

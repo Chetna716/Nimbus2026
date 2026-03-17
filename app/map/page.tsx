@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { ChevronLeft, X, MapPin } from 'lucide-react';
 
-// --- Types ---
 interface ZoneData {
     id: string;
     name: string;
@@ -18,7 +17,6 @@ interface ZoneData {
     cy: number; // Center Y for label
 }
 
-// --- Data ---
 const ZONES: ZoneData[] = [
     {
         id: "Z01",
@@ -77,16 +75,12 @@ const MapPage = () => {
     const [hoveredZone, setHoveredZone] = useState<string | null>(null);
     const [scale, setScale] = useState(1);
 
-    // Zoom handling (simple)
     const handleZoomIn = () => setScale(prev => Math.min(prev + 0.2, 2));
     const handleZoomOut = () => setScale(prev => Math.max(prev - 0.2, 0.8));
 
     return (
         <main className="min-h-screen bg-[#050505] text-white relative overflow-hidden font-bankgothic selection:bg-[#B19EEF] selection:text-white">
-
-            {/* --- GRID & AMBIENCE --- */}
             <div className="fixed inset-0 z-0 pointer-events-none">
-                {/* Moving Grid */}
                 <div
                     className="absolute inset-0 opacity-20"
                     style={{
@@ -96,11 +90,8 @@ const MapPage = () => {
                         transformOrigin: 'center 80%'
                     }}
                 />
-                {/* Vignette */}
                 <div className="absolute inset-0 bg-radial-gradient from-transparent via-black/50 to-black/90" />
             </div>
-
-            {/* --- HEADER UI --- */}
             <header className="absolute top-0 left-0 w-full p-6 md:p-10 flex justify-between items-start z-50 pointer-events-none">
                 <div className="pointer-events-auto">
                     <Link href="/" className="flex items-center gap-2 group opacity-70 hover:opacity-100 transition-opacity mb-4">
@@ -118,8 +109,6 @@ const MapPage = () => {
                     </div>
                 </div>
             </header>
-
-            {/* --- COMING SOON OVERLAY --- */}
             <div className="absolute inset-0 z-[40] flex items-center justify-center pointer-events-none">
                 <div className="bg-black/80 backdrop-blur-md border-y border-[#B19EEF] py-8 w-full text-center relative overflow-hidden">
                     <motion.div
@@ -136,11 +125,7 @@ const MapPage = () => {
                     </p>
                 </div>
             </div>
-
-            {/* --- MAIN MAP INTERFACE --- */}
             <div className="relative w-full h-screen flex items-center justify-center overflow-hidden cursor-move active:cursor-grabbing opacity-50 pointer-events-none grayscale">
-
-                {/* Interactive SVG Map */}
                 <motion.div
                     animate={{ scale: scale }}
                     transition={{ type: 'spring', stiffness: 300, damping: 30 }}
@@ -150,13 +135,9 @@ const MapPage = () => {
                         viewBox="0 0 1000 600"
                         className="w-full h-full drop-shadow-[0_0_20px_rgba(177,158,239,0.2)]"
                     >
-
-                        {/* Connecting Lines (Decor) */}
                         <path d="M 300,200 L 500,100 L 800,200" fill="none" stroke="#ffffff10" strokeWidth="2" strokeDasharray="5 5" />
                         <path d="M 290,450 L 500,450 L 830,420" fill="none" stroke="#ffffff10" strokeWidth="2" strokeDasharray="5 5" />
                         <circle cx="500" cy="300" r="150" fill="none" stroke="#ffffff05" strokeWidth="1" />
-
-                        {/* Zones */}
                         {ZONES.map((zone) => {
                             const isSelected = selectedZone?.id === zone.id;
                             const isHovered = hoveredZone === zone.id;
@@ -169,7 +150,6 @@ const MapPage = () => {
                                     onMouseLeave={() => setHoveredZone(null)}
                                     className="cursor-pointer transition-all duration-300"
                                 >
-                                    {/* Shape */}
                                     <motion.path
                                         d={zone.path}
                                         fill={isSelected || isHovered ? `${zone.color}40` : "rgba(20,20,30,0.6)"}
@@ -180,8 +160,6 @@ const MapPage = () => {
                                         transition={{ duration: 0.5 }}
                                         className="transition-all duration-300 backdrop-blur-sm"
                                     />
-
-                                    {/* Pin / Icon */}
                                     <foreignObject x={zone.cx - 20} y={zone.cy - 20} width="40" height="40" className="pointer-events-none">
                                         <div className={`w-full h-full flex items-center justify-center rounded-full transition-transform duration-300 ${isSelected || isHovered ? 'scale-125' : 'scale-100'}`}>
                                             <div className="relative">
@@ -190,8 +168,6 @@ const MapPage = () => {
                                             </div>
                                         </div>
                                     </foreignObject>
-
-                                    {/* Label (Visible on Hover/Select) */}
                                     <AnimatePresence>
                                         {(isHovered || isSelected) && (
                                             <motion.foreignObject
@@ -217,8 +193,6 @@ const MapPage = () => {
                     </svg>
                 </motion.div>
             </div>
-
-            {/* --- HUD CONTROLS --- */}
             <div className="absolute bottom-10 left-10 z-50 flex flex-col gap-2">
                 <div className="text-xs font-mono text-gray-500 mb-2">ZOOM_LEVEL</div>
                 <div className="flex gap-2">
@@ -229,8 +203,6 @@ const MapPage = () => {
                     <button onClick={handleZoomIn} className="w-10 h-10 border border-white/20 bg-black/40 hover:bg-white/10 text-white rounded flex items-center justify-center transition-colors">+</button>
                 </div>
             </div>
-
-            {/* --- SELECTED ZONE DETAIL PANEL --- */}
             <AnimatePresence>
                 {selectedZone && (
                     <motion.div
@@ -240,18 +212,13 @@ const MapPage = () => {
                         transition={{ type: 'spring', damping: 25, stiffness: 300 }}
                         className="fixed top-0 right-0 h-full w-full md:w-[450px] bg-black/90 border-l border-white/10 z-[60] backdrop-blur-xl p-8 md:p-12 flex flex-col shadow-[-20px_0_50px_rgba(0,0,0,0.5)]"
                     >
-                        {/* Panel Scanline */}
                         <div className="absolute inset-0 pointer-events-none opacity-5 bg-[url('/scanline.png')] bg-[length:100%_4px]" />
-
-                        {/* Close */}
                         <button
                             onClick={() => setSelectedZone(null)}
                             className="absolute top-8 right-8 p-2 hover:bg-white/10 rounded-full transition-colors group"
                         >
                             <X className="w-6 h-6 text-gray-400 group-hover:text-white" />
                         </button>
-
-                        {/* Header */}
                         <div className="mt-10 mb-8">
                             <div className="flex items-center gap-3 mb-4">
                                 <div className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-white/10 border border-white/10 text-[color:var(--color)]" style={{ '--color': selectedZone.color } as any}>
@@ -262,11 +229,8 @@ const MapPage = () => {
                             <h2 className="text-5xl font-bold text-white mb-2 leading-none">{selectedZone.name}</h2>
                             <h3 className="text-xl text-gray-400 font-light tracking-wide">{selectedZone.type}</h3>
                         </div>
-
-                        {/* Hero Graphic (Abstract) */}
                         <div className="w-full h-48 rounded-lg mb-8 relative overflow-hidden border border-white/10 group">
                             <div className="absolute inset-0 bg-[color:var(--color)] opacity-20 group-hover:opacity-30 transition-opacity" style={{ '--color': selectedZone.color } as any} />
-                            {/* Simulated visualizer bars */}
                             <div className="absolute bottom-0 left-0 w-full h-full flex items-end justify-between px-4 pb-4 gap-1">
                                 {[...Array(10)].map((_, i) => (
                                     <motion.div
@@ -280,8 +244,6 @@ const MapPage = () => {
                                 ))}
                             </div>
                         </div>
-
-                        {/* Details */}
                         <div className="space-y-6">
                             <p className="text-gray-300 text-lg leading-relaxed font-light">
                                 {selectedZone.description}
@@ -301,8 +263,6 @@ const MapPage = () => {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Footer Action */}
                         <div className="mt-auto pt-8">
                             <button className="w-full py-4 bg-[color:var(--color)] text-black font-bold tracking-widest hover:brightness-110 transition-all clip-path-slant" style={{ '--color': selectedZone.color } as any}>
                                 NAVIGATE TO ZONE

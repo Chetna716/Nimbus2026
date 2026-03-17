@@ -24,10 +24,7 @@ const Footer = () => {
 
     return (
         <footer className="relative bg-black text-white overflow-hidden">
-
-            {/* Animated Background Layers */}
             <div className="absolute inset-0 z-0">
-                {/* Grid */}
                 <div
                     className="absolute inset-0 opacity-20"
                     style={{
@@ -38,15 +35,11 @@ const Footer = () => {
                         backgroundSize: '40px 40px'
                     }}
                 />
-
-                {/* Diagonal Stripes */}
                 <div className="absolute inset-0 opacity-5">
                     <div className="absolute inset-0" style={{
                         backgroundImage: 'repeating-linear-gradient(45deg, #B19EEF 0px, #B19EEF 2px, transparent 2px, transparent 10px)',
                     }} />
                 </div>
-
-                {/* Glowing Orbs */}
                 <motion.div
                     animate={{
                         scale: [1, 1.2, 1],
@@ -72,8 +65,6 @@ const Footer = () => {
                     className="absolute -bottom-20 -right-20 w-96 h-96 bg-purple-600 rounded-full blur-[120px]"
                 />
             </div>
-
-            {/* Top Border with Animation */}
             <div className="relative h-1 bg-gradient-to-r from-transparent via-[#B19EEF] to-transparent">
                 <motion.div
                     animate={{ x: ['-100%', '200%'] }}
@@ -83,11 +74,7 @@ const Footer = () => {
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-20 py-20">
-
-                {/* Main Content - Creative Layout */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
-
-                    {/* Left: Large Brand Section */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -95,7 +82,6 @@ const Footer = () => {
                         transition={{ duration: 0.6 }}
                         className="lg:col-span-5 relative"
                     >
-                        {/* Glitch Effect on Hover */}
                         <div className="relative group">
                             <h2 className="text-7xl md:text-8xl font-bold font-bankgothic mb-6 tracking-tight leading-none">
                                 <span className="relative inline-block">
@@ -126,8 +112,6 @@ const Footer = () => {
                             Where <span className="text-white font-bold">innovation</span> meets reality,
                             and <span className="text-[#B19EEF] font-bold">technology</span> shapes the future.
                         </p>
-
-                        {/* CTA Button */}
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
@@ -149,8 +133,6 @@ const Footer = () => {
                             </span>
                         </motion.button>
                     </motion.div>
-
-                    {/* Middle: Quick Links with Creative Design */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -189,8 +171,6 @@ const Footer = () => {
                             ))}
                         </ul>
                     </motion.div>
-
-                    {/* Right: Contact & Social */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -202,8 +182,6 @@ const Footer = () => {
                             <div className="w-8 h-[2px] bg-[#B19EEF]" />
                             CONNECT
                         </h3>
-
-                        {/* Contact Info */}
                         <div className="space-y-4 mb-8">
                             <div className="flex items-start gap-3 text-gray-400 group hover:text-white transition-colors">
                                 <MapPin className="w-5 h-5 text-[#B19EEF] flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" />
@@ -218,8 +196,6 @@ const Footer = () => {
                                 <span className="text-sm">nimbus@nith.ac.in</span>
                             </div>
                         </div>
-
-                        {/* Social Links - Creative Circular Design */}
                         <div className="flex gap-3">
                             {socialLinks.map((social, index) => (
                                 <motion.a
@@ -231,7 +207,6 @@ const Footer = () => {
                                     className="relative w-14 h-14 border-2 border-white/20 rounded-full flex items-center justify-center group overflow-hidden"
                                     aria-label={social.label}
                                 >
-                                    {/* Animated Background */}
                                     <motion.div
                                         className="absolute inset-0 rounded-full"
                                         style={{ backgroundColor: social.color }}
@@ -245,8 +220,6 @@ const Footer = () => {
                         </div>
                     </motion.div>
                 </div>
-
-                {/* Animated Divider */}
                 <div className="relative h-[1px] bg-white/10 mb-8 overflow-hidden">
                     <motion.div
                         animate={{ x: ['-100%', '100%'] }}
@@ -254,8 +227,6 @@ const Footer = () => {
                         className="absolute inset-0 w-1/3 bg-gradient-to-r from-transparent via-[#B19EEF] to-transparent"
                     />
                 </div>
-
-                {/* Bottom Bar - Creative Layout */}
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6">
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -291,8 +262,6 @@ const Footer = () => {
                         </Link>
                     </motion.div>
                 </div>
-
-                {/* Decorative Elements */}
                 <div className="absolute top-10 right-10 w-32 h-32 border border-[#B19EEF]/20 rounded-full pointer-events-none">
                     <motion.div
                         animate={{ rotate: 360 }}

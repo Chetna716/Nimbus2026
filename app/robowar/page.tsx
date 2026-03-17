@@ -6,13 +6,11 @@ import Link from 'next/link';
 export default function RobowarPage() {
   return (
     <main className="min-h-screen bg-[#020202] text-white relative selection:bg-[#B19EEF]/30 overflow-x-hidden">
-      {/* Background Effects */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(177,158,239,0.08)_0%,transparent_50%),radial-gradient(circle_at_80%_80%,rgba(255,159,252,0.05)_0%,transparent_50%)]" />
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000), repeating-linear-gradient(45deg, #000 25%, #222 25%, #222 75%, #000 75%, #000)', backgroundPosition: '0 0, 10px 10px', backgroundSize: '20px 20px' }}></div>
       </div>
 
-      {/* Navigation */}
       <nav className="relative w-full p-6 z-50 flex justify-between items-center bg-transparent">
         <Link href="/#robowar" className="group flex items-center gap-3 text-white/70 hover:text-[#B19EEF] transition-colors">
           <div className="p-2 border border-white/20 group-hover:border-[#B19EEF]/50 rounded-full bg-black/50 backdrop-blur-md">
@@ -23,7 +21,6 @@ export default function RobowarPage() {
         <div className="font-bankgothic text-[#B19EEF] tracking-[0.3em] text-sm hidden sm:block">MAIN EVENT // 01</div>
       </nav>
 
-      {/* Hero Header */}
       <header className="relative pt-20 pb-20 px-6 lg:px-12 z-10 flex flex-col items-center justify-center min-h-[50vh] border-b border-[#B19EEF]/20">
         <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -44,13 +41,10 @@ export default function RobowarPage() {
         </motion.div>
       </header>
 
-      {/* Main Content */}
       <div className="container mx-auto px-6 lg:px-12 py-20 relative z-10">
         
-        {/* Top Section: Briefing & Status */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-20 items-center">
           
-          {/* Mission Briefing */}
           <div className="flex flex-col justify-center">
             <motion.section initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <h2 className="text-3xl font-bankgothic text-white mb-6 flex items-center gap-4">
@@ -65,7 +59,6 @@ export default function RobowarPage() {
             </motion.section>
           </div>
 
-          {/* Event Status */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="w-full">
             <div className="bg-gradient-to-br from-[#B19EEF]/10 to-transparent border border-[#B19EEF]/30 p-6 lg:p-8 relative overflow-hidden group flex flex-col">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#B19EEF]/20 blur-[50px] rounded-full group-hover:bg-[#FF9FFC]/30 transition-colors duration-500"></div>
@@ -100,7 +93,6 @@ export default function RobowarPage() {
           </motion.div>
         </div>
 
-        {/* Bottom Section: Parameters */}
         <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
           <h2 className="text-3xl font-bankgothic text-white mb-8 flex items-center gap-4">
             <span className="w-8 h-[2px] bg-[#B19EEF]"></span>

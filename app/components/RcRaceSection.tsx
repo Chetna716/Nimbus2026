@@ -21,22 +21,16 @@ const RcRaceSection = () => {
     const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
     const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
-    // Background marquee effect
     const marqueeX = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
 
     return (
         <section ref={containerRef} className="w-full min-h-screen bg-black text-white relative flex items-center justify-center py-8 md:py-12 z-10 overflow-hidden">
-            {/* Dark/Neon Atmosphere */}
             <div className="absolute inset-0 pointer-events-none z-0">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(177,158,239,0.08)_0%,transparent_60%),radial-gradient(circle_at_80%_80%,rgba(255,159,252,0.05)_0%,transparent_50%)]" />
                 <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000), repeating-linear-gradient(45deg, #000 25%, #222 25%, #222 75%, #000 75%, #000)', backgroundPosition: '0 0, 10px 10px', backgroundSize: '20px 20px' }}></div>
-                
-                {/* Section Blending Fades */}
                 <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black to-transparent z-10" />
                 <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent z-10" />
             </div>
-
-            {/* Giant Background Text */}
             <motion.div
                 style={{ x: isMobile ? 0 : marqueeX }}
                 className="absolute top-1/4 left-0 w-[200%] pointer-events-none z-0 select-none flex"
@@ -49,8 +43,6 @@ const RcRaceSection = () => {
 
             <div className="container mx-auto px-6 lg:px-12 relative z-20 mt-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-
-                    {/* Visual / Image Side */}
                     <div className="lg:col-span-6 relative group">
                         <motion.div
                             style={{ y: isMobile ? 0 : y, opacity: isMobile ? 1 : opacity }}
@@ -84,8 +76,6 @@ const RcRaceSection = () => {
 
                         </motion.div>
                     </div>
-
-                    {/* Content / Typography Side */}
                     <div className="lg:col-span-6 flex flex-col justify-center relative z-20">
                         <motion.div
                             initial={{ opacity: 0, x: 50 }}

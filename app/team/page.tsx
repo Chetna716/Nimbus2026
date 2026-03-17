@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { Github, Linkedin, Instagram, Mail } from 'lucide-react';
 import LeftSidebar from '../herosection/LeftSidebar';
 
-// --- Types & Data ---
 
 type Category = 'FACULTY' | 'FINAL YEAR' | 'PRE FINAL YEAR';
 
@@ -26,7 +25,6 @@ interface TeamMember {
 }
 
 const TEAM_MEMBERS: TeamMember[] = [
-  // --- FACULTY ---
   {
     id: "f1",
     name: "DR. RAJESH KUMAR",
@@ -59,7 +57,6 @@ const TEAM_MEMBERS: TeamMember[] = [
     image: "/whatsapp.jpeg",
     socials: { linkedin: "#", email: "#" }
   },
-  // --- FINAL YEAR ---
   {
     id: "c1",
     name: "SARAYU NALLABOLU",
@@ -148,7 +145,6 @@ const TEAM_MEMBERS: TeamMember[] = [
     image: "/teamss/final/DIVYANSHU VERMA.jpg",
     socials: { linkedin: "#", email: "#", whatsapp: "#" }
   },
-  // --- PRE FINAL YEAR ---
   {
     id: "cc1",
     name: "AYUSH KUMAR",
@@ -257,9 +253,7 @@ const TeamsPage = () => {
 
   return (
     <main className="min-h-screen bg-black text-white relative overflow-x-hidden selection:bg-[#B19EEF] selection:text-white">
-      <LeftSidebar activeSection={3} /> {/* Assumption: Team is section 3 */}
-
-      {/* Background Grid */}
+      <LeftSidebar activeSection={3} />
       <div
         className="fixed inset-0 z-0 pointer-events-none opacity-20"
         style={{
@@ -272,8 +266,6 @@ const TeamsPage = () => {
       />
 
       <div className="relative z-10 px-6 pt-24 pb-12 md:pl-[120px] md:pr-8 md:py-20 max-w-7xl mx-auto">
-
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -293,8 +285,6 @@ const TeamsPage = () => {
             className="h-1 bg-[#B19EEF] max-w-6xl"
           />
         </motion.div>
-
-        {/* Category Filters */}
         <div className="flex flex-wrap gap-4 mb-20">
           {CATEGORIES.map((cat) => (
             <button
@@ -309,8 +299,6 @@ const TeamsPage = () => {
             </button>
           ))}
         </div>
-
-        {/* Team Grid */}
         <motion.div
           layout
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
@@ -329,7 +317,6 @@ const TeamsPage = () => {
                 className="group relative h-[420px] w-full bg-gray-900/40 backdrop-blur-sm overflow-hidden"
                 style={{ clipPath: "polygon(0 0, 100% 0, 100% 88%, 88% 100%, 0 100%)" }} // Angled Corner
               >
-                {/* Image Layer */}
                 <div className="absolute inset-0 z-0">
                   <Image
                     src={member.image}
@@ -338,15 +325,11 @@ const TeamsPage = () => {
                     className="object-cover transition-transform duration-700 ease-out scale-100 grayscale-0 md:grayscale md:group-hover:scale-110 md:group-hover:grayscale-0"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90" />
-
-                  {/* Tech Grid Overlay (Visible on Hover) */}
                   <div
                     className="absolute inset-0 bg-[url('/grid-pattern.png')] transition-opacity duration-500 mixed-blend-overlay opacity-0 md:group-hover:opacity-20"
                     style={{ backgroundSize: '30px 30px' }}
                   />
                 </div>
-
-                {/* Cyber Scanner Line */}
                 {hoveredMember === member.id && (
                   <motion.div
                     initial={{ top: '-10%' }}
@@ -355,16 +338,10 @@ const TeamsPage = () => {
                     className="absolute left-0 w-full h-[2px] bg-[#B19EEF] shadow-[0_0_10px_#B19EEF] z-20 opacity-50"
                   />
                 )}
-
-                {/* Content Layer */}
                 <div className="absolute bottom-0 left-0 w-full p-6 z-20 flex flex-col justify-end h-full">
-
-                  {/* Top Right ID Badge */}
                   <div className="absolute top-4 right-4 text-[9px] font-mono text-white/40 border border-white/10 px-2 py-1 tracking-widest">
                     ID // {member.id.padStart(3, '0')}
                   </div>
-
-                  {/* Text Content */}
                   <div className="transform transition-transform duration-500 translate-y-0 md:group-hover:-translate-y-4">
                     <div className="flex items-center gap-2 mb-2">
                       <div className="w-1 h-3 bg-[#B19EEF]" />
@@ -377,18 +354,11 @@ const TeamsPage = () => {
                       {member.name}
                     </h3>
                     <p className="text-sm font-mono text-gray-400 tracking-wider mb-6">
-                        // {member.role}
                     </p>
                   </div>
-
-                  {/* Socials Removed */}
                 </div>
-
-                {/* Corner Accents */}
                 <div className="absolute top-0 left-0 w-8 h-8 border-l border-t border-white/20 pointer-events-none transition-colors duration-300 group-hover:border-[#B19EEF]" />
                 <div className="absolute bottom-0 right-0 w-8 h-8 border-r border-b border-white/20 pointer-events-none transition-colors duration-300 group-hover:border-[#B19EEF]" />
-
-                {/* Border Overlay */}
                 <div className="absolute inset-0 border border-white/10 transition-colors duration-300 pointer-events-none md:group-hover:border-[#B19EEF]/50" style={{ clipPath: "polygon(0 0, 100% 0, 100% 88%, 88% 100%, 0 100%)" }} />
 
               </motion.div>

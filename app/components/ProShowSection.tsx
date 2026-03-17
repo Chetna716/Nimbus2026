@@ -34,24 +34,8 @@ const ProShowSection = () => {
     setActiveId(id);
   };
 
-  // Helper to get ordered artists based on active one to maintain the 3-item layout
-  // We want the active one in the middle.
-  // Actually, simplest is just to render all 3 in a fixed order (1, 2, 3) or specific slots?
-  // The user said "three image/ circle should be horizontally be align and when we click on the circle the image should swap".
-  // This implies position swapping or just content swapping?
-  // "image should swap and the text content also like the passes"
-  // In passes (TathvaPassSection), we scroll through them.
-  // Here, let's keep three fixed slots: Left, Center (Active), Right.
-  // But we have 3 artists total.
-  // So if Artist 1 is active: Left=3, Center=1, Right=2? Or just fixed positions and scale changes?
-  // "horizontally be align" suggests a row.
   
-  // Let's try a fixed row of 3 images. The one that is active is larger. The others are smaller.
-  // If I click a smaller one, it becomes active (larger) and the text updates.
-  // To make them "swap", maybe the user implies the active one is always in the center?
-  // If so, we need to rotate the array or positions.
   
-  // Let's go with: Active is always center. Left and Right are the other two.
   const getDisplayOrder = () => {
     const activeIndex = artists.findIndex(a => a.id === activeId);
     const prevIndex = (activeIndex - 1 + artists.length) % artists.length;
@@ -68,12 +52,9 @@ const ProShowSection = () => {
 
   return (
     <section className="w-full min-h-screen bg-black text-white relative flex items-center justify-center overflow-hidden py-20">
-      {/* Background Grid/Lines */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="w-full h-full" style={{ backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)', backgroundSize: '100px 100px' }}></div>
       </div>
-
-      {/* Top Left Squares */}
       <div className="absolute top-10 left-10 md:left-20 flex flex-col gap-2 z-10">
         <div className="flex gap-2">
           <div className="w-4 h-4 border border-white"></div>
@@ -94,18 +75,13 @@ const ProShowSection = () => {
           <div className="w-4 h-4 border border-white"></div>
         </div>
       </div>
-
-      {/* Top Right Coordinates */}
       <div className="absolute top-10 right-10 md:right-20 text-right z-10">
         <p className="font-mono text-sm tracking-widest text-white/70">11.3210°N</p>
         <p className="font-mono text-sm tracking-widest text-white/70">75.9320°E</p>
       </div>
 
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
-        
-        {/* Left Side: Circular Animation & Images */}
         <div className="relative w-full md:w-1/2 h-[500px] flex items-center justify-center">
-          {/* Rotating Text Ring */}
           <motion.div 
             className="absolute inset-0 flex items-center justify-center pointer-events-none z-10"
             animate={{ rotate: 360 }}
@@ -122,8 +98,6 @@ const ProShowSection = () => {
                </text>
              </svg>
           </motion.div>
-
-          {/* Images Container - Horizontally Aligned */}
           <div className="absolute inset-0 flex items-center justify-center gap-4 md:gap-8 z-20">
             {displayArtists.map((item) => {
               const isCenter = item.position === 'center';
@@ -153,8 +127,6 @@ const ProShowSection = () => {
             })}
           </div>
         </div>
-
-        {/* Right Side: Content */}
         <div className="w-full md:w-1/2 flex flex-col items-start text-left pl-0 md:pl-10 h-[400px] justify-center">
           <AnimatePresence mode="wait">
             <motion.div
@@ -182,15 +154,11 @@ const ProShowSection = () => {
           </AnimatePresence>
         </div>
       </div>
-
-      {/* Bottom Left Text */}
       <div className="absolute bottom-10 left-10 md:left-20 text-white/50 text-sm md:text-base font-light tracking-wide z-10">
         <p>Be there</p>
         <p>Feel it</p>
         <p>Live it</p>
       </div>
-
-      {/* Bottom Right Barcode/Dots */}
       <div className="absolute bottom-10 right-10 md:right-20 flex gap-1 z-10">
         {[...Array(20)].map((_, i) => (
           <div key={i} className={`w-2 h-2 ${i % 3 === 0 ? 'bg-white' : 'bg-white/30'}`}></div>
