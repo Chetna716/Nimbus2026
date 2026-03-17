@@ -59,6 +59,9 @@ const Hero = () => {
           />
         </div>
 
+        {/* Radial Gradient Behind Model */}
+        <div className="absolute inset-0 z-10 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_20%,black_100%)] md:bg-[radial-gradient(circle_at_center,transparent_0%,black_80%)]" />
+
         {/* 3D Model */}
         <Model />
 
@@ -74,31 +77,16 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right Side Info Card */}
-        <motion.div
-          initial={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)", opacity: 0 }}
-          animate={{ clipPath: "polygon(0 0, 110% 0, 100% 100%, -10% 100%)", opacity: 1 }}
-          transition={{ delay: 1.0, duration: 0.8, ease: "circOut" }}
-          className="absolute right-4 md:right-10 bottom-8 md:bottom-12 z-30 max-w-[240px] md:max-w-sm"
-        >
-          <div className="relative overflow-hidden group cursor-pointer">
-            <div className="relative z-10 pl-6 pr-8 py-6 border-l-8 border-[#B19EEF] bg-gray-900/40 backdrop-blur-xl rounded-r-2xl border-white/10 border-y border-r">
-              <h3 className="text-xl md:text-3xl font-bold text-white font-bankgothic drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] tracking-widest mb-2">
-                COMING SOON
-              </h3>
-              <p className="text-gray-300 font-mono text-sm leading-relaxed tracking-wider">
-                GET READY FOR THE FUTURE
-              </p>
-            </div>
-            {/* Shine effect */}
-            <motion.div
-              initial={{ x: "-100%" }}
-              animate={{ x: "200%" }}
-              transition={{ delay: 1.6, duration: 0.8, ease: "linear", repeat: Infinity, repeatDelay: 4 }}
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 z-20 pointer-events-none"
-            />
-          </div>
-        </motion.div>
+        {/* Nimbus Logo - Bottom Right */}
+        <div className="absolute bottom-6 right-6 md:bottom-10 md:right-10 z-50 pointer-events-none">
+          <Image 
+            src="/nimbuslogoW-01.png" 
+            alt="Nimbus Logo" 
+            width={180} 
+            height={60} 
+            className="object-contain opacity-80 w-16 md:w-28"
+          />
+        </div>
       </div>
     </div>
   );

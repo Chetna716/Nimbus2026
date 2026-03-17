@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { ChevronLeft, X, MapPin, Info, Zap } from 'lucide-react';
+import { ChevronLeft, X, MapPin } from 'lucide-react';
 
 // --- Types ---
 interface ZoneData {
