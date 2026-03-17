@@ -151,34 +151,98 @@ const TEAM_MEMBERS: TeamMember[] = [
   // --- PRE FINAL YEAR ---
   {
     id: "cc1",
-    name: "HARSH VARDHAN",
-    role: "MEDEXTROUS COORDINATOR",
+    name: "AYUSH KUMAR",
+    role: "COORDINATOR MEDIA AND PROMOTION",
     category: "PRE FINAL YEAR",
-    image: "/whatsapp.jpeg",
+    image: "/teamss/prefinal/AYUSH KUMAR.jpg",
     socials: { linkedin: "#", whatsapp: "#" }
   },
   {
     id: "cc2",
-    name: "KAVYA JOSHI",
-    role: "EXE COORDINATOR",
+    name: "DEEPTANU SARMA",
+    role: "COORDINATOR - MEDIA AND PROMOTION",
     category: "PRE FINAL YEAR",
-    image: "/whatsapp.jpeg",
+    image: "/teamss/prefinal/DEEPTANU SARMA.jpg",
     socials: { linkedin: "#", instagram: "#", whatsapp: "#" }
   },
   {
     id: "cc3",
-    name: "ADITYA RAJ",
-    role: "VIBHAV COORDINATOR",
+    name: "NIMISH SAXENA",
+    role: "INSTITUTE LEVEL COORDINATOR",
     category: "PRE FINAL YEAR",
-    image: "/whatsapp.jpeg",
+    image: "/teamss/prefinal/Nimish Saxena.jpg",
     socials: { linkedin: "#", github: "#", whatsapp: "#" }
   },
   {
     id: "cc4",
-    name: "MEERA KAPOOR",
-    role: "ROBOTICS COORDINATOR",
+    name: "PARAM SOHAL",
+    role: "CLUB COORDINATOR - DEPARTMENTAL",
     category: "PRE FINAL YEAR",
-    image: "/whatsapp.jpeg",
+    image: "/teamss/prefinal/PARAM SOHAL.jpg",
+    socials: { linkedin: "#", whatsapp: "#" }
+  },
+  {
+    id: "cc5",
+    name: "RAJAT RANSETA",
+    role: "CLUB COORDINATOR DEPARTMENTAL",
+    category: "PRE FINAL YEAR",
+    image: "/teamss/prefinal/RAJAT RANSETA.jpg",
+    socials: { linkedin: "#", whatsapp: "#" }
+  },
+  {
+    id: "cc6",
+    name: "SOMANSHU BHARDWAJ",
+    role: "COORDINATOR-MEDIA AND PROMOTIONS",
+    category: "PRE FINAL YEAR",
+    image: "/teamss/prefinal/SOMANSHU BHARDWAJ.jpg",
+    socials: { linkedin: "#", whatsapp: "#" }
+  },
+  {
+    id: "cc7",
+    name: "UJJAWAL MAHESHWARI",
+    role: "INSTITUTE LEVEL COORDINATOR",
+    category: "PRE FINAL YEAR",
+    image: "/teamss/prefinal/UJJAWAL MAHESHWARI.jpg",
+    socials: { linkedin: "#", whatsapp: "#" }
+  },
+  {
+    id: "cc8",
+    name: "VIDHAN VARDHAN SONI",
+    role: "COORDINATOR-CORE ACTIVITIES",
+    category: "PRE FINAL YEAR",
+    image: "/teamss/prefinal/VIDHAN VARDHAN SONI.webp",
+    socials: { linkedin: "#", whatsapp: "#" }
+  },
+  {
+    id: "cc9",
+    name: "NANDINEE TANDON",
+    role: "COORDINATOR-CORE ACTIVITIES",
+    category: "PRE FINAL YEAR",
+    image: "/teamss/prefinal/nandinee tandon.jpg",
+    socials: { linkedin: "#", whatsapp: "#" }
+  },
+  {
+    id: "cc10",
+    name: "PRIYANSHI",
+    role: "CLUB COORDINATOR -DEPARTMENTAL",
+    category: "PRE FINAL YEAR",
+    image: "/teamss/prefinal/priyanshi.jpg",
+    socials: { linkedin: "#", whatsapp: "#" }
+  },
+  {
+    id: "cc11",
+    name: "RONIT",
+    role: "CLUB CORDINATOR - CORE",
+    category: "PRE FINAL YEAR",
+    image: "/teamss/prefinal/ronit.jpg",
+    socials: { linkedin: "#", whatsapp: "#" }
+  },
+  {
+    id: "cc12",
+    name: "VYOM SHARMA",
+    role: "CLUB COORDINATOR - CORE",
+    category: "PRE FINAL YEAR",
+    image: "/teamss/prefinal/vyom sharma.jpg",
     socials: { linkedin: "#", whatsapp: "#" }
   },
 ];
@@ -305,7 +369,7 @@ const TeamsPage = () => {
                     <div className="flex items-center gap-2 mb-2">
                       <div className="w-1 h-3 bg-[#B19EEF]" />
                       <span className="text-xs font-mono font-bold text-[#B19EEF] tracking-wider uppercase">
-                        {member.category} OPS
+                        {member.category}
                       </span>
                     </div>
 
@@ -317,43 +381,7 @@ const TeamsPage = () => {
                     </p>
                   </div>
 
-                  {/* Socials - Slide Up Reveal */}
-                  <div
-                    className="nav-links flex gap-4 overflow-hidden transition-all duration-500 max-h-12 opacity-100 md:max-h-0 md:opacity-0 md:group-hover:max-h-12 md:group-hover:opacity-100"
-                  >
-                    {member.socials.linkedin && (
-                      <a href={member.socials.linkedin} className="p-2 border border-white/20 rounded hover:bg-[#B19EEF] hover:border-[#B19EEF] hover:text-white text-gray-400 transition-all">
-                        <Linkedin size={16} />
-                      </a>
-                    )}
-                    {member.socials.github && (
-                      <a href={member.socials.github} className="p-2 border border-white/20 rounded hover:bg-[#B19EEF] hover:border-[#B19EEF] hover:text-white text-gray-400 transition-all">
-                        <Github size={16} />
-                      </a>
-                    )}
-                    {member.socials.instagram && (
-                      <a href={member.socials.instagram} className="p-2 border border-white/20 rounded hover:bg-[#B19EEF] hover:border-[#B19EEF] hover:text-white text-gray-400 transition-all">
-                        <Instagram size={16} />
-                      </a>
-                    )}
-                    {member.socials.email && (
-                      <a href={`mailto:${member.socials.email}`} className="p-2 border border-white/20 rounded hover:bg-[#B19EEF] hover:border-[#B19EEF] hover:text-white text-gray-400 transition-all">
-                        <Mail size={16} />
-                      </a>
-                    )}
-                    {member.socials.whatsapp && (
-                      <a href={member.socials.whatsapp} className="p-2 border border-white/20 rounded hover:bg-[#B19EEF] hover:border-[#B19EEF] hover:text-white text-gray-400 transition-all flex items-center justify-center">
-                        <div className="relative w-4 h-4">
-                          <Image
-                            src="/whatsapp.jpeg"
-                            alt="WhatsApp"
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                      </a>
-                    )}
-                  </div>
+                  {/* Socials Removed */}
                 </div>
 
                 {/* Corner Accents */}

@@ -7,20 +7,55 @@ const TeamsSection = () => {
   const teams = [
     {
       id: 1,
+      name: 'HERMATICA',
+      fullName: 'TEAM HERMATICA',
+      image: '/clubs/hermatica.jpeg',
+      description: 'Mathematics and Logic'
+    },
+    {
+      id: 2,
+      name: 'ABRAXAS',
+      fullName: 'TEAM ABRAXAS',
+      image: '/clubs/abraxas.jpeg',
+      description: 'Creative and Technical Innovation'
+    },
+    {
+      id: 3,
+      name: 'DESIGNOCRATS',
+      fullName: 'TEAM DESIGNOCRATS',
+      image: '/clubs/designocrats.jpeg',
+      description: 'Design and Aesthetics'
+    },
+    {
+      id: 4,
+      name: 'METAMORPH',
+      fullName: 'TEAM METAMORPH',
+      image: '/clubs/metamorph.jpeg',
+      description: 'Material and Metallurgical Engineering'
+    },
+    {
+      id: 5,
+      name: 'OJAS',
+      fullName: 'TEAM OJAS',
+      image: '/clubs/ojas.jpeg',
+      description: 'Electrical and Electronics Engineering'
+    },
+    {
+      id: 6,
       name: 'MEDEXTROUS',
       fullName: 'TEAM MEDEXTROUS',
       image: '/teams/medex.jpg',
       description: 'Medical Innovation'
     },
     {
-      id: 2,
+      id: 7,
       name: 'EXE',
       fullName: 'TEAM EXE',
       image: '/teams/exe.jpg',
       description: 'Executive Technical'
     },
     {
-      id: 3,
+      id: 8,
       name: 'VIBHAV',
       fullName: 'TEAM VIBHAV',
       image: '/teams/vibhav.jpg',
