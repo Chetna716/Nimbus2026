@@ -71,9 +71,9 @@ const Hero = () => {
           <Image
             src="/PIXO LOGO.png"
             alt="Pixonoids Logo"
-            width={90}
-            height={30}
-            className="object-contain opacity-80 w-10 md:w-16"
+            width={75}
+            height={25}
+            className="object-contain opacity-80 w-8 md:w-14"
           />
         </div>
       </div>
