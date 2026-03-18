@@ -30,7 +30,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "DR. RAJESH KUMAR",
     role: "FACULTY ADVISOR",
     category: "FACULTY",
-    image: "/whatsapp.jpeg",
+    image: "/nimbuslogoW-01.png",
     socials: { linkedin: "#", email: "#" }
   },
   {
@@ -38,7 +38,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "DR. PRIYA MEHTA",
     role: "FACULTY CO-ADVISOR",
     category: "FACULTY",
-    image: "/whatsapp.jpeg",
+    image: "/nimbuslogoW-01.png",
     socials: { linkedin: "#", email: "#" }
   },
   {
@@ -46,7 +46,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "DR. AMIT SHARMA",
     role: "TECHNICAL MENTOR",
     category: "FACULTY",
-    image: "/whatsapp.jpeg",
+    image: "/nimbuslogoW-01.png",
     socials: { linkedin: "#", email: "#" }
   },
   {
@@ -54,7 +54,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "DR. SUNITA VERMA",
     role: "EVENT PATRON",
     category: "FACULTY",
-    image: "/whatsapp.jpeg",
+    image: "/nimbuslogoW-01.png",
     socials: { linkedin: "#", email: "#" }
   },
   {
