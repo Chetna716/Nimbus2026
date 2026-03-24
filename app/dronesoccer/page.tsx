@@ -99,9 +99,11 @@ export default function DroneSoccerPage() {
                 </div>
 
                 <div className="pt-2">
-                  <button className="w-full py-3 lg:py-4 bg-[#FF9FFC] hover:bg-[#5227FF] hover:text-white text-black font-bankgothic font-bold tracking-[0.2em] transition-all duration-300 transform hover:-translate-y-1 shadow-[0_0_20px_rgba(255,159,252,0.4)] relative z-10">
-                    DEPLOY NOW
-                  </button>
+                  <Link href="https://unstop.com/competitions/drone-soccer-nimbus-annual-technical-festival-of-nit-hamirpur-nit-hamirpur-1656018" target="_blank" className="block w-full">
+                    <button className="w-full py-3 lg:py-4 bg-[#FF9FFC] hover:bg-[#5227FF] hover:text-white text-black font-bankgothic font-bold tracking-[0.2em] transition-all duration-300 transform hover:-translate-y-1 shadow-[0_0_20px_rgba(255,159,252,0.4)] relative z-10">
+                      DEPLOY NOW
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

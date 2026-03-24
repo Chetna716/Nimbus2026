@@ -35,7 +35,7 @@ const Hero = ({ onModelLoad }: HeroProps) => {
           alt="Nimbus Logo"
           width={60}
           height={20}
-          className="object-contain opacity-90"
+          className="object-contain opacity-90 w-11 md:w-15"
           priority
         />
       </div>
@@ -84,13 +84,13 @@ const Hero = ({ onModelLoad }: HeroProps) => {
             <span className="absolute -bottom-8 md:-bottom-4 right-2 text-white text-2xl md:text-5xl tracking-widest font-bankgothic">2026</span>
           </div>
         </div>
-        <div className="absolute bottom-6 right-4 md:bottom-10 md:right-6 z-50 pointer-events-none">
+        <div className="absolute bottom-6 right-6 md:bottom-10 md:right-12 z-50 pointer-events-none">
           <Image
             src="/PIXO LOGO.png"
             alt="Pixonoids Logo"
             width={75}
             height={25}
-            className="object-contain opacity-80 w-8 md:w-14"
+            className="object-contain opacity-80 w-12 md:w-14"
             priority
           />
         </div>

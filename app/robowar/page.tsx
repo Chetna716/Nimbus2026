@@ -94,9 +94,11 @@ export default function RobowarPage() {
                 </div>
 
                 <div className="pt-2">
-                  <button className="w-full py-3 lg:py-4 bg-[#B19EEF] hover:bg-[#FF9FFC] hover:text-black text-black font-bankgothic font-bold tracking-[0.2em] transition-all duration-300 transform hover:-translate-y-1 shadow-[0_0_20px_rgba(177,158,239,0.4)] relative z-10">
-                    JOIN BATTLE
-                  </button>
+                  <Link href="https://unstop.com/competitions/robowars-8-kg-nimbus-annual-technical-festival-of-nit-hamirpur-nit-hamirpur-1655757" target="_blank" className="block w-full">
+                    <button className="w-full py-3 lg:py-4 bg-[#B19EEF] hover:bg-[#FF9FFC] hover:text-black text-black font-bankgothic font-bold tracking-[0.2em] transition-all duration-300 transform hover:-translate-y-1 shadow-[0_0_20px_rgba(177,158,239,0.4)] relative z-10">
+                      JOIN BATTLE
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
