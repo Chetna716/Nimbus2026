@@ -34,9 +34,16 @@ export default function RcRacePage() {
             RC<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B19EEF] to-[#FF9FFC]">RACE</span>
           </h1>
-          <p className="text-lg md:text-2xl text-white/60 font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-2xl text-white/60 font-light max-w-2xl mx-auto leading-relaxed mb-8">
             Push the limits of velocity on our custom-built circuit. Tune your machines, master the drifts, and leave your opponents in the dust.
           </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {['Games & Sports', 'Quizzes & Treasure Hunt', 'Engineering Excellence'].map((tag, i) => (
+              <span key={i} className="px-3 py-1 border border-white/10 bg-white/5 text-white/40 font-mono text-[10px] uppercase tracking-widest">
+                {tag}
+              </span>
+            ))}
+          </div>
         </motion.div>
       </header>
 
@@ -51,8 +58,8 @@ export default function RcRacePage() {
                 MISSION BRIEFING
               </h2>
               <div className="prose prose-invert prose-lg text-white/70 font-light max-w-none">
-                <p className="mb-4">Welcome to the Nimbus 2026 RC Race circuit. This high-adrenaline competition features two intense categories: Nitro (Internal Combustion) and Electric, pushing the boundaries of remote control engineering.</p>
-                <p>The track features a mixed off-road surface with challenging hurdles. Precision, speed, and technical tuning are essential to dominate the field and take home the championship.</p>
+                <p className="mb-4">NIMBUS 2026 proudly presents RC Car Race, a high-intensity technical competition that celebrates innovation, engineering excellence, and competitive racing. The event brings together enthusiastic teams to showcase their ability to design and control high-performance remote-controlled vehicles in a demanding racing environment.</p>
+                <p className="text-sm">Participants will compete on a challenging track designed with obstacles, sharp turns, and off-road elements that test both the mechanical efficiency of the vehicle and the precision of the driver. The competition emphasizes not only speed but also control, stability, and strategic maneuvering.</p>
               </div>
             </motion.section>
           </div>
@@ -92,27 +99,93 @@ export default function RcRacePage() {
           </motion.div>
         </div>
 
-        <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-          <h2 className="text-3xl font-bankgothic text-white mb-8 flex items-center gap-4">
-            <span className="w-8 h-[2px] bg-[#B19EEF]"></span>
-            PARAMETERS
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { title: "Vehicle Scale", desc: "1:8 Scale Off-Road Buggies Only" },
-              { title: "Nitro Specs", desc: "IC Engines up to 4.6cc displacement" },
-              { title: "Electric Specs", desc: "DC / BLDC Motors (Wireless 2.4 GHz)" },
-              { title: "Max Dimensions", desc: "800mm (L) x 600mm (W) x 500mm (H)" },
-              { title: "Team Size", desc: "1 - 5 Members per team" },
-              { title: "Format", desc: "Qualifying Heats followed by Grand Finals" }
-            ].map((item, i) => (
-              <div key={i} className="bg-white/[0.02] border border-white/5 p-6 hover:border-[#B19EEF]/30 transition-colors group">
-                <h3 className="text-[#B19EEF] font-mono text-sm tracking-widest uppercase mb-2 group-hover:text-[#FF9FFC] transition-colors">{item.title}</h3>
-                <p className="text-white/80 font-bankgothic tracking-wider text-sm">{item.desc}</p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+          <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className="text-3xl font-bankgothic text-white mb-8 flex items-center gap-4">
+              <span className="w-8 h-[2px] bg-[#B19EEF]"></span>
+              GUIDELINES
+            </h2>
+            <ul className="space-y-4">
+              {[
+                "Only 1:8 scale off-road RC buggies are allowed with a mixed off-road surface track.",
+                "Vehicles must remain stationary until the official start signal; an early start allows one restart, but a second violation leads to disqualification.",
+                "Vehicles can compete in two power categories: Nitro (IC engine up to 4.6 cc) and Electric (DC or BLDC motor).",
+                "Wireless remote control with a maximum frequency of 2.4 GHz must be used to operate all vehicles.",
+                "The vehicle must fit within 800 mm x 600 mm x 500 mm and include a functional braking system.",
+                "The race will include qualifying heats (5-10 participants each), and top performers advance to the final round.",
+                "Safety and fair play are mandatory; reckless driving, intentional collisions, or signal jamming may result in disqualification."
+              ].map((text, i) => (
+                <li key={i} className="flex gap-4 group">
+                  <span className="text-[#B19EEF] font-mono text-xs mt-1">[{i + 1}]</span>
+                  <span className="text-white/60 text-sm leading-relaxed group-hover:text-white/90 transition-colors">{text}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.section>
+
+          <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+            <h2 className="text-3xl font-bankgothic text-white mb-8 flex items-center gap-4">
+              <span className="w-8 h-[2px] bg-[#B19EEF]"></span>
+              PRIZES & REWARDS
+            </h2>
+            <div className="space-y-6">
+              <div className="bg-white/[0.02] border border-white/5 p-6">
+                <h4 className="text-[#B19EEF] font-mono text-xs tracking-widest uppercase mb-4">Nitro Category (₹60,000)</h4>
+                <div className="space-y-2 text-sm">
+                  <p className="flex justify-between"><span className="text-white/60">1st Prize:</span> <span className="text-white">₹25,000 Cash + ₹5,000 Vouchers</span></p>
+                  <p className="flex justify-between"><span className="text-white/60">2nd Prize:</span> <span className="text-white">₹15,000 Cash + ₹15,000 Vouchers</span></p>
+                </div>
               </div>
-            ))}
-          </div>
-        </motion.section>
+              <div className="bg-white/[0.02] border border-white/5 p-6">
+                <h4 className="text-[#FF9FFC] font-mono text-xs tracking-widest uppercase mb-4">Electric Category (₹60,000)</h4>
+                <div className="space-y-2 text-sm">
+                  <p className="flex justify-between"><span className="text-white/60">1st Prize:</span> <span className="text-white">₹20,000 Cash + ₹5,000 Vouchers</span></p>
+                  <p className="flex justify-between"><span className="text-white/60">2nd Prize:</span> <span className="text-white">₹15,000 Cash + ₹5,000 Vouchers</span></p>
+                  <p className="flex justify-between"><span className="text-white/60">3rd Prize:</span> <span className="text-white">₹5,000 Cash + ₹10,000 Vouchers</span></p>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+          <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className="text-3xl font-bankgothic text-white mb-8 flex items-center gap-4">
+              <span className="w-8 h-[2px] bg-[#B19EEF]"></span>
+              PARAMETERS
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {[
+                { title: "Vehicle Scale", desc: "1:8 Scale Off-Road Buggies Only" },
+                { title: "Max Dimensions", desc: "800mm x 600mm x 500mm" },
+                { title: "Team Size", desc: "1 - 5 Members per team" },
+                { title: "Location", desc: "NIT Hamirpur Campus" }
+              ].map((item, i) => (
+                <div key={i} className="bg-white/[0.02] border border-white/5 p-6 hover:border-[#B19EEF]/30 transition-colors group">
+                  <h3 className="text-[#B19EEF] font-mono text-sm tracking-widest uppercase mb-2 group-hover:text-[#FF9FFC] transition-colors">{item.title}</h3>
+                  <p className="text-white/80 font-bankgothic tracking-wider text-sm">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </motion.section>
+
+          <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
+            <h2 className="text-3xl font-bankgothic text-white mb-8 flex items-center gap-4">
+              <span className="w-8 h-[2px] bg-[#B19EEF]"></span>
+              CONTACT ORGANIZER
+            </h2>
+            <div className="bg-white/[0.02] border border-white/5 p-6 flex items-center gap-6">
+              <div className="w-16 h-16 bg-[#B19EEF]/20 flex items-center justify-center font-bankgothic text-2xl text-[#B19EEF] border border-[#B19EEF]/30">
+                UJ
+              </div>
+              <div>
+                <h4 className="text-white font-bankgothic text-lg">Ujjawal Maheshwari</h4>
+                <p className="text-[#B19EEF] text-sm">festnimbus@nith.ac.in</p>
+                <p className="text-white/60 text-sm font-mono mt-1">+91 9462821732</p>
+              </div>
+            </div>
+          </motion.section>
+        </div>
 
       </div>
     </main>
