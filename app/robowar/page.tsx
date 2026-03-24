@@ -34,9 +34,16 @@ export default function RobowarPage() {
             ROBO<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B19EEF] to-[#FF9FFC]">WARS</span>
           </h1>
-          <p className="text-lg md:text-2xl text-white/60 font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-2xl text-white/60 font-light max-w-2xl mx-auto leading-relaxed mb-8">
             The ultimate test of mechanical endurance and raw power. Build, fight, and survive the arena.
           </p>
+          <div className="flex flex-wrap justify-center gap-3">
+             {['Mechanical Engineer', 'Robotics Engineer', 'Electronics Engineer'].map((tag, i) => (
+              <span key={i} className="px-3 py-1 border border-white/10 bg-white/5 text-white/40 font-mono text-[10px] uppercase tracking-widest">
+                {tag}
+              </span>
+            ))}
+          </div>
         </motion.div>
       </header>
 
@@ -51,9 +58,12 @@ export default function RobowarPage() {
                 MISSION BRIEFING
               </h2>
               <div className="prose prose-invert prose-lg text-white/70 font-light max-w-none">
-                <p className="mb-4">Welcome to the most destructive competition in Nimbus 2026. Teams will construct remote-controlled combat robots designed to disable, destroy, and outmaneuver their opponents in a reinforced arena.</p>
-                <p className="mb-4">This year, engineering brilliance meets raw power as we host the ultimate combat robotics championship. Strategy, durability, and piloting skills will be pushed to the absolute limit.</p>
-                <p>Open to all Engineering students (UG/PG). Teams must consist of 1-6 members.</p>
+                <p className="mb-4">NIMBUS 2026 presents ROBOWARS, the ultimate combat robotics championship where engineering brilliance meets raw power. In this electrifying event, custom-built bots will clash in a high-stakes battle for supremacy, employing innovative designs and destructive tactics to outwit and overpower their rivals.</p>
+                <div className="bg-white/5 border-l-4 border-[#B19EEF] p-4 my-6 italic text-sm text-white/60">
+                  "In a future where human boxers have been replaced by towering robots, the world witnesses a new kind of sport—robot boxing. These mechanical titans, controlled by their human creators, battle it out in electrifying matches that blend strength, precision, and strategy."
+                </div>
+                <p className="mb-4">This isn't just a fight; it's a test of resilience, strategy, and survival. Design and build your very own mechanical contender a bot capable of standing strong against powerful opponents and proving its dominance in the arena.</p>
+                <p className="text-sm font-mono text-[#B19EEF]">Open to Undergraduate & Postgraduate Engineering Students.</p>
               </div>
             </motion.section>
           </div>
@@ -68,17 +78,18 @@ export default function RobowarPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 mb-6 lg:mb-8">
                   <div className="col-span-1 sm:col-span-2 flex flex-col sm:flex-row sm:justify-between sm:items-start border-b border-[#B19EEF]/20 pb-4 lg:pb-6">
                     <div>
-                      <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Prize Pool</div>
-                      <div className="text-2xl lg:text-3xl font-bankgothic text-white drop-shadow-[0_0_15px_rgba(177,158,239,0.5)]">₹1,00,000</div>
+                      <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Combined Prize Pool</div>
+                      <div className="text-2xl lg:text-3xl font-bankgothic text-white drop-shadow-[0_0_15px_rgba(177,158,239,0.5)]">₹1,30,000</div>
+                      <div className="text-[#B19EEF] font-mono text-[10px] mt-2 uppercase tracking-tight">8kg Cat: ₹65,000 | 15kg Cat: ₹65,000</div>
                     </div>
                   </div>
                   <div>
-                    <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Deadlines</div>
-                    <div className="text-lg lg:text-xl font-bankgothic text-white uppercase mt-1">15kg: April 01<br/>8kg: April 06</div>
+                    <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Abstract Submission</div>
+                    <div className="text-lg lg:text-xl font-bankgothic text-white uppercase mt-1">April 01, 2026</div>
                   </div>
                   <div>
-                    <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Venue & Dates</div>
-                    <div className="text-lg lg:text-xl font-bankgothic text-white uppercase mt-1">NIT Hamirpur<br/>April 10-12, 2026</div>
+                    <div className="text-white/40 font-mono text-xs tracking-widest uppercase mb-1">Registration Close</div>
+                    <div className="text-lg lg:text-xl font-bankgothic text-white uppercase mt-1">April 06, 2026</div>
                   </div>
                 </div>
 
@@ -92,6 +103,42 @@ export default function RobowarPage() {
           </motion.div>
         </div>
 
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+          <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className="text-3xl font-bankgothic text-white mb-8 flex items-center gap-4">
+              <span className="w-8 h-[2px] bg-[#B19EEF]"></span>
+              SUBMISSION GUIDELINES
+            </h2>
+            <div className="bg-white/[0.02] border border-white/5 p-6 space-y-4 text-sm text-white/70 leading-relaxed">
+              <p>Participants must submit a portfolio titled <code className="text-[#B19EEF]">Robowars_Team Name_Abstract</code> containing:</p>
+              <ul className="list-disc list-inside space-y-2 ml-2">
+                <li>Robot concept and design overview</li>
+                <li>Mechanical systems and weapon specifications</li>
+                <li>Component breakdown and materials used</li>
+                <li>Written abstract and video link of the bot in action</li>
+              </ul>
+              <p className="pt-4 border-t border-white/5 text-xs">Shortlisted teams based on abstract evaluation will qualify for the offline combat rounds.</p>
+            </div>
+          </motion.section>
+
+          <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+            <h2 className="text-3xl font-bankgothic text-white mb-8 flex items-center gap-4">
+              <span className="w-8 h-[2px] bg-[#B19EEF]"></span>
+              CONTACT ORGANIZER
+            </h2>
+            <div className="bg-white/[0.02] border border-white/5 p-6 flex items-center gap-6">
+              <div className="w-16 h-16 bg-[#B19EEF]/20 flex items-center justify-center font-bankgothic text-2xl text-[#B19EEF] border border-[#B19EEF]/30">
+                NI
+              </div>
+              <div>
+                <h4 className="text-white font-bankgothic text-lg">Nimish Saxena</h4>
+                <p className="text-[#B19EEF] text-sm">nimish.saxena35@gmail.com</p>
+                <p className="text-white/60 text-sm font-mono mt-1">+91 8931040270</p>
+              </div>
+            </div>
+          </motion.section>
+        </div>
+
         <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
           <h2 className="text-3xl font-bankgothic text-white mb-8 flex items-center gap-4">
             <span className="w-8 h-[2px] bg-[#B19EEF]"></span>
@@ -99,16 +146,16 @@ export default function RobowarPage() {
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Weight Classes", desc: "8 KG & 15 KG (0% weight tolerance)" },
-              { title: "Format", desc: "Round 1: Online Abstract | Round 2: Offline Combat" },
-              { title: "Ready Time", desc: "Robots combat-ready within 15 min of call" },
-              { title: "Immobility Rule", desc: "Disqualification if immobile > 15 seconds" },
-              { title: "Team Size", desc: "1 - 6 members per team" },
-              { title: "Repairs", desc: "Repairs only with prior organizer approval" }
+              { title: "Weight Categories", desc: "Two Classes: 8 KG and 15 KG (0% tolerance)" },
+              { title: "Team Size", desc: "1 - 6 Members per team" },
+              { title: "Rounds", desc: "Round 1: Abstract Analysis | Round 2: Arena Combat" },
+              { title: "Readiness", desc: "Bots must be ready within 15 min of the call" },
+              { title: "Immobility", desc: "15-second count for immobilization" },
+              { title: "Arena", desc: "Reinforced Combat Cage at NIT Hamirpur" }
             ].map((item, i) => (
               <div key={i} className="bg-white/[0.02] border border-white/5 p-6 hover:border-[#B19EEF]/30 transition-colors group">
                 <h3 className="text-[#B19EEF] font-mono text-sm tracking-widest uppercase mb-2 group-hover:text-[#FF9FFC] transition-colors">{item.title}</h3>
-                <p className="text-white/80 font-bankgothic tracking-wider">{item.desc}</p>
+                <p className="text-white/80 font-bankgothic tracking-wider text-sm">{item.desc}</p>
               </div>
             ))}
           </div>

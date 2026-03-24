@@ -9,30 +9,6 @@ const TeamsSection = () => {
   const teams = [
     {
       id: 1,
-      name: 'HERMATICA',
-      fullName: 'TEAM HERMATICA',
-      image: '/clubs/hermatica.jpeg',
-      description: 'Mathematics and Logic Society',
-      website: ''
-    },
-    {
-      id: 2,
-      name: 'MATCOM',
-      fullName: 'TEAM MATCOM',
-      image: '', // Empty as requested
-      description: 'Mathematics and Computing Society',
-      website: 'https://matcom-website.vercel.app/'
-    },
-    {
-      id: 3,
-      name: 'C HELIX',
-      fullName: 'TEAM C HELIX',
-      image: '', // Empty as requested
-      description: 'Chemistry and Molecular Sciences',
-      website: 'https://chelix.netlify.app/'
-    },
-    {
-      id: 4,
       name: 'ABRAXAS',
       fullName: 'TEAM ABRAXAS',
       image: '/clubs/abraxas.jpeg',
@@ -40,7 +16,15 @@ const TeamsSection = () => {
       website: 'https://team-abraxas-2026.vercel.app/'
     },
     {
-      id: 5,
+      id: 2,
+      name: 'C HELIX',
+      fullName: 'TEAM C HELIX',
+      image: '', // Empty as requested
+      description: 'Chemistry and Molecular Sciences',
+      website: 'https://chelix.netlify.app/'
+    },
+    {
+      id: 3,
       name: 'DESIGNOCRATS',
       fullName: 'TEAM DESIGNOCRATS',
       image: '/clubs/designocrats.jpeg',
@@ -48,23 +32,31 @@ const TeamsSection = () => {
       website: 'https://design-ocrafts.vercel.app/'
     },
     {
+      id: 4,
+      name: 'EXE',
+      fullName: 'TEAM EXE',
+      image: '/teams/exe.jpg',
+      description: 'Executive Technical',
+      website: 'https://website-2k26-dzk2.vercel.app/'
+    },
+    {
+      id: 5,
+      name: 'HERMATICA',
+      fullName: 'TEAM HERMATICA',
+      image: '/clubs/hermatica.jpeg',
+      description: 'Mathematics and Logic Society',
+      website: ''
+    },
+    {
       id: 6,
-      name: 'METAMORPH',
-      fullName: 'TEAM METAMORPH',
-      image: '/clubs/metamorph.jpeg',
-      description: 'Material and Metallurgical Engineering',
-      website: 'https://teammetamorph.vercel.app/'
+      name: 'MATCOM',
+      fullName: 'TEAM MATCOM',
+      image: '', // Empty as requested
+      description: 'Mathematics and Computing Society',
+      website: 'https://matcom-website.vercel.app/'
     },
     {
       id: 7,
-      name: 'OJAS',
-      fullName: 'TEAM OJAS',
-      image: '/clubs/ojas.jpeg',
-      description: 'Electrical and Electronics Engineering',
-      website: 'https://team-ojas-nith.vercel.app/'
-    },
-    {
-      id: 8,
       name: 'MEDEXTROUS',
       fullName: 'TEAM MEDEXTROUS',
       image: '/teams/medex.jpg',
@@ -72,12 +64,20 @@ const TeamsSection = () => {
       website: 'https://medextrous-2026.vercel.app/'
     },
     {
+      id: 8,
+      name: 'METAMORPH',
+      fullName: 'TEAM METAMORPH',
+      image: '/clubs/metamorph.jpeg',
+      description: 'Material and Metallurgical Engineering',
+      website: 'https://teammetamorph.vercel.app/'
+    },
+    {
       id: 9,
-      name: 'EXE',
-      fullName: 'TEAM EXE',
-      image: '/teams/exe.jpg',
-      description: 'Executive Technical',
-      website: 'https://website-2k26-dzk2.vercel.app/'
+      name: 'OJAS',
+      fullName: 'TEAM OJAS',
+      image: '/clubs/ojas.jpeg',
+      description: 'Electrical and Electronics Engineering',
+      website: 'https://team-ojas-nith.vercel.app/'
     },
     {
       id: 10,
