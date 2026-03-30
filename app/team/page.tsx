@@ -50,6 +50,14 @@ const TEAM_MEMBERS: TeamMember[] = [
     socials: { linkedin: "#", email: "#" }
   },
   {
+    id: "f5",
+    name: "DR. PAWAN KUMAR",
+    role: "DSW",
+    category: "FACULTY",
+    image: "/nimbuslogoB-01.png",
+    socials: { linkedin: "#", email: "#" }
+  },
+  {
     id: "f3",
     name: "DR. RAKESH SHARMA",
     role: "FACULTY INCHARGE",
@@ -60,17 +68,9 @@ const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "f4",
     name: "DR. KRITI MAHAJAN",
-    role: "ASSISTANT FACULTY",
+    role: "ASSISTANT FACULTY INCHARGE",
     category: "FACULTY",
     image: "/teamss/faculty/kirtiAFI.jpg",
-    socials: { linkedin: "#", email: "#" }
-  },
-  {
-    id: "f5",
-    name: "DR. PAWAN KUMAR",
-    role: "DWS",
-    category: "FACULTY",
-    image: "/nimbuslogoB-01.png",
     socials: { linkedin: "#", email: "#" }
   },
   {
