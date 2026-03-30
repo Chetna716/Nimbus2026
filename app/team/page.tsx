@@ -59,10 +59,18 @@ const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     id: "f4",
-    name: "DR. KIRTI",
-    role: "ASSOCIATE FACULTY INCHARGE",
+    name: "DR. KRITI MAHAJAN",
+    role: "ASSISTANT FACULTY",
     category: "FACULTY",
     image: "/teamss/faculty/kirtiAFI.jpg",
+    socials: { linkedin: "#", email: "#" }
+  },
+  {
+    id: "f5",
+    name: "DR. PAWAN KUMAR",
+    role: "DWS",
+    category: "FACULTY",
+    image: "/nimbuslogoB-01.png",
     socials: { linkedin: "#", email: "#" }
   },
   {
@@ -279,6 +287,14 @@ const TEAM_MEMBERS: TeamMember[] = [
     role: "CLUB COORDINATOR - CORE",
     category: "PRE FINAL YEAR",
     image: "/teamss/prefinal/vyom sharma.jpg",
+    socials: { linkedin: "#", whatsapp: "#" }
+  },
+  {
+    id: "cc13",
+    name: "SOHAM JUNEJA",
+    role: "CLUB COORDINATOR - CORE",
+    category: "PRE FINAL YEAR",
+    image: "/nimbuslogoB-01.png",
     socials: { linkedin: "#", whatsapp: "#" }
   },
 ];
