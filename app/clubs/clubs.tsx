@@ -41,9 +41,9 @@ const TeamsSection = () => {
     },
     {
       id: 5,
-      name: 'HERMATICA',
-      fullName: 'TEAM HERMATICA',
-      image: '/clubs/hermatica.jpeg',
+      name: 'HERMETICA',
+      fullName: 'TEAM HERMETICA',
+      image: '/clubs/hermetica.jpeg',
       description: 'Departmental Club of Chemical Engineering',
       website: ''
     },
