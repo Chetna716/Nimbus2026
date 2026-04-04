@@ -67,7 +67,7 @@ const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     id: "f4",
-    name: "DR. KRITI MAHAJAN",
+    name: "DR. KIRTI MAHAJAN",
     role: "ASSISTANT FACULTY INCHARGE",
     category: "FACULTY",
     image: "/teamss/faculty/kirtiAFI.jpg",
